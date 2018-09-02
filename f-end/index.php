@@ -123,7 +123,9 @@
                     <label>Password</label>
                     <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
+                <div class="text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form>
             </div>
         </div>
