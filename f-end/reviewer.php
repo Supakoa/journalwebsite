@@ -1,6 +1,6 @@
 <?php
 require 'server/server.php';
-$_SESSION['id'] = '123456';
+// $_SESSION['id'] = '123456';
 $id = $_SESSION['id'];
 // $id = "321654";
   
