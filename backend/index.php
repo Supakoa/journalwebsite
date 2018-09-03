@@ -36,6 +36,7 @@ if(isset($_SESSION['status'])){
     <style>
 
         .login-page {
+        font-family: 'Mitr', sans-serif;
         width: 360px;
         padding: 8% 0 0;
         margin: auto;
@@ -125,7 +126,7 @@ if(isset($_SESSION['status'])){
         }
         
     </style>
-<body>
+<body >
     <div class="container-fluid">
     <div class="container">
     </div>
@@ -137,7 +138,7 @@ if(isset($_SESSION['status'])){
             <form action="server/login.php" method="post" class="login-form">
             <input type="text" name="username" placeholder="username"/>
             <input type="password" name="password" placeholder="password"/>
-            <button type="submit">login</button>
+            <button type="submit">เข้าสู่ระบบ</button>
             </form>
 
         </div>

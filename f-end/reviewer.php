@@ -89,7 +89,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <header class="masthead text-white text-center" style="background-color : #f06eaa">
       <div class="container">
           <br>
-        <h1 class="text-uppercase mb-0"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></h1>
+        <h1 class="text-uppercase mb-0" style="font-family: 'Mitr', sans-serif;"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></h1>
         <br><br><br><br>
         <hr>
         
@@ -102,7 +102,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <section class="portfolio" id="uncheck" style="font-family: 'Mitr', sans-serif;">
         <div class="col-lg-9 mx-auto">
             <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Uncheck</h2>
+            <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">รอตรวจ</h2>
             <hr class="star-dark mb-5">
                 <table id="table1" class="table responsive display">
                 <thead>
@@ -144,7 +144,7 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <!-- checked Section -->
     <section class="portfolio" id="checked" style="font-family: 'Mitr', sans-serif;">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Checked</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">ตรวจแล้ว</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-9 mx-auto">

@@ -125,7 +125,7 @@
                     <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
                 <div class="text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
                 </div>
             </form>
             </div>
@@ -161,7 +161,7 @@
                         <div class="col-lg-6 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
                             <label>ยืนยัน password</label>
-                            <input class="form-control" name="conpassword" type="text" placeholder="Confirm password" required="required" data-validation-required-message="Please enter your Confirm password.">
+                            <input class="form-control" name="conpassword" type="text" placeholder="ยืนนัน password" required="required" data-validation-required-message="Please enter your Confirm password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -173,12 +173,12 @@
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
                             <label>ชื่อ ** </label>
-                            <input class="form-control" name="fname" type="text" placeholder="firstname" required="required" data-validation-required-message="Please enter your firstname.">
+                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required" data-validation-required-message="Please enter your firstname.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>นามสกุล ** </label>
-                            <input class="form-control" name="lname" type="text" placeholder="lastname" required="required" data-validation-required-message="Please enter your lastname.">
+                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล" required="required" data-validation-required-message="Please enter your lastname.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -213,7 +213,7 @@
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>ยืนนัน email ** </label>
-                            <input class="form-control" name="conemail" type="text" placeholder="Confirm email" required="required" data-validation-required-message="Please enter your Confirm email.">
+                            <input class="form-control" name="conemail" type="text" placeholder="ยืนนัน email" required="required" data-validation-required-message="Please enter your Confirm email.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col col-lg-12 mx-auto">
@@ -225,8 +225,8 @@
               </div>
               <br>
               <div id="success"></div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Submit</button>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">ตกลง</button>
               </div>
             </form>
           </div>

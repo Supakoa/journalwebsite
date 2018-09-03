@@ -27,32 +27,32 @@
                                 ?>
           <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px">Paper ID : </h5>
+            <h5 style="margin-left:20px">รหัสเอกสาร : </h5>
             </div>
             <div class="col col-6-lg ms-auto">
             <span><?php echo $row_q_p['paper_id'] ?></span></div>
           </div>
           <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px"> Title(Th) : </h5>
+            <h5 style="margin-left:20px"> คำนำ(Th) : </h5>
             </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['name_th'] ?></span></div>
           </div>
           <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px"> Title(Eng) : </h5>
+            <h5 style="margin-left:20px"> คำนำ(Eng) : </h5>
              </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['name_eng'] ?></span></div>
           </div>
           <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px"> Status : </h5>
+            <h5 style="margin-left:20px"> สถานะ : </h5>
             </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_status['status'] ?></span></div>
           </div>
           <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px"> Abstract : </h5>
+            <h5 style="margin-left:20px"> บทความ : </h5>
             </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['abstract'] ?></span></div>
           </div>
@@ -90,8 +90,8 @@
                                               <br>
 
                                 <div class="container" style="text-align:right" >
-                                <button type="submit" class="btn btn-primary btn-sm" id="sendMessageButton">Submit</button>
-                                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary btn-sm" id="sendMessageButton">ตกลง</button>
+                                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">ปิด</button>
                                 </div>
                                 </form><br>
                                 </div>
