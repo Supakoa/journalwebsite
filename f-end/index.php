@@ -47,7 +47,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>One stop service</title>
+    <title>Journal Website</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
