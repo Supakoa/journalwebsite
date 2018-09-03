@@ -58,7 +58,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="font-family: 'Mitr', sans-serif;">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: 'Mitr', sans-serif;">สมาชิค</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: 'Mitr', sans-serif;">สมาชิก</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>

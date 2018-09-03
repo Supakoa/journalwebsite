@@ -74,7 +74,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Journal Website</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">JOURNAL GE SSRU</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -88,7 +88,7 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
             </li> -->
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#register">สมัครสมาชิค</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#register">สมัครสมาชิก</a>
             </li>
           </ul>
         </div>
@@ -99,7 +99,8 @@
     <header class="masthead text-white text-center" style="background-color : #f06eaa">
       <div class="container">
           <br>
-        <h1 class="text-uppercase mb-0">Wellcom to Website</h1>
+        <h1 class="text-uppercase mb-0">วรสารวิชาการ <BR><BR>สำนักงานการศึกษาทั่วไป ฯ</h1>
+        <h1 class="text-uppercase mb-0"><BR>JOURNAL GE SSRU</h1>
         <br><br><br><br>
         <hr>
         
@@ -138,7 +139,7 @@
     <!-- Register Section -->
     <section id="register">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">สมัครสมาชิค</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">สมัครสมาชิก</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">

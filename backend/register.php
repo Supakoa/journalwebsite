@@ -41,7 +41,7 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Admin GE-สมัคร Reviewer</title>
+	<title>Admin GE-เพิ่มข้อมูลผู้ทรงคุณวุฒิ</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -89,7 +89,7 @@
 
         <div class="content">
             <div class="container-fluid">
-             <h3 style="text-align:center">สมัคร reviewer </h3><hr><br>
+             <h3 style="text-align:center">เพิ่มข้อมูลผู้ทรงคุณวุฒิ </h3><hr><br>
 
                 <form action="input_register.php" method="POST">
                     <div class="form-group">

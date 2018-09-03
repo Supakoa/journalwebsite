@@ -1,6 +1,6 @@
 <?php
 require 'server/server.php';
-$_SESSION['id'] = '123456';
+// $_SESSION['id'] = '123456';
 $id = $_SESSION['id'];
 // $id = "321654";
   
@@ -64,7 +64,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="font-family: 'Mitr', sans-serif;">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">ผู้ตรวจ</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">ผู้ทรงคุณวุฒิ</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -72,7 +72,7 @@ $r_name = mysqli_fetch_assoc($result_name);
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#uncheck">รอตรวจ</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#uncheck">รอการตรวจสอบ</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#checked">ตรวจแล้ว</a>
@@ -102,7 +102,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <section class="portfolio" id="uncheck" style="font-family: 'Mitr', sans-serif;">
         <div class="col-lg-9 mx-auto">
             <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">รอตรวจ</h2>
+            <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">รอการตรวจสอบ</h2>
             <hr class="star-dark mb-5">
                 <table id="table1" class="table responsive display">
                 <thead>
