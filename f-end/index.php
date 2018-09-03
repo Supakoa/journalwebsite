@@ -56,6 +56,7 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
@@ -81,13 +82,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#login">Log-in</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#login">เข้าสู่ระบบ</a>
             </li>
             <!-- <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
             </li> -->
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#register">Register</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#register">สมัครสมาชิค</a>
             </li>
           </ul>
         </div>
@@ -111,7 +112,7 @@
     <section class="portfolio" id="login">
         <div class="col-lg-6 mx-auto">
             <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Log-in</h2>
+            <h2 class="text-center text-uppercase text-secondary mb-0">เข้าสู่ระบบ</h2>
             <hr class="star-dark mb-5">
             <form  action = "server/login.php" method = "POST">
                 <div class="form-group">
@@ -137,7 +138,7 @@
     <!-- Register Section -->
     <section id="register">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Register</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">สมัครสมาชิค</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -159,7 +160,7 @@
                         </div>
                         <div class="col-lg-6 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
-                            <label>Confirm password</label>
+                            <label>ยืนยัน password</label>
                             <input class="form-control" name="conpassword" type="text" placeholder="Confirm password" required="required" data-validation-required-message="Please enter your Confirm password.">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -171,12 +172,12 @@
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
-                            <label>Firstname ** </label>
+                            <label>ชื่อ ** </label>
                             <input class="form-control" name="fname" type="text" placeholder="firstname" required="required" data-validation-required-message="Please enter your firstname.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
-                            <label>Lastname ** </label>
+                            <label>นามสกุล ** </label>
                             <input class="form-control" name="lname" type="text" placeholder="lastname" required="required" data-validation-required-message="Please enter your lastname.">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -187,11 +188,11 @@
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <div class="row">
                         <div class="col-lg-4 mx-auto">
-                        <label>Gender</label>
+                        <label>เพศ</label>
                         <select class="form-control" name="gender" required>
-                            <option disabled selected > Gender </option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option disabled selected > เพศ </option>
+                            <option value="male">ชาย</option>
+                            <option value="female">หญิง</option>
                         </select>
                         </div>
                         <div class="col-lg-8 mx-auto">
@@ -211,7 +212,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
-                            <label>Confirm email ** </label>
+                            <label>ยืนนัน email ** </label>
                             <input class="form-control" name="conemail" type="text" placeholder="Confirm email" required="required" data-validation-required-message="Please enter your Confirm email.">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -236,7 +237,7 @@
     <!-- Footer -->
     <footer class="footer text-center">
       <div class="container">
-      <h4 class="text-uppercase mb-4">Location</h4>
+      <h4 class="text-uppercase mb-4">เอกสารที่เกี่ยวข้อง</h4>
         <div class="row">
           <div class="col-md-6 mb-5 mb-lg-0">
           <ul class="list-inline mb-0">
