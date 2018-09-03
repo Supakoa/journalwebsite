@@ -74,9 +74,9 @@
                                 
                                 
                             </div>
-                            <div style="text-align:right" >
+                            <div style="text-align:right;margin-right:15px" >
                                 <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-                                </div>
+                                </div><br>
                         </div>
                     </div>
                 </div> 

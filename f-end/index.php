@@ -111,7 +111,7 @@
 
     <!-- Login Section -->
     <section class="portfolio" id="login">
-        <div class="col-lg-6 mx-auto">
+        <div class="col-lg-4 mx-auto">
             <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0">เข้าสู่ระบบ</h2>
             <hr class="star-dark mb-5">
@@ -162,7 +162,7 @@
                         <div class="col-lg-6 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
                             <label>ยืนยัน password</label>
-                            <input class="form-control" name="conpassword" type="text" placeholder="ยืนนัน password" required="required" data-validation-required-message="Please enter your Confirm password.">
+                            <input class="form-control" name="conpassword" type="text" placeholder="ยืนยัน password" required="required" data-validation-required-message="Please enter your Confirm password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -197,8 +197,8 @@
                         </select>
                         </div>
                         <div class="col-lg-8 mx-auto">
-                            <label>Affiliate (You Institute, e.g. "Suan Sunandha Rajabhat University")</label>
-                            <input class="form-control" name="address" type="text" placeholder="Address" required="required" data-validation-required-message="Please enter your affiliate.">
+                            <label>บริษัทในเครือ (You Institute, e.g. "Suan Sunandha Rajabhat University")</label>
+                            <input class="form-control" name="address" type="text" placeholder="บริษัทในเครือ" required="required" data-validation-required-message="Please enter your affiliate.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -214,12 +214,12 @@
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>ยืนนัน email ** </label>
-                            <input class="form-control" name="conemail" type="text" placeholder="ยืนนัน email" required="required" data-validation-required-message="Please enter your Confirm email.">
+                            <input class="form-control" name="conemail" type="text" placeholder="ยืนยัน email" required="required" data-validation-required-message="Please enter your Confirm email.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col col-lg-12 mx-auto">
-                            <label>Example textarea</label>
-                            <textarea class="form-control" placeholder="Member" name="member" rows="3"></textarea>
+                            <label>สมาชิค</label>
+                            <textarea class="form-control" placeholder="สมาชิค" name="member" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
