@@ -37,13 +37,13 @@ $r_name = mysqli_fetch_assoc($result_name);
     <title>Reviewer</title>
 
     <!-- Bootstrap core CSS -->
-    <form action="" method="post"></form>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 
@@ -59,12 +59,12 @@ $r_name = mysqli_fetch_assoc($result_name);
 
   </head>
 
-  <body id="page-top">
+  <body id="page-top" style="font-family: 'Mitr', sans-serif;">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="font-family: 'Mitr', sans-serif;">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Reviewer</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">ผู้ตรวจ</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -72,13 +72,13 @@ $r_name = mysqli_fetch_assoc($result_name);
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#uncheck">Uncheck</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#uncheck">รอตรวจ</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#checked">Checked</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#checked">ตรวจแล้ว</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="server/logout.php">Log-out</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="server/logout.php">ออกจากระบบ</a>
             </li>
           </ul>
         </div>
@@ -89,7 +89,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <header class="masthead text-white text-center" style="background-color : #f06eaa">
       <div class="container">
           <br>
-        <h1 class="text-uppercase mb-0"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></h1>
+        <h1 class="text-uppercase mb-0" style="font-family: 'Mitr', sans-serif;"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></h1>
         <br><br><br><br>
         <hr>
         
@@ -99,18 +99,18 @@ $r_name = mysqli_fetch_assoc($result_name);
     </header>
 
     <!-- uncheck Section -->
-    <section class="portfolio" id="uncheck">
+    <section class="portfolio" id="uncheck" style="font-family: 'Mitr', sans-serif;">
         <div class="col-lg-9 mx-auto">
             <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Uncheck</h2>
+            <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">รอตรวจ</h2>
             <hr class="star-dark mb-5">
                 <table id="table1" class="table responsive display">
                 <thead>
                     <tr>
-                        <th>Paper id</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Edit</th>
+                        <th>รหัสเอกสาร</th>
+                        <th>คำนำ</th>
+                        <th>สถานะ</th>
+                        <th>แก้ไข</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -143,8 +143,8 @@ $r_name = mysqli_fetch_assoc($result_name);
     
 
     <!-- checked Section -->
-    <section class="portfolio" id="checked">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Checked</h2>
+    <section class="portfolio" id="checked" style="font-family: 'Mitr', sans-serif;">
+        <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">ตรวจแล้ว</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-9 mx-auto">
@@ -152,10 +152,10 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <table id="table2" class="table responsive display">
                 <thead>
                     <tr>
-                        <th>Paper id</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Edit</th>
+                        <th>รหัสเอกสาร</th>
+                        <th>คำนำ</th>
+                        <th>สถานะ</th>
+                        <th>แก้ไข</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -183,7 +183,7 @@ $r_name = mysqli_fetch_assoc($result_name);
         </div>
     </section>
 
-    <div class="copyright py-4 text-center text-white">
+    <div class="copyright py-4 text-center text-white" style="font-family: 'Mitr', sans-serif;">
       <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">

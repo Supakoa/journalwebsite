@@ -69,7 +69,7 @@ td,
 button.close {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+    font-family: 'Mitr', sans-serif;
     font-weight: 400;
 }
 
@@ -228,6 +228,7 @@ input:focus {
 }
 
 .wrapper {
+    font-family: 'Mitr', sans-serif;
     position: relative;
     top: 0;
     height: 100vh;
@@ -281,7 +282,7 @@ input:focus {
     margin: 10px 10px;
     color: #FFFFFF;
     line-height: 20px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Mitr', sans-serif;
 }
 
 .sidebar .logo .simple-text {
@@ -380,7 +381,7 @@ input:focus {
     margin: 10px 10px;
     color: #FFFFFF;
     line-height: 20px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Mitr', sans-serif;
 }
 
 .sidebar .logo .simple-text {

@@ -31,10 +31,12 @@ if(isset($_SESSION['status'])){
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <style>
 
         .login-page {
+        font-family: 'Mitr', sans-serif;
         width: 360px;
         padding: 8% 0 0;
         margin: auto;
@@ -124,7 +126,7 @@ if(isset($_SESSION['status'])){
         }
         
     </style>
-<body>
+<body >
     <div class="container-fluid">
     <div class="container">
     </div>
@@ -136,7 +138,7 @@ if(isset($_SESSION['status'])){
             <form action="server/login.php" method="post" class="login-form">
             <input type="text" name="username" placeholder="username"/>
             <input type="password" name="password" placeholder="password"/>
-            <button type="submit">login</button>
+            <button type="submit">เข้าสู่ระบบ</button>
             </form>
 
         </div>

@@ -45,6 +45,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
 
 </head>
@@ -76,8 +77,8 @@
                         <table id="table2" class="display responsive">
                             <thead>
                                 <tr>
-                                    <th>Paper-id</th>
-                                    <th>ชื่อ Paper</th>
+                                    <th>รหัสเอกสาร</th>
+                                    <th>ชื่อ เอกสาร</th>
                                     <th>ชื่อผู้ส่ง</th>
                                     <th>ผู้ตรวจ 1</th>
                                     <th>ผู้ตรวจ 2</th>
