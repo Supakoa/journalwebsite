@@ -41,7 +41,7 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Admin GE</title>
+	<title>Admin GE-เพิ่มข้อมูลผู้ทรงคุณวุฒิ</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -65,6 +65,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
 </head>
 <body>
@@ -88,7 +89,7 @@
 
         <div class="content">
             <div class="container-fluid">
-             <h3 style="text-align:center">สมัคร reviewer </h3><hr><br>
+             <h3 style="text-align:center">เพิ่มข้อมูลผู้ทรงคุณวุฒิ </h3><hr><br>
 
                 <form action="input_register.php" method="POST">
                     <div class="form-group">
@@ -101,26 +102,26 @@
                         <label for="conpassword">Confirm Password </label>
                         <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" >
 
-                        <label for="fname">First name **</label>
+                        <label for="fname">ชื่อ**</label>
                         <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" >
 
-                        <label for="lname">Last name **</label>
+                        <label for="lname">นามสกุล **</label>
                         <input type="text" class="form-control" name="lname" placeholder="นามสกุล" >
 
-                        <label for="gender">Gender</label>
+                        <label for="gender">เพศ</label>
                         <select class="form-control" name="gender" required>
                             <option disabled selected value="">เพศ</option>
-                            <option value="male">male</option>
-                            <option value="female">female</option>
+                            <option value="male">ชาย</option>
+                            <option value="female">หญิง</option>
                         </select>
 
-                        <label for="address">Address</label>
+                        <label for="address">ที่อยู่</label>
                         <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่"></textarea>
                     
                         <label for="username">Email *</label>
                         <input type="text" class="form-control" name="email" placeholder="อีเมล์" >
                         
-                        <label for="password">Confirm Email *</label>
+                        <label for="password">ยืนยัน Email *</label>
                         <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" >
                         <br>
                         </div>

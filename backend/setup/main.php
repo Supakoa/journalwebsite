@@ -14,7 +14,7 @@
                         
                         <li>
                             <a href="server/logout.php">
-                                <p>Log out</p>
+                                <p>ออกจากระบบ</p>
                             </a>
                         </li>
 						<li class="separator hidden-lg"></li>

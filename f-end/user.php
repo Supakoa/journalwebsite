@@ -29,13 +29,13 @@ $r_name = mysqli_fetch_assoc($result_name);
     <title>Auther</title>
 
     <!-- Bootstrap core CSS -->
-    <form action="" method="post"></form>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   
@@ -53,12 +53,12 @@ $r_name = mysqli_fetch_assoc($result_name);
 
   </head>
 
-  <body id="page-top">
+  <body id="page-top" style="font-family: 'Mitr', sans-serif;">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="font-family: 'Mitr', sans-serif;">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Auther</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: 'Mitr', sans-serif;">สมาชิก</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -66,13 +66,13 @@ $r_name = mysqli_fetch_assoc($result_name);
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#paper">Paper</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#paper">เอกสาร</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#submitpaper">Submit paper</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#submitpaper">เพิ่มเอกสาร</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="server/logout.php">Log-out</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="server/logout.php">ออกจากระบบ</a>
             </li>
           </ul>
         </div>
@@ -80,10 +80,10 @@ $r_name = mysqli_fetch_assoc($result_name);
     </nav>  
 
     <!-- Header -->
-    <header class="masthead text-white text-center" style="background-color : #f06eaa">
+    <header class="masthead text-white text-center" style="background-color : #f06eaa" >
       <div class="container">
           <br>
-        <h1 class="text-uppercase mb-0"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></h1>
+        <h1 class="text-uppercase mb-0" style="font-family: 'Mitr', sans-serif;"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></h1>
         <br><br><br><br>
         <hr>
         
@@ -93,18 +93,18 @@ $r_name = mysqli_fetch_assoc($result_name);
     </header>
 
     <!-- paper Section -->
-    <section class="portfolio" id="paper">
+    <section class="portfolio" id="paper" style="font-family: 'Mitr', sans-serif;">
         <div class="col-lg-8 mx-auto">
             <div class="container">
-            <h2 class="text-center text-uppercase text-secondary mb-0">Paper</h2>
+            <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เอกสาร</h2>
             <hr class="star-dark mb-5">
             <table id="table_id" class="table responsive display">
                 <thead>
                     <tr>
-                        <th>Paper id</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Edit</th>
+                        <th>รหัสเอกสาร</th>
+                        <th>คำนำ</th>
+                        <th>สถานะ</th>
+                        <th>แก้ไข</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -144,9 +144,9 @@ $r_name = mysqli_fetch_assoc($result_name);
     
 
     <!-- submit Section -->
-    <section id="submitpaper">
+    <section id="submitpaper" style="font-family: 'Mitr', sans-serif;">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Submit manuscript</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เพิ่มเอกสาร</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -154,43 +154,43 @@ $r_name = mysqli_fetch_assoc($result_name);
             <form action = "server/insert_paper.php" method ="POST" enctype="multipart/form-data">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                        <label>Paper File</label>
-                        <input class="form-control" name="paper" type="file" placeholder="File" required="required">
+                        <label>ไฟล์เอกสาร</label>
+                        <input class="form-control" name="paper" type="file" placeholder="ไฟล์เอกสาร" required="required">
                     </div>
                 </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Paper name Thai</label>
-                  <input class="form-control" name="paper_th" type="text" placeholder="Paper name thai" required="required" data-validation-required-message="Please enter your Paper name thai.">
+                  <label>ชื่อเอกสารภาษาไทย</label>
+                  <input class="form-control" name="paper_th" type="text" placeholder="ชื่อเอกสารภาษาไทย" required="required" data-validation-required-message="Please enter your Paper name thai.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Paper name English</label>
-                  <input class="form-control" name="paper_eng" type="text" placeholder="Paper name English " required="required" data-validation-required-message="Please enter your Paper name english.">
+                  <label>ชื่อเอกสารภาษาอังกฤษ</label>
+                  <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสารภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Abstract</label>
-                  <textarea class="form-control" name="abstract" rows="5" placeholder="Abtract" required="required" data-validation-required-message="Please enter a message."></textarea>
+                  <label>ข้อความ</label>
+                  <textarea class="form-control" name="abstract" rows="5" placeholder="ข้อความ" required="required" data-validation-required-message="Please enter a message."></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Keyword</label>
-                  <input class="form-control" name="keyword" type="text" placeholder="Keyword" required="required" data-validation-required-message="Please enter your Keyword.">
+                  <label>คำเฉพาะ</label>
+                  <input class="form-control" name="keyword" type="text" placeholder="คำเฉพาะ" required="required" data-validation-required-message="Please enter your Keyword.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <br>
               <div id="success"></div>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-md" id="sendMessageButton">Send</button>
+                <button type="submit" class="btn btn-primary btn-md" id="sendMessageButton">ส่ง</button>
               </div>
             </form>
           </div>
