@@ -12,10 +12,11 @@
 
     $a = "DELETE FROM `user` WHERE `order` = '$id' ";
     $r_a = mysqli_query($con,$a);
-    // if($r_a){
-    //     echo ' Delete success.';
-    // }else{
-    //     echo ' Delete error.';
-    // }
+    if($r_a){
+        $_SESSION['alert'] = 2 ;
+       
+    }else{
+        $_SESSION['alert'] = 0 ;
+    }
     header("Location: ../user.php");
 ?>

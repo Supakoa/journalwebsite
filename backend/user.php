@@ -4,6 +4,15 @@
         $_SESSION['online'] = 0 ;
         header("Location: index.php");
       }
+      if(isset($_SESSION['alert'])){
+        if($_SESSION['alert'] == 0 ){
+          echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+        }
+        elseif ($_SESSION['alert'] == 2) {
+          echo '<script>alert("ลบข้อมูลเรียบร้อย.");</script>';
+        }
+        unset($_SESSION['alert']);
+      }
     $_SESSION['counter_up'] = 0 ;
     //set page
     $_SESSION['set_page']=1;

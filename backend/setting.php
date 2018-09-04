@@ -15,7 +15,25 @@
         $a = $_POST['commentf'];
         $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
         $q_b = mysqli_query($con,$b);
+        if($q_b){
+            $_SESSION['alert'] = 2 ;
+           
+        }else{
+            $_SESSION['alert'] = 0 ;
+        }
     }
+    if(isset($_SESSION['alert'])){
+        if($_SESSION['alert'] == 0 ){
+          echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+        }
+        elseif ($_SESSION['alert'] == 1) {
+          echo '<script>alert("อัพเดท Banner เรียบร้อย.");</script>';
+        }
+        elseif ($_SESSION['alert'] == 2) {
+          echo '<script>alert("อัพเดท Footer เรียบร้อย.");</script>';
+        }
+        unset($_SESSION['alert']);
+      }
 
     $q_banner = "SELECT * FROM `banner` ";
     $result_banner = mysqli_query($con,$q_banner);

@@ -11,6 +11,12 @@
     $a = "UPDATE `banner` SET `name`='$b1',`tmp_name`='$b2' WHERE 1";
     $r_a = mysqli_query($con,$a);
     unset($_SESSION['check_banner']); 
+    if($r_a){
+        $_SESSION['alert'] = 1 ;
+       
+    }else{
+        $_SESSION['alert'] = 0 ;
+    }
     header("Location: ../setting.php");
 }
 else{
@@ -51,6 +57,7 @@ else{
     $_SESSION['name_banner'] = $banner ;
     $_SESSION['tmp_banner'] = $b ;
     $_SESSION['check_banner'] = 1;
+
     header("Location: ../setting.php");
 }
     ?>

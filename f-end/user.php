@@ -9,10 +9,10 @@ if(isset($_SESSION['alert'])){
     echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
   }
   elseif ($_SESSION['alert'] == 1) {
-    echo '<script>alert("เพิ่มวารสารเรียบร้อย");</script>';
+    echo '<script>alert("เพิ่มวารสารเรียบร้อย.");</script>';
   }
   elseif ($_SESSION['alert'] == 2) {
-    echo '<script>alert("แก้ไขวารสารเรียบร้อย");</script>';
+    echo '<script>alert("แก้ไขวารสารเรียบร้อย.");</script>';
   }
   unset($_SESSION['alert']);
 }

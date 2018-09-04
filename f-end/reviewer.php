@@ -1,6 +1,15 @@
 <?php
 require 'server/server.php';
 // $_SESSION['id'] = '123456';
+if(isset($_SESSION['alert'])){
+  if($_SESSION['alert'] == 0 ){
+    echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+  }
+  elseif ($_SESSION['alert'] == 1) {
+    echo '<script>alert("ส่งคำตอบเรียบร้อย.");</script>';
+  }
+  unset($_SESSION['alert']);
+}
 $id = $_SESSION['id'];
 // $id = "321654";
   

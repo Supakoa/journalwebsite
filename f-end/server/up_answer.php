@@ -32,7 +32,14 @@
 }
     $b = "UPDATE reviewer_answer SET status = '$done',score='$score',comment='$comment' WHERE paper_id = '$id_paper' AND reviewer_id = '$id' ";
     $r_b = mysqli_query($con,$b);
+    if($r_b){
+        $_SESSION['alert'] = 1 ;
+    }
+    else{
+        $_SESSION['alert'] = 0 ;
+    }
+
     header("Location: ../reviewer.php");
 
-    echo $done.'<br>'.$score.'<br>'.$comment.'<br>'.$id_paper;
+   
 ?>
