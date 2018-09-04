@@ -104,7 +104,7 @@
     <header class="masthead text-white text-center" style="background-color : #f06eaa">
       <div class="container">
           <br>
-        <h1 class="text-uppercase mb-0">วรสารวิชาการ <BR><BR>สำนักงานการศึกษาทั่วไป ฯ</h1>
+        <h1 class="text-uppercase mb-0">วารสารวิชาการ <BR><BR>สำนักวิชาการศึกษาทั่วไป ฯ</h1>
         <h1 class="text-uppercase mb-0"><BR>JOURNAL GE SSRU</h1>
         <br><br><br><br>
         <hr>

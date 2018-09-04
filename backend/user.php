@@ -120,7 +120,7 @@
                                         <form action="server/edit_user.php?id=<?php echo $ro_a['order'] ?>" method="POST">
                                             <div class="modal-content">
                                             <div class="modal-header" style="text-align:center" >
-                                                <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิค</h3>
+                                                <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิก</h3>
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center" >
