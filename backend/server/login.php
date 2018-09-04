@@ -11,10 +11,10 @@
     $result = mysqli_query($con,$sql);
     $r_a = mysqli_fetch_array($result);
     if($r_a){
-        $_SESSION['status'] = 1 ;
+        $_SESSION['status_admin'] = 1 ;
         header("Location: ../report.php");
     }else{
-        $_SESSION['status'] = 0 ;
+        $_SESSION['status_admin'] = 0 ;
         header("Location: ../index.php");
     }
 

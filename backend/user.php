@@ -1,6 +1,6 @@
 <?php
     require 'server.php';
-    if($_SESSION['status'] != 1){
+    if($_SESSION['status_admin'] != 1){
         $_SESSION['online'] = 0 ;
         header("Location: index.php");
       }
