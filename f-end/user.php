@@ -13,9 +13,8 @@ $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' "
 $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
 
-
-
-
+  $a3 = "SELECT * FROM banner ";
+  $q3 = mysqli_query($con,$a3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -204,7 +203,11 @@ $r_name = mysqli_fetch_assoc($result_name);
       <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            ใส่ตรงนี้
+            <?php 
+              //htis site is show footer.
+              $r_3 = mysqli_fetch_array($q3);
+              echo $r_3['footer'];
+            ?>
           </div><!-- content -->
           <div class="col-lg-4"></div>
         </div>

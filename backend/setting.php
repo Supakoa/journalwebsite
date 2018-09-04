@@ -1,21 +1,31 @@
 <?php
     require 'server.php';
+
     if($_SESSION['status'] != 1){
         $_SESSION['online'] = 0 ;
         header("Location: index.php");
       }
     $_SESSION['counter_up'] = 0 ;
+
     //set page
     $_SESSION['set_page']=7;
+
+    //setting footer
+    if(isset($_POST['gogogo'])){
+        $a = $_POST['commentf'];
+        $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
+        $q_b = mysqli_query($con,$b);
+    }
+
     $q_banner = "SELECT * FROM `banner` ";
     $result_banner = mysqli_query($con,$q_banner);
     $row_banner = mysqli_fetch_array($result_banner);
-     
-   
     if(!isset($_SESSION['check_banner'])){
         $_SESSION['tmp_banner'] = $row_banner['tmp_name'];
         
     }
+
+    
     
     
 ?>
@@ -126,10 +136,10 @@
                             <div><hr>
                     
                     <br><h2 class="text-center">ตั้งค่า footer</h2>
-                <form action="update_footer.php" method="POST">
+                <form action="setting.php" method="POST">
                 <div class="row">
                     <div class="col-lg-12" style="text-align:center">
-                    <textarea  name="commentf" cols="110" rows="10" value = "<?php echo $row['footer']  ?>" ></textarea>   
+                    <textarea  name="commentf" cols="110" rows="10" ><?php echo $row_banner['footer']  ?></textarea>   
                     <br><br>
                     </div>
                     <div class="col-lg-12" style="text-align:center">
