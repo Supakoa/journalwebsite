@@ -35,6 +35,11 @@
     echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
   }
   session_destroy();
+
+  $a1 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '1'";
+  $a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
+  $q1 = mysqli_query($con,$a1);
+  $q2 = mysqli_query($con,$a2);
 ?>
 
 <!DOCTYPE html>
@@ -239,22 +244,18 @@
           <div class="col-md-6 mb-5 mb-lg-0">
           <ul class="list-inline mb-0">
               <li class="list-inline-item">
-                <a class=" text-center" href="#">1</a><br>
-                <a class=" text-center" href="#">21</a><br>
-                <a class=" text-center" href="#">541</a><br>
-                <a class=" text-center" href="#">54</a><br>
-                <a class=" text-center" href="#">54</a><br>
+                <?php while($r1 = mysqli_fetch_array($q1)){ ?>
+                  <a class=" text-center" target="_blank" href="<?php echo $r1['url']; ?>"><?php echo $r1['text']; ?></a><br>
+                <?php } ?>
               </li>
             </ul>
           </div>
           <div class="col-md-6 mb-5 mb-lg-0">
           <ul class="list-inline mb-0">
               <li class="list-inline-item">
-                <a class=" text-center" href="#">1</a><br>
-                <a class=" text-center" href="#">21</a><br>
-                <a class=" text-center" href="#">541</a><br>
-                <a class=" text-center" href="#">54</a><br>
-                <a class=" text-center" href="#">54</a><br>
+              <?php while($r2 = mysqli_fetch_array($q2)){ ?>
+                  <a class=" text-center" target="_blank" href="../backend/uploads/<?php echo $r2['url']; ?>"><?php echo $r2['text']; ?></a><br>
+                <?php } ?>
               </li>
             </ul>
           </div>
