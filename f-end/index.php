@@ -40,6 +40,9 @@
   $a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
   $q1 = mysqli_query($con,$a1);
   $q2 = mysqli_query($con,$a2);
+  
+  $a3 = "SELECT * FROM banner ";
+  $q3 = mysqli_query($con,$a3);
 ?>
 
 <!DOCTYPE html>
@@ -271,7 +274,11 @@
       <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            ใส่ตรงนี้
+            <?php 
+              //htis site is show footer.
+              $r_3 = mysqli_fetch_array($q3);
+              echo $r_3['footer'];
+            ?>
           </div><!-- content -->
           <div class="col-lg-4"></div>
         </div>
