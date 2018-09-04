@@ -4,6 +4,18 @@ if($_SESSION['status'] != 1){
   $_SESSION['online'] = 0 ;
   header("Location: index.php");
 }
+if(isset($_SESSION['alert'])){
+  if($_SESSION['alert'] == 0 ){
+    echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+  }
+  elseif ($_SESSION['alert'] == 1) {
+    echo '<script>alert("เพิ่มวารสารเรียบร้อย");</script>';
+  }
+  elseif ($_SESSION['alert'] == 2) {
+    echo '<script>alert("แก้ไขวารสารเรียบร้อย");</script>';
+  }
+  unset($_SESSION['alert']);
+}
 //$id = $_SESSION['id'];
 $_SESSION['id'] = 'singha';
 $id = $_SESSION['id'];
