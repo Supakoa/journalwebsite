@@ -91,8 +91,8 @@
             <div class="container-fluid">
              <h3 style="text-align:center">ตาราง User</h3><hr><br>
             	<div class="row">
-                    <div class="col col-12-lg">
-                        <table class="table responsive display" id="tableuser">
+                    <div class="col col-12-lg table-responsive-lg">
+                        <table class="table display" id="tableuser">
                             <thead>
                                 <th>Username</th>
                                 <th>Password</th>

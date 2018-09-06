@@ -112,7 +112,8 @@ $r_name = mysqli_fetch_assoc($result_name);
             <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">รอการตรวจสอบ</h2>
             <hr class="star-dark mb-5">
-                <table id="table1" class="table responsive display">
+            <div class="table-responsive-lg">
+            <table id="table1" class="table  display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
@@ -142,6 +143,8 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <?php } ?>
                 </tbody>
             </table>
+            </div>
+               
                 
             </div>
         </div>
@@ -156,8 +159,8 @@ $r_name = mysqli_fetch_assoc($result_name);
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-9 mx-auto">
-
-                <table id="table2" class="table responsive display">
+                  <div class="table-responsive-lg">
+                  <table id="table2" class="table display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
@@ -187,6 +190,8 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <?php } ?>
                 </tbody>
             </table>
+                  </div>
+                
           </div>
         </div>
     </section>

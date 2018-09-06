@@ -73,8 +73,8 @@
             <h3 style="text-align:center">รอยืนยันคำตอบจาก Admin</h3>
                 <hr>
                 <div class="row">
-                    <div class="col col-12-lg">
-                        <table id="table3" class="display responsive">
+                    <div class="col col-12-lg table-responsive-lg">
+                        <table id="table3" class="display table">
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>

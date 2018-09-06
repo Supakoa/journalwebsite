@@ -169,8 +169,8 @@
                     <h4 style="margin-left: 5px;text-align:center">ตั้งค่าเว็บไซต์ที่เกี่ยวข้อง</h4><br>
                     <form method="POST" action="paper.php" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col col-lg-12">
-                            <table class="table table responsive">
+                        <div class="col col-lg-12 table-responsive-lg">
+                            <table class="table ">
                                 <thead class="thead-drak">
                                     <th scope="col" colp="2">ข้อที่</th>
                                     <th scope="col" colp="2">ข้อความ</th>

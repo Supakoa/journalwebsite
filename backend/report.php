@@ -67,8 +67,8 @@ $result2 = mysqli_query($con, $q2);
             <h3 style="text-align:center">รายงาน</h3><hr><br>
               
                 <div class="row">
-                    <div class=" col-12-lg">
-                    <table id="tablepaper" class="display responsive" >
+                    <div class=" col-12-lg table-responsive-lg">
+                    <table id="tablepaper" class="display table" >
                             <thead>
                                 <tr>
                                     <th>Paper-id</th>

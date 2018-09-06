@@ -109,7 +109,8 @@ $r_name = mysqli_fetch_assoc($result_name);
             <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เอกสาร</h2>
             <hr class="star-dark mb-5">
-            <table id="table_id" class="table responsive display">
+            <div class="table-responsive-lg">
+            <table id="table_id" class="table display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
@@ -147,6 +148,8 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <?php } ?>
                 </tbody>
             </table>
+            </div>
+            
             </div>
         </div>
         
