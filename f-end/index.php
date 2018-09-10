@@ -227,7 +227,7 @@ $q3 = mysqli_query($con, $a3);
                         </div>
                         <div class="col col-lg-12 mx-auto">
                             <label>สมาชิก</label>
-                            <textarea class="form-control" placeholder="สมาชิค" name="member" rows="3"></textarea>
+                            <textarea class="form-control" placeholder="สมาชิก" name="member" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
