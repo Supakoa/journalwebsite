@@ -1,48 +1,48 @@
 <?php
-  require 'server/server.php';
+require 'server/server.php';
 
   //alert all
-  if (isset($_SESSION['index_alert'])) {
-    $alert;
-    if ($_SESSION['index_alert']==1) {
-        $alert = 'password is not match.';
-    }elseif ($_SESSION['index_alert']==2) {
-        $alert = 'email is not match.';
-    }elseif ($_SESSION['index_alert']==3) {
-        $alert = 'password & email are not match.';
-    }
-    if ($_SESSION['index_alert']!=0) {
-        echo '<script>alert("'.$alert.'");</script>';
-    }
-    $_SESSION['index_alert']=0;
+if (isset($_SESSION['index_alert'])) {
+  $alert;
+  if ($_SESSION['index_alert'] == 1) {
+    $alert = 'password is not match.';
+  } elseif ($_SESSION['index_alert'] == 2) {
+    $alert = 'email is not match.';
+  } elseif ($_SESSION['index_alert'] == 3) {
+    $alert = 'password & email are not match.';
   }
-  if (isset($_SESSION['user_match'])) {
-    if ($_SESSION['user_match']==1) {
-        echo '<script>alert("Your username are used.");</script>';
-    }elseif ($_SESSION['user_match']==2) {
-        echo '<script>alert("Insert user sucessful.");</script>';
-    }elseif ($_SESSION['user_match']==3) {
-        echo '<script>alert("Insert error.");</script>';
-    }
-    $_SESSION['user_match']=0;
+  if ($_SESSION['index_alert'] != 0) {
+    echo '<script>alert("' . $alert . '");</script>';
   }
-  if(isset($_SESSION['status'])){
-    if($_SESSION['status']==0){
+  $_SESSION['index_alert'] = 0;
+}
+if (isset($_SESSION['user_match'])) {
+  if ($_SESSION['user_match'] == 1) {
+    echo '<script>alert("Your username are used.");</script>';
+  } elseif ($_SESSION['user_match'] == 2) {
+    echo '<script>alert("Insert user sucessful.");</script>';
+  } elseif ($_SESSION['user_match'] == 3) {
+    echo '<script>alert("Insert error.");</script>';
+  }
+  $_SESSION['user_match'] = 0;
+}
+if (isset($_SESSION['status'])) {
+  if ($_SESSION['status'] == 0) {
     echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
-    }
   }
-  if(isset($_SESSION['online'])){
-    echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
-  }
-  session_destroy();
+}
+if (isset($_SESSION['online'])) {
+  echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
+}
+session_destroy();
 
-  $a1 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '1'";
-  $a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
-  $q1 = mysqli_query($con,$a1);
-  $q2 = mysqli_query($con,$a2);
-  
-  $a3 = "SELECT * FROM banner ";
-  $q3 = mysqli_query($con,$a3);
+$a1 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '1'";
+$a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
+$q1 = mysqli_query($con, $a1);
+$q2 = mysqli_query($con, $a2);
+
+$a3 = "SELECT * FROM banner ";
+$q3 = mysqli_query($con, $a3);
 ?>
 
 <!DOCTYPE html>
@@ -226,7 +226,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col col-lg-12 mx-auto">
-                            <label>สมาชิค</label>
+                            <label>สมาชิก</label>
                             <textarea class="form-control" placeholder="สมาชิค" name="member" rows="3"></textarea>
                         </div>
                     </div>
@@ -251,18 +251,20 @@
           <div class="col-md-6 mb-5 mb-lg-0">
           <ul class="list-inline mb-0">
               <li class="list-inline-item">
-                <?php while($r1 = mysqli_fetch_array($q1)){ ?>
+                <?php while ($r1 = mysqli_fetch_array($q1)) { ?>
                   <a class=" text-center" target="_blank" href="<?php echo $r1['url']; ?>"><?php echo $r1['text']; ?></a><br>
-                <?php } ?>
+                <?php 
+              } ?>
               </li>
             </ul>
           </div>
           <div class="col-md-6 mb-5 mb-lg-0">
           <ul class="list-inline mb-0">
               <li class="list-inline-item">
-              <?php while($r2 = mysqli_fetch_array($q2)){ ?>
+              <?php while ($r2 = mysqli_fetch_array($q2)) { ?>
                   <a class=" text-center" target="_blank" href="../backend/uploads/<?php echo $r2['url']; ?>"><?php echo $r2['text']; ?></a><br>
-                <?php } ?>
+                <?php 
+              } ?>
               </li>
             </ul>
           </div>
@@ -276,8 +278,8 @@
           <div class="col-lg-4">
             <?php 
               //htis site is show footer.
-              $r_3 = mysqli_fetch_array($q3);
-              echo $r_3['footer'];
+            $r_3 = mysqli_fetch_array($q3);
+            echo $r_3['footer'];
             ?>
           </div><!-- content -->
           <div class="col-lg-4"></div>
