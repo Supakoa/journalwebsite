@@ -80,6 +80,7 @@ $q3 = mysqli_query($con, $a3);
   <body id="page-top">
 
     <!-- Navigation -->
+   
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">JOURNAL GE SSRU</a>
@@ -102,11 +103,13 @@ $q3 = mysqli_query($con, $a3);
         </div>
       </div>
     </nav>  
+   
 
     <!-- Header -->
     <header class="masthead text-white text-center" style="background-color : #f06eaa">
       <div class="container">
           <br>
+          <img src="cinqueterre.jpg" class="img-rounded" alt="Cinque Terre">
         <h1 class="text-uppercase mb-0">วารสารวิชาการ <BR><BR>สำนักวิชาการศึกษาทั่วไป ฯ</h1>
         <h1 class="text-uppercase mb-0"><BR>JOURNAL GE SSRU</h1>
         <br><br><br><br>
