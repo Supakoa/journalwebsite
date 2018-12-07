@@ -43,6 +43,7 @@ $q2 = mysqli_query($con, $a2);
 
 $a3 = "SELECT * FROM banner ";
 $q3 = mysqli_query($con, $a3);
+$r_3 = mysqli_fetch_array($q3);
 ?>
 
 <!DOCTYPE html>
@@ -106,18 +107,10 @@ $q3 = mysqli_query($con, $a3);
    
 
     <!-- Header -->
-    <header class="masthead text-white text-center" style="background-color : #f06eaa">
-      <div class="container">
-          <br>
-          <img src="cinqueterre.jpg" class="img-rounded" alt="Cinque Terre">
-        <h1 class="text-uppercase mb-0">วารสารวิชาการ <BR><BR>สำนักวิชาการศึกษาทั่วไป ฯ</h1>
-        <h1 class="text-uppercase mb-0"><BR>JOURNAL GE SSRU</h1>
-        <br><br><br><br>
-        <hr>
-        
-        <br><br><br>
-       
-      </div>
+    <header class="text-white text-center responsive" >
+      
+      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%;heigth:auto ;margin-top:105px" srcset="">
+          
     </header>
 
     <!-- Login Section -->
@@ -281,7 +274,7 @@ $q3 = mysqli_query($con, $a3);
           <div class="col-lg-4">
             <?php 
               //htis site is show footer.
-            $r_3 = mysqli_fetch_array($q3);
+            
             echo $r_3['footer'];
             ?>
           </div><!-- content -->

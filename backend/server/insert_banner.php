@@ -34,7 +34,7 @@ else{
     }
 
     // Allow certain file formats
-    if ($imageFileType != "jpg") {
+    if ($imageFileType != "jpg"&&$imageFileType != "png") {
         echo "Sorry, only PDF files are allowed.";
         $uploadOk = 0;
     }
