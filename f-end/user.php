@@ -17,9 +17,9 @@ if(isset($_SESSION['alert'])){
   unset($_SESSION['alert']);
 }
 //$id = $_SESSION['id'];
-$_SESSION['id'] = 'singha';
+//$_SESSION['id'] = 'singha';
 $id = $_SESSION['id'];
-$q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id";
+$q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND user_paper.username = user.username AND paper.status = status_tb.id";
 $result = mysqli_query($con, $q);
 $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
 $result_name = mysqli_query($con, $q_name);
