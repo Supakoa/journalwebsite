@@ -209,22 +209,23 @@ $r_3 = mysqli_fetch_array($q3);
                     </div>
                 </div>
               </div>
+              
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
                             <label>Email ** </label>
-                            <input class="form-control" name="email" type="text" placeholder="Email **" required="required" data-validation-required-message="Please enter your Email.">
+                            <input class="form-control" name="email" type="text" placeholder="Email **"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required="required" data-validation-required-message="Please enter your Email.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>ยืนนัน email ** </label>
-                            <input class="form-control" name="conemail" type="text" placeholder="ยืนยัน email **" required="required" data-validation-required-message="Please enter your Confirm email.">
+                            <input class="form-control" name="conemail" type="text" placeholder="ยืนยัน email **" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required="required"  data-validation-required-message="Please enter your Confirm email.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>เบอร์โทรศัพท์มือถือ **</label>
-                            <input class="form-control" name="phone" type="tel" placeholder="เบอร์โทรศัพท์มือถือ **" required="required" data-validation-required-message="Please enter your Phone number.">
+                            <input class="form-control" name="phone" type="text" pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" placeholder="เบอร์โทรศัพท์มือถือ **" required="required" data-validation-required-message="Please enter your Phone number.">
                             <p class="help-block text-danger"></p>
                         </div>
                      

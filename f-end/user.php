@@ -185,7 +185,7 @@ $r_name = mysqli_fetch_assoc($result_name);
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>ชื่อเอกสารภาษาอังกฤษ</label>
-                  <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสารภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
+                  <input class="form-control" name="paper_eng" type="text" pattern="[a-z],[0-9]" placeholder="ชื่อเอกสารภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
