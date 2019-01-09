@@ -115,7 +115,7 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
+                        <th>ชื่อเอกสาร</th>
                         <th>สถานะ</th>
                         <th>แก้ไข</th>
                     </tr>
@@ -162,7 +162,7 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
+                        <th>ชื่อเอกสาร</th>
                         <th>สถานะ</th>
                         <th>แก้ไข</th>
                     </tr>

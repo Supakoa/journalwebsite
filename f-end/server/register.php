@@ -34,7 +34,7 @@
     if($alert==1){
         header("Location: ../index.php");
     }
-
+    else{
     //encode password
     $password = base64_encode($_POST['password']);
 
@@ -50,7 +50,7 @@
         $_SESSION['user_match']=3;
         header("Location: ../index.php");
     }
-
+}
     // echo $username.'<br>'.$password.'<br>'.$conpassword.'<br>'.$fname.'<br>'
     //     .$lname.'<br>'.$gender.'<br>'.$address.'<br>'.$email.'<br>'.$conemail.'<br>'.$member;
 ?>

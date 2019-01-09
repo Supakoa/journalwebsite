@@ -14,6 +14,9 @@ if(isset($_SESSION['alert'])){
   elseif ($_SESSION['alert'] == 2) {
     echo '<script>alert("แก้ไขวารสารเรียบร้อย.");</script>';
   }
+  elseif ($_SESSION['alert'] == 3) {
+    echo '<script>alert("ได้เฉพาะ ไฟล์ PDF.");</script>';
+  }
   unset($_SESSION['alert']);
 }
 //$id = $_SESSION['id'];
@@ -114,7 +117,7 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
+                        <th>ชื่อเอกสาร</th>
                         <th>สถานะ</th>
                         <th>แก้ไข</th>
                     </tr>
