@@ -109,8 +109,9 @@
                                         $row_user = mysqli_fetch_array($result_user);
                                         $status_paper = $row['status'];
                                         $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
-                                        $result_status = mysqli_query($con, $q_status);
+                                        $result_status = mysqli_query($con,$q_status);
                                         $row_status = mysqli_fetch_array($result_status);
+                                        
                                         ?>
                                       
                                         <td style="text-align:left" ><p style="font-size: 5 "><?php echo $row['paper_id'] ?></p></td>

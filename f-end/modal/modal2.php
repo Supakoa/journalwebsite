@@ -18,11 +18,11 @@
                             <div class="content">
                                
                                 <?php
-                                $q_p = "SELECT * FROM paper WHERE paper_id = $id_paper";
+                                $q_p = "SELECT * FROM paper WHERE paper_id = '$id_paper'";
                                 $r_q_p = mysqli_query($con,$q_p);
                                 $row_q_p = mysqli_fetch_assoc($r_q_p);
                                 $status_paper = $row_q_p['status'];
-                                $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
+                                $q_status = "SELECT * FROM status_tb WHERE id = '$status_paper'";
                                 $result_status = mysqli_query($con, $q_status);
                                 $row_status = mysqli_fetch_array($result_status);
                                 ?>

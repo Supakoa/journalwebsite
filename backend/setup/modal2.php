@@ -18,8 +18,7 @@
                                 <form>
                                 <h4>รหัสเอกสาร : <?php echo $row['paper_id'] ?></h4>
                                 <h5> คำนำ : <?php echo $row['name_th'] ?></h5>
-                                <h5> สถานะ : <?php echo $row['status'] ?></h5>
-                                
+                                <h5> สถานะ : <?php echo $row_status['status'] ?></h5>
                                 <h5> บทความ : <?php echo $row['abstract'] ?></h5>
                                 <br>
                                 
