@@ -36,15 +36,17 @@
     }
     if ($alert == 1) {
         header("Location: register.php");
+    }else{
+        $b = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,role) 
+        VALUE ('$username','$password','$gender','$fname','$lname','$address','$email','2')";
+        $r_b = mysqli_query($con,$b);
+        if ($r_b) {
+             $_SESSION['username_match']=2;
+        }else{
+
+             $_SESSION['username_match']=3;
+        }
     }
 
-    $b = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,role) 
-            VALUE ('$username','$password','$gender','$fname','$lname','$address','$email','2')";
-    $r_b = mysqli_query($con,$b);
-    if ($r_b) {
-        $_SESSION['username_match']=2;
-    }else{
-        
-        $_SESSION['username_match']=3;
-    }
+   
 ?>

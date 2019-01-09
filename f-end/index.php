@@ -155,18 +155,18 @@ $r_3 = mysqli_fetch_array($q3);
                         
                         <div class="col-lg-6 mx-auto">
                             <label>Username *</label>
-                            <input class="form-control" name="username" type="text" placeholder="Username" required="required" data-validation-required-message="Please enter your username.">
+                            <input class="form-control" name="username" type="text" placeholder="Username **" required="required" data-validation-required-message="Please enter your username.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>Password *</label>
-                            <input class="form-control" name="password" type="password" placeholder="Password" required="required" data-validation-required-message="Please enter your password.">
+                            <input class="form-control" name="password" type="password" placeholder="Password **" required="required" data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
                             <label>Confirm password *</label>
-                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password" required="required" data-validation-required-message="Please enter your Confirm password.">
+                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password **" required="required" data-validation-required-message="Please enter your Confirm password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -178,12 +178,12 @@ $r_3 = mysqli_fetch_array($q3);
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
                             <label>ชื่อ ** </label>
-                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required" data-validation-required-message="Please enter your firstname.">
+                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ **" required="required" data-validation-required-message="Please enter your firstname.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>นามสกุล ** </label>
-                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล" required="required" data-validation-required-message="Please enter your lastname.">
+                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล **" required="required" data-validation-required-message="Please enter your lastname.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -192,14 +192,15 @@ $r_3 = mysqli_fetch_array($q3);
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <div class="row">
-                        <div class="col-lg-6 mx-auto">
-                        <label>เพศ</label><br>
+                        <div class="col-lg-4 mx-auto">
+                        <label>เพศ **</label><br>
                         <select class="form-control" name="gender" required>
-                            <option hidden selected  value=""> เพศ </option>
+                            <option hidden selected  value=""> เพศ **</option>
                             <option value="male">ชาย</option>
                             <option value="female">หญิง</option>
                         </select>
                         </div>
+                        <div class="col-lg-2 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
                             <label>บริษัทในเครือ (You Institute, e.g. "Suan Sunandha Rajabhat University")</label>
                             <input class="form-control" name="address" type="text" placeholder="บริษัทในเครือ(สังกัด)"  data-validation-required-message="Please enter your affiliate.">
@@ -213,15 +214,23 @@ $r_3 = mysqli_fetch_array($q3);
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
                             <label>Email ** </label>
-                            <input class="form-control" name="email" type="text" placeholder="Email" required="required" data-validation-required-message="Please enter your Email.">
+                            <input class="form-control" name="email" type="text" placeholder="Email **" required="required" data-validation-required-message="Please enter your Email.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>ยืนนัน email ** </label>
-                            <input class="form-control" name="conemail" type="text" placeholder="ยืนยัน email" required="required" data-validation-required-message="Please enter your Confirm email.">
+                            <input class="form-control" name="conemail" type="text" placeholder="ยืนยัน email **" required="required" data-validation-required-message="Please enter your Confirm email.">
                             <p class="help-block text-danger"></p>
                         </div>
+                        <div class="col-lg-6 mx-auto">
+                            <label>เบอร์โทรศัพท์มือถือ **</label>
+                            <input class="form-control" name="phone" type="text" placeholder="เบอร์โทรศัพท์มือถือ **" required="required" data-validation-required-message="Please enter your Phone number.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                     
+                        <div class="col-lg-6 mx-auto"></div>
                         <div class="col col-lg-12 mx-auto">
+                        <hr>
                             <label>สมาชิก</label>
                             <textarea class="form-control" placeholder="สมาชิก(ถ้ามี)" name="member" rows="3"></textarea>
                         </div>
