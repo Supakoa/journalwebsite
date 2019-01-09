@@ -17,7 +17,7 @@
     //set page
     $_SESSION['set_page']=1;
 
-    $a = "SELECT * FROM user ";
+    $a = "SELECT * FROM `user` WHERE `role` = '2' ";
     $r_a = mysqli_query($con,$a);
 
     if(isset($_SESSION['alsert_user'])){
@@ -101,7 +101,6 @@
                                 <th>Gender</th>
                                 <th>Address</th>
                                 <th>E-mail</th>
-                                <th>Member</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </thead>
@@ -115,7 +114,6 @@
                                             <td><?php echo $ro_a['gender'] ?></td>
                                             <td><?php echo $ro_a['address'] ?></td>
                                             <td><?php echo $ro_a['email'] ?></td>
-                                            <td><?php echo $ro_a['member'] ?></td>
 
                                     <td>
                                         <!-- Button trigger modal -->
