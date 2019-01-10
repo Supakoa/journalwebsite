@@ -9,6 +9,7 @@
     $gender = $_POST['gender'];
     $address = $_POST['address'];
     $email = $_POST['email'];
+    $tel  =$_POST['tel'];
     $conemail = $_POST['conemail'];
     $member = $_POST['member'];
 
@@ -39,8 +40,8 @@
     $password = base64_encode($_POST['password']);
 
     //insert to database
-    $a = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,member,role) 
-            VALUES ('$username','$password','$gender','$fname','$lname','$address','$email','$member','1')";
+    $a = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,tel,member,role) 
+            VALUES ('$username','$password','$gender','$fname','$lname','$address','$email','$tel','$member','1')";
 
     $r_a = mysqli_query($con,$a);
     if ($r_a) {

@@ -39,7 +39,7 @@
                             } ?>
                             <br>
                              <p>ยืนยันสถานะ : </p><select class="form-control" name="done" required>
-                                               <option disabled selected >เลือกสถานะ</option>
+                                               <option disabled selected  value = ""  >เลือกสถานะ</option>
                                               <option  value = "2" >ผ่าน</option>
                                               <option  value = "3" >ไม่ผ่าน</option>
                                               <option  value = "4" >แก้ไข</option>
