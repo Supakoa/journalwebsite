@@ -32,11 +32,10 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
-    <link rel="stylesheet" href="sweetalert2.min.css">
-
-    <script src="sweetalert2.min.js"></script>
-    <!-- sweet alert -->
-    <script src="sweetalert2.all.min.js"></script>
+    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
     <style>
 
         .login-page {
@@ -130,6 +129,7 @@
         }
         
     </style>
+ 
 <body >
     <div class="container-fluid">
     <div class="container">
@@ -149,6 +149,14 @@
         </div>
     
     </div>
+    <script>
+    Swal(
+    'The Internet?',
+     'That thing is still around?',
+    'question'
+    );
+<?php echo "eieieiei" ?>
+    </script>
 </body>
 
 <!-- php check alert -->
