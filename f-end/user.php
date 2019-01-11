@@ -172,7 +172,7 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <label>ไฟล์เอกสาร</label>
-                        <input class="form-control" name="paper" type="file" placeholder="ไฟล์เอกสาร" required="required">
+                        <input class="form-control btn btn-sm" name="paper" type="file" placeholder="ไฟล์เอกสาร" required="required">
                     </div>
                 </div>
               <div class="control-group">
