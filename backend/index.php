@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
 
     <style>
-    
+
         .login-page {
         font-family: 'Mitr', sans-serif;
         width: 360px;
