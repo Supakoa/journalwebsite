@@ -111,7 +111,7 @@
                         </table>
                         <br>
                         <div class="text-center">
-                            <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal">Download File</a>
+                            <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal">ดาวโหลดไฟล์</a>
                         </div>
                        
         <div class="modal fade" id="submit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

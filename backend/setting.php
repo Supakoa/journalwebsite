@@ -102,16 +102,16 @@
                
                <h2 class="text-center">ตั้งค่า Banner</h2><br>
             	<div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                     <form action = "server/insert_banner.php" method ="POST" enctype="multipart/form-data">
                     <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <div class="row">
                             <div class="col-lg-6">
-                        <input class="form-control" name="banner" type="file" placeholder="File" required="required">
+                                <input class="form-control" name="banner" type="file" placeholder="File" required="required">
                             </div>
                             <div class="col-lg-6" >
-                        <button type="submit" class="btn btn-success" >อัพโหลด</button>
+                                <button type="submit" class="btn btn-success" >อัพโหลด</button>
                             </div>
                         </div>
                         </form> 
@@ -148,7 +148,7 @@
                                             </div>
                                         </div>
                                         <div style="text-align:center">
-                                        <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">Update Banner</a>
+                                        <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">อัพเดต Banner</a>
                                         </div>
                                     </div>
                             <div><hr>
@@ -161,7 +161,7 @@
                     <br><br>
                     </div>
                     <div class="col-lg-12" style="text-align:center">
-                    <button class="btn btn-success btn-md "   type="submit" name="gogogo">Upload</button>
+                    <button class="btn btn-success btn-md "   type="submit" name="gogogo">อัพโหลด</button>
                     </div>
                 </div>
                 </form>
