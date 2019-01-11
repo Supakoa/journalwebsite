@@ -1,9 +1,13 @@
 <?php
     require 'server.php';
-    if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+    
+    // check online with check have start with index
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: index.php");
-      }
+        exit();
+    }
 
     $q = "SELECT * FROM paper WHERE status = 6 ";
     $result = mysqli_query($con, $q);
