@@ -1,39 +1,46 @@
 <?php
+    // connect database and open session to start
     require 'server.php';
-    if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+
+    // check online with check have start with index
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: index.php");
+        exit();
     }
+
     //alert all
-    if (isset($_SESSION['register_alert'])) {
-        $alert;
-        if ($_SESSION['register_alert']==1) {
-            $alert = 'password is not match.';
-        }elseif ($_SESSION['register_alert']==2) {
-            $alert = 'email is not match.';
-        }elseif ($_SESSION['register_alert']==3) {
-            $alert = 'password & email are not match.';
-        }
-        if ($_SESSION['register_alert']!=0) {
-            echo '<script>alert("'.$alert.'");</script>';
-        }
-        $_SESSION['register_alert']=0;
-    }
-    if (isset($_SESSION['username_match'])) {
-        if ($_SESSION['username_match']==1) {
-            echo '<script>alert("Your username are used.");</script>';
-        }elseif ($_SESSION['username_match']==2) {
-            echo '<script>alert("Insert user sucessful.");</script>';
-        }elseif ($_SESSION['username_match']==3) {
-            echo '<script>alert("Insert error.");</script>';
-        }
-        $_SESSION['username_match']=0;
-    }
+    // if (isset($_SESSION['register_alert'])) {
+    //     $alert;
+    //     if ($_SESSION['register_alert']==1) {
+    //         $alert = 'password is not match.';
+    //     }elseif ($_SESSION['register_alert']==2) {
+    //         $alert = 'email is not match.';
+    //     }elseif ($_SESSION['register_alert']==3) {
+    //         $alert = 'password & email are not match.';
+    //     }
+    //     if ($_SESSION['register_alert']!=0) {
+    //         echo '<script>alert("'.$alert.'");</script>';
+    //     }
+    //     $_SESSION['register_alert']=0;
+    // }
+    // if (isset($_SESSION['username_match'])) {
+    //     if ($_SESSION['username_match']==1) {
+    //         echo '<script>alert("Your username are used.");</script>';
+    //     }elseif ($_SESSION['username_match']==2) {
+    //         echo '<script>alert("Insert user sucessful.");</script>';
+    //     }elseif ($_SESSION['username_match']==3) {
+    //         echo '<script>alert("Insert error.");</script>';
+    //     }
+    //     $_SESSION['username_match']=0;
+    // }
 
     //set page
     $_SESSION['set_page']=5;
 
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -67,6 +74,11 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+
 </head>
 <body>
 
@@ -81,6 +93,7 @@
     -->
 
     	<div class="sidebar-wrapper">
+
             <?php require 'setup/menu.php' ?>
 
     <div class="main-panel">
@@ -125,7 +138,7 @@
                         <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" required="required">
                         <br>
                         </div>
-                        <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">Submit</button>
+                        <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button>
                 </form>
             	  
             </div>
@@ -146,6 +159,9 @@
 
 </body>
 
+    <!-- alert -->
+    <?php require '../alert.php'; ?>
+
     <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -165,7 +181,7 @@
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<!-- <script src="assets/js/demo.js"></script> -->
 
-	// <script type="text/javascript">
+	<script type="text/javascript">
     // 	$(document).ready(function(){
 
     //     	demo.initChartist();

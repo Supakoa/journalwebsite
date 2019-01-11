@@ -51,6 +51,10 @@
         <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
+        <!-- sweet alert -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+        <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
 
     </head>
     <body>
@@ -76,7 +80,7 @@
                                 <h3 style="text-align:center">รอยืนยันคำตอบจาก Admin</h3>
                                 <hr>
                                 <div class="row">
-                                    <div class="col col-12-lg table-responsive-lg">
+                                    <div class="col-lg-12 table-responsive">
                                         <table id="table3" class="display table">
                                             <thead>
                                                 <tr>
@@ -93,28 +97,32 @@
 
                                                 <?php while ($row = mysqli_fetch_array($result)) { ?>
                                                     <?php
-                                                    $id_paper = $row["paper_id"];
+                                                        $id_paper = $row["paper_id"];
+                                                        $q_reviewer = "SELECT * FROM reviewer_paper WHERE paper_id = $id_paper ";
+                                                        $result_reviewer = mysqli_query($con, $q_reviewer);
+                                                        $row_reviewer = mysqli_fetch_array($result_reviewer);
 
-                                                    $q_reviewer = "SELECT * FROM reviewer_paper WHERE paper_id =$id_paper ";
-                                                    $result_reviewer = mysqli_query($con, $q_reviewer);
-                                                    $row_reviewer = mysqli_fetch_array($result_reviewer);
+                                                        $q_reviewer1 = "SELECT user.first_name,user.last_name FROM reviewer_paper,user,status_tb WHERE paper_id =$id_paper And user.username = reviewer_paper.reviewer1 ";
+                                                        $result_reviewer1 = mysqli_query($con, $q_reviewer1);
+                                                        $row_reviewer1 = mysqli_fetch_array($result_reviewer1);
 
-                                                    $q_reviewer1 = "SELECT user.first_name,user.last_name FROM reviewer_paper,user,status_tb WHERE paper_id =$id_paper And user.username = reviewer_paper.reviewer1 ";
-                                                    $result_reviewer1 = mysqli_query($con, $q_reviewer1);
-                                                    $row_reviewer1 = mysqli_fetch_array($result_reviewer1);
-                                                    $q_reviewer2 = "SELECT user.first_name,user.last_name FROM reviewer_paper,user,status_tb WHERE paper_id =$id_paper And user.username = reviewer_paper.reviewer2 ";
-                                                    $result_reviewer2 = mysqli_query($con, $q_reviewer2);
-                                                    $row_reviewer2 = mysqli_fetch_array($result_reviewer2);
-                                                    $q_answer = "SELECT * FROM reviewer_answer WHERE paper_id = $id_paper ";
-                                                    $result_answer = mysqli_query($con, $q_answer);
-                                                    $row_answer = mysqli_fetch_array($result_answer);
-                                                    $q_user = "SELECT user.first_name,user.last_name FROM user,user_paper WHERE user_paper.paper_id = $id_paper AND user_paper.username = user.username";
-                                                    $result_user = mysqli_query($con, $q_user);
-                                                    $row_user = mysqli_fetch_array($result_user);
-                                                    $status_paper = $row['status'];
-                                                    $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
-                                                    $result_status = mysqli_query($con, $q_status);
-                                                    $row_status = mysqli_fetch_array($result_status);
+                                                        $q_reviewer2 = "SELECT user.first_name,user.last_name FROM reviewer_paper,user,status_tb WHERE paper_id =$id_paper And user.username = reviewer_paper.reviewer2 ";
+                                                        $result_reviewer2 = mysqli_query($con, $q_reviewer2);
+                                                        $row_reviewer2 = mysqli_fetch_array($result_reviewer2);
+
+                                                        $q_answer = "SELECT * FROM reviewer_answer WHERE paper_id = $id_paper ";
+                                                        $result_answer = mysqli_query($con, $q_answer);
+                                                        $row_answer = mysqli_fetch_array($result_answer);
+
+                                                        $q_user = "SELECT user.first_name,user.last_name FROM user,user_paper WHERE user_paper.paper_id = $id_paper AND user_paper.username = user.username";
+                                                        $result_user = mysqli_query($con, $q_user);
+                                                        $row_user = mysqli_fetch_array($result_user);
+
+                                                        $status_paper = $row['status'];
+                                                        $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
+                                                        $result_status = mysqli_query($con, $q_status);
+                                                        $row_status = mysqli_fetch_array($result_status);
+
                                                     ?>
                                                     <tr>
                                                         <td style="text-align:left" ><p style="font-size: 5 "><?php echo $row['paper_id'] ?></p></td>
@@ -140,7 +148,7 @@
                             <div class="container-fluid">
 
                                 <p class="copyright pull-right">
-                                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Creative Tim</a>,CEFstyle
+                                    &copy; <script>document.write(new Date().getFullYear())</script><a href="#">Creative Tim</a>,CEFstyle
                                 </p>
                             </div>
                         </footer>
@@ -149,6 +157,8 @@
 
 
                 </body>
+
+                <?php require '../alert.php'; ?>
 
                 <script type="text/javascript">
                     $('#myModal').on('shown.bs.modal', function () {
@@ -187,7 +197,7 @@
                 <script type="text/javascript">
                     $(document).ready(function () {
                         demo.initChartist();
-<?php if ($_SESSION['counter_up'] == 1) { ?>
+                            <?php if ($_SESSION['counter_up'] == 1) { ?>
                             $.notify({
                                 icon: 'pe-7s-bell',
                                 message: "เพิ่มข้อมูลเรียบร้อย"
@@ -196,8 +206,8 @@
                                 type: 'info',
                                 timer: 4000
                             });
-<?php } elseif ($_SESSION['counter_up'] == 2) {
-    ?>
+                            <?php } elseif ($_SESSION['counter_up'] == 2) {
+                                ?>
                             $.notify({
                                 icon: 'pe-7s-bell',
                                 message: "การเพิ่มข้อมูลเกิดข้อผิดพลาด."
@@ -206,7 +216,7 @@
                                 type: 'danger',
                                 timer: 4000
                             });
-    <?php
+                        <?php
 }
 $_SESSION['counter_up'] = 0;
 ?>

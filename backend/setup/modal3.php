@@ -12,51 +12,72 @@
         <h4 class="modal-title" id="myModalLabel">ยืนยันสถานะ</h4>
       </div>
       <div class="modal-body">
-      <div class="card">
-                           
-                            <div class="content">
-                                <form method = "POST" action= "setup/up_status.php?id=<?php echo $row['paper_id'] ?>">
+        <div class="card">
 
-                                <h4>รหัสเอกสาร : <?php echo $row['paper_id'] ?></h4>
-                                <h5> คำนำ : <?php echo $row['name_th'] ?></h5>
-                                <h5> สถานะ : <?php echo $row_status['status'] ?></h5>
-                                <h5> คำหลัก : <?php echo $row['key_word'] ?></h5>
-                                <h5> บทความ : <?php echo $row['abstract'] ?></h5>
-                                
-                                <?php
-                                $i = 1;
-                                $q_RA = "SELECT user.first_name,user.last_name,reviewer_answer.status,reviewer_answer.score,reviewer_answer.comment,status_tb.status
-                                FROM user,reviewer_answer,status_tb WHERE reviewer_answer.paper_id =$id_paper AND reviewer_answer.reviewer_id = user.username AND status_tb.id = reviewer_answer.status";
-                                $result_RA = mysqli_query($con, $q_RA);
-                                while ($row_RA = mysqli_fetch_array($result_RA)) { ?>
-                                <h4> สถานะผู้ตรวจคนที่ <?php echo $i++ ?> </h4>
-                                    <p> ชื่อ : <?php echo $row_RA['first_name'] . " " . $row_RA['last_name'] ?> </p>
-                                    <p> คะแนน : <?php echo $row_RA['score'] ?></p>
-                                    <p> ผลตรวจ : <?php echo $row_RA['status'] ?></p>
-                                    <p> คอมเมนต์ : <?php echo $row_RA['comment'] ?></p>
-                                   
-                                <?php 
+          <div class="content">
+            <form method="POST" action="setup/up_status.php?id=<?php echo $row['paper_id'] ?>">
+
+              <h4>รหัสเอกสาร :
+                <?php echo $row['paper_id'] ?>
+              </h4>
+              <h5> คำนำ :
+                <?php echo $row['name_th'] ?>
+              </h5>
+              <h5> สถานะ :
+                <?php echo $row_status['status'] ?>
+              </h5>
+              <h5> คำหลัก :
+                <?php echo $row['key_word'] ?>
+              </h5>
+              <h5> บทความ :
+                <?php echo $row['abstract'] ?>
+              </h5>
+
+              <?php
+                $i = 1;
+                $q_RA = "SELECT user.first_name,user.last_name,reviewer_answer.status,reviewer_answer.score,reviewer_answer.comment,status_tb.status
+                FROM user,reviewer_answer,status_tb WHERE reviewer_answer.paper_id =$id_paper AND reviewer_answer.reviewer_id = user.username AND status_tb.id = reviewer_answer.status";
+                $result_RA = mysqli_query($con, $q_RA);
+                
+                while ($row_RA = mysqli_fetch_array($result_RA)) { ?>
+                <h4> สถานะผู้ตรวจคนที่
+              <?php echo $i++ ?>
+              </h4>
+              <p> ชื่อ :
+                <?php echo $row_RA['first_name'] . " " . $row_RA['last_name'] ?>
+              </p>
+              <p> คะแนน :
+                <?php echo $row_RA['score'] ?>
+              </p>
+              <p> ผลตรวจ :
+                <?php echo $row_RA['status'] ?>
+              </p>
+              <p> คอมเมนต์ :
+                <?php echo $row_RA['comment'] ?>
+              </p>
+
+              <?php 
                             } ?>
-                            <br>
-                             <p>ยืนยันสถานะ : </p><select class="form-control" name="done" required>
-                                               <option disabled selected  value = ""  >เลือกสถานะ</option>
-                                              <option  value = "2" >ผ่าน</option>
-                                              <option  value = "3" >ไม่ผ่าน</option>
-                                              <option  value = "4" >แก้ไข</option>
-                                              </select>
-                                              <br>
-                                <div  style="text-align:right" >
-                                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-                                <button type="submit" class="btn btn-primary">บันทึก</button>
-                                </div>
-                                
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+              <br>
+              <p>ยืนยันสถานะ : </p><select class="form-control" name="done" required>
+                <option disabled selected value="">เลือกสถานะ</option>
+                <option value="2">ผ่าน</option>
+                <option value="3">ไม่ผ่าน</option>
+                <option value="4">แก้ไข</option>
+              </select>
+              <br>
+              <div style="text-align:right">
+                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                <button type="submit" class="btn btn-primary">บันทึก</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
       </div>
-     
     </div>
   </div>
+
+</div>
+</div>
 </div>

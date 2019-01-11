@@ -1,10 +1,14 @@
 <?php
-    //connect databse
-    require '../server.php';
-    if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+    // connect database and open session to start
+    require 'server.php';
+
+    // check online with check have start with index
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: ../index.php");
-      }
+        exit();
+    }
 
     $username = $_POST['username'];
     $password = base64_encode($_POST['password']);
@@ -19,12 +23,14 @@
     $a = "UPDATE `user` SET `username`='$username',`password`='$password',`gender`='$gender',`first_name`='$firstname',
             `last_name`='$lastname',`address`='$address',`email`='$email',`member`='$member' WHERE `order` = '$id' ";
     $r_a = mysqli_query($con,$a);
+
     if($r_a){
-        $_SESSION['alert_user'] = 1;
+        $_SESSION['alert'] = 10;
     }else{
-        $_SESSION['alert_user'] = 2;
+        $_SESSION['alert'] = 11;
     }
     header("Location: ../user.php");
+    exit();
 
     // echo "<br>".$username."<br>".$password."<br>".$gender."<br>".$firstname."<br>".$lastname."<br>".$address."<br>".$email."<br>".$member."<br>".$id;
 ?>

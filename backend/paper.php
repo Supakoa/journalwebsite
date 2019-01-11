@@ -169,7 +169,7 @@
                     <h4 style="margin-left: 5px;text-align:center">ตั้งค่าเว็บไซต์ที่เกี่ยวข้อง</h4><br>
                     <form method="POST" action="paper.php" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col col-lg-12 table-responsive-lg">
+                        <div class="col-lg-12 table-responsive">
                             <table class="table ">
                                 <thead class="thead-drak">
                                     <th scope="col" colp="2">ข้อที่</th>
@@ -199,7 +199,7 @@
                             </tbody>
                         </table>
                         </div>
-                        <div class="co-lg-12">
+                        <div class="col-lg-12">
                         <table class="table table responsive">
                             <h4 style="margin-left: 5px;text-align:center">ตั้งค่าเอกสารเผยแพร่</h4><br>
                             <thead class="thead-drak">
@@ -233,7 +233,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                    <input type="submit" class="btn btn-info btn-active" value="update" name="update"><br>
+                    <input type="submit" class="btn btn-info btn-active" value="อัพเดต" name="update"><br>
                     </div>
                 </div>
                 </form>

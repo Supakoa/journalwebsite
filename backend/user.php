@@ -1,23 +1,29 @@
 <?php
-    require 'server.php';
-    if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+    // connect database and open session to start
+    require 'server/server.php';
+
+    // check online with check have start with index
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: index.php");
-      }
-      if(isset($_SESSION['alert'])){
-        if($_SESSION['alert'] == 0 ){
-          echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
-        }
-        elseif ($_SESSION['alert'] == 2) {
-          echo '<script>alert("ลบข้อมูลเรียบร้อย.");</script>';
-        }
-        unset($_SESSION['alert']);
-      }
-    $_SESSION['counter_up'] = 0 ;
+        exit();
+    }
+
+    // if(isset($_SESSION['alert'])){
+    //     if($_SESSION['alert'] == 0 ){
+    //       echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+    //     }
+    //     elseif ($_SESSION['alert'] == 2) {
+    //       echo '<script>alert("ลบข้อมูลเรียบร้อย.");</script>';
+    //     }
+    //     unset($_SESSION['alert']);
+    // }
+      
     //set page
     $_SESSION['set_page']=1;
 
-    $a = "SELECT * FROM `user` WHERE 1 ";
+    $a = "SELECT * FROM `user` ";
     $r_a = mysqli_query($con,$a);
 
     if(isset($_SESSION['alsert_user'])){
@@ -67,6 +73,11 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+
 </head>
 <body>
 
@@ -91,7 +102,7 @@
             <div class="container-fluid">
              <h3 style="text-align:center">ตาราง User</h3><hr><br>
             	<div class="row">
-                    <div class="col col-12-lg table-responsive-lg">
+                    <div class="col-lg-12 table-responsive">
                         <table class="table display" id="tableuser">
                             <thead>
                                 <th>Username</th>
@@ -135,7 +146,7 @@
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit_modal<?php echo $ro_a['order'] ?>">
-                                        Edit
+                                        แก้
                                         </button>
 
                                         <!-- Modal -->
@@ -147,19 +158,54 @@
                                                 <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิก</h3>
                                                 </button>
                                             </div>
-                                            <div class="modal-body" style="text-align:center" >
-                                                <span>username : </span><input type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username"><br>
-                                                <span>password : </span><input type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password"><br>
-                                                <span>gender : </span><select name="gender" required>
-                                                                            <option hidden  selected value="<?php echo $ro_a['gender'] ?>"><?php echo $ro_a['gender'] ?></option>
-                                                                            <option value="male">male</option>
-                                                                            <option value="female" required>female</option>
-                                                                        </select><br>
-                                                <span>firstname : </span><input type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname"><br>
-                                                <span>lastname : </span><input type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname"><br>
-                                                <span>address : </span><input type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address"><br>
-                                                <span>email : </span><input type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email"><br>
-                                                <span>member : </span><textarea name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea><br>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="user_name">Username  </label>
+                                                        <input id="user_name" class="form-control" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="pass_word">Password  </label>
+                                                        <input id="pass_word" class="form-control" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="f_name">Firstname  </label>
+                                                        <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="l_name">Lastname  </label>
+                                                        <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="gen_der">Gender  </label>
+                                                        <select id="gen_der" class="form-control" name="gender" required> 
+                                                            <option hidden  selected value="<?php echo $ro_a['gender'] ?>"><?php echo $ro_a['gender'] ?></option>
+                                                            <option value="male">male</option>
+                                                            <option value="female" required>female</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6"> </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="e_mail">E-mail  </label>
+                                                        <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="addre">Address  </label>
+                                                        <input id="addre" class="form-control" type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label for="mem">Member  </label>
+                                                        <textarea id="mem" class="form-control" name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
                                                     <button type="submit" class="btn btn-success">ยืนยัน</button>
@@ -174,28 +220,28 @@
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#submit_modal<?php echo $ro_a['order'] ?>">
-                                        Delete
+                                        ลบ
                                         </button>
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="submit_modal<?php echo $ro_a['order'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-sm" role="document">
-                                        <form action="server/delete_user.php?id=<?php echo $ro_a['order'] ?> " method="POST">
-                                            <div class="modal-content">
-                                            <div class="modal-header" style="text-align:center" >
-                                                <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
-                                                </button>
+                                            <div class="modal-dialog modal-sm" role="document">
+                                                <form action="server/delete_user.php?id=<?php echo $ro_a['order'] ?> " method="POST">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header" style="text-align:center" >
+                                                        <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body" style="text-align:center" >
+                                                        <h5>ยืนยันการลบข้อมูลสมาชิค</h5>
+                                                    </div>
+                                                    <div class="modal-footer" style="text-align:center">
+                                                            <button type="submit" class="btn btn-success">ยืนยัน</button>
+                                                            <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
+                                                    </div>
+                                                    </div>
+                                                </form>    
                                             </div>
-                                            <div class="modal-body" style="text-align:center" >
-                                                <h5>ยืนยันการลบข้อมูลสมาชิค</h5>
-                                            </div>
-                                            <div class="modal-footer" style="text-align:center">
-                                                    <button type="submit" class="btn btn-success">ยืนยัน</button>
-                                                    <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
-                                            </div>
-                                            </div>
-                                        </form>    
-                                        </div>
                                         </div>
                                     </td>
 
@@ -220,6 +266,9 @@
 
 
 </body>
+
+    <!-- php check alert -->
+    <?php require '../alert.php'; ?>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
