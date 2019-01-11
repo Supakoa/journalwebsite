@@ -7,7 +7,10 @@
     $id = $_GET["id"];                               
     $reviewer1 = $_POST['reviewer1'];
     $reviewer2 = $_POST['reviewer2'];
-    
+    if($reviewer1==$reviewer2){
+      //กลับไปปปปปปป
+    }
+    else{
 
     
      $up = "UPDATE `reviewer_paper` SET `reviewer1`='$reviewer1',`reviewer2`='$reviewer2' WHERE paper_id = $id";
@@ -26,7 +29,7 @@
      else{
         $_SESSION['counter_up'] = 2;
      }
-    
+   }
      header("Location: ../table.php");
 
 
