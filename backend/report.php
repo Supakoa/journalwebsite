@@ -1,16 +1,21 @@
 <?php
-require 'server.php';
-if($_SESSION['status_admin'] != 1){
-    $_SESSION['online'] = 0 ;
-    header("Location: index.php");
-}
-$_SESSION['counter_up'] = 0;
+    require 'server.php';
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
+        header("Location: index.php");
+        exit();
+    }
+
+    // ไม่ใช้ counter_up แล้ว
+    // $_SESSION['counter_up'] = 0;
+
     //set page
-$_SESSION['set_page'] = 1;
-$q = "SELECT paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.status";
-$result = mysqli_query($con, $q);
-$q2 = "SELECT paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.status";
-$result2 = mysqli_query($con, $q2);
+    $_SESSION['set_page'] = 1;
+    $q = "SELECT paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.status";
+    $result = mysqli_query($con, $q);
+    $q2 = "SELECT paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.status";
+    $result2 = mysqli_query($con, $q2);
 ?>
 
 <!doctype html>

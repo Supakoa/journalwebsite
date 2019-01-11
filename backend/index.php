@@ -1,5 +1,6 @@
 <?php
     require 'server.php';
+
     if(isset($_SESSION['status_login'])){
         
         if($_SESSION['status_login']==0){
@@ -7,14 +8,16 @@
         }
     
     }
+
     if(isset($_SESSION['status_admin'])){
         if($_SESSION['status_admin']==0){
-        echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+            echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
         }
     }
-    if(isset($_SESSION['online'])){
-        echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
-    }
+
+    // if(isset($_SESSION['online'])){
+    //     echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
+    // }
     session_destroy();
 
 ?>
@@ -32,10 +35,12 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+
+    <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+
     <style>
 
         .login-page {
@@ -160,10 +165,9 @@
 </body>
 
 <!-- php check alert -->
-<?php
+<?php require '../alert.php';?>
 
-    require '../alert.php';
-?>
+<script src="../alert.js"></script>
 <!-- script -->
 <script>
     $('.message a').click(function(){$('form').animate({height: "toggle", opacity: "toggle"}, "slow");});
