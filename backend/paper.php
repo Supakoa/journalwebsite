@@ -233,7 +233,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                    <input type="submit" class="btn btn-info btn-active" value="update" name="update"><br>
+                    <input type="submit" class="btn btn-info btn-active" value="อัพเดต" name="update"><br>
                     </div>
                 </div>
                 </form>

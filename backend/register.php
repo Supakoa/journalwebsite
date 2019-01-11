@@ -138,7 +138,7 @@
                         <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" required="required">
                         <br>
                         </div>
-                        <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">Submit</button>
+                        <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button>
                 </form>
             	  
             </div>

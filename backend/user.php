@@ -146,7 +146,7 @@
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit_modal<?php echo $ro_a['order'] ?>">
-                                        Edit
+                                        แก้
                                         </button>
 
                                         <!-- Modal -->
@@ -160,20 +160,52 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
-                                                    <div class></div>
+                                                    <div class="col-lg-6">
+                                                        <label for="user_name">Username  </label>
+                                                        <input id="user_name" class="form-control" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="pass_word">Password  </label>
+                                                        <input id="pass_word" class="form-control" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password">
+                                                    </div>
                                                 </div>
-                                                <span>username : </span><input type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username"><br>
-                                                <span>password : </span><input type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password"><br>
-                                                <span>gender : </span><select name="gender" required>
-                                                                            <option hidden  selected value="<?php echo $ro_a['gender'] ?>"><?php echo $ro_a['gender'] ?></option>
-                                                                            <option value="male">male</option>
-                                                                            <option value="female" required>female</option>
-                                                                        </select><br>
-                                                <span>firstname : </span><input type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname"><br>
-                                                <span>lastname : </span><input type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname"><br>
-                                                <span>address : </span><input type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address"><br>
-                                                <span>email : </span><input type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email"><br>
-                                                <span>member : </span><textarea name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea><br>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="f_name">Firstname  </label>
+                                                        <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="l_name">Lastname  </label>
+                                                        <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="gen_der">Gender  </label>
+                                                        <select id="gen_der" class="form-control" name="gender" required> 
+                                                            <option hidden  selected value="<?php echo $ro_a['gender'] ?>"><?php echo $ro_a['gender'] ?></option>
+                                                            <option value="male">male</option>
+                                                            <option value="female" required>female</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-6"> </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="e_mail">E-mail  </label>
+                                                        <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email">
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label for="addre">Address  </label>
+                                                        <input id="addre" class="form-control" type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label for="mem">Member  </label>
+                                                        <textarea id="mem" class="form-control" name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
                                                     <button type="submit" class="btn btn-success">ยืนยัน</button>
@@ -188,7 +220,7 @@
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#submit_modal<?php echo $ro_a['order'] ?>">
-                                        Delete
+                                        ลบ
                                         </button>
 
                                         <!-- Modal -->
