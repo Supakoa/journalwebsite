@@ -34,8 +34,7 @@
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <!-- sweet alert -->
-    <script src="sweetalert2.all.min.js"></script>
-    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <style>
