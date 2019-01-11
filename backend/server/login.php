@@ -13,8 +13,10 @@
     if($r_a){
         $_SESSION['status_admin'] = 1 ;
         header("Location: ../report.php");
-    }else{
-        $_SESSION['status_admin'] = 0 ;
+    } else{
+        // status admin ไม่ใช้ในหน้า index นอกแล้ว
+        // $_SESSION['status_admin'] = 0 ;
+        $_SESSION['alert'] = 1;
         header("Location: ../index.php");
     }
 

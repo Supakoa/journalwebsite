@@ -3,7 +3,7 @@
     if($_SESSION['status_admin'] != 1){
         $_SESSION['online'] = 0 ;
         header("Location: index.php");
-      }
+    }
     //alert all
     if (isset($_SESSION['register_alert'])) {
         $alert;
