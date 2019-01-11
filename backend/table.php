@@ -77,7 +77,7 @@
                 <h3 style="text-align: center">ยังไม่ได้เลือกผู้ตรวจ</h3>
                 <hr>
                 <div class="row">
-                    <div class="col col-12-lg table-responsive-lg">
+                    <div class="col-lg-12 table-responsive">
                         <table id="table" class="display table">
                             <thead>
                                 <tr>

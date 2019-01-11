@@ -72,7 +72,7 @@
             <h3 style="text-align:center">รายงาน</h3><hr><br>
               
                 <div class="row">
-                    <div class=" col-12-lg table-responsive-lg">
+                    <div class=" col-lg-12 table-responsive">
                     <table id="tablepaper" class="display table" >
                             <thead>
                                 <tr>
@@ -110,7 +110,7 @@
                             </tbody>
                         </table>
                         <br>
-                        <div style="text-align:center">
+                        <div class="text-center">
                             <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal">Download File</a>
                         </div>
                        

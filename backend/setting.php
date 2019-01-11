@@ -102,7 +102,7 @@
                
                <h2 class="text-center">ตั้งค่า Banner</h2><br>
             	<div class="row">
-                    <div class="col-8-lg">
+                    <div class="col-lg-8">
                     <form action = "server/insert_banner.php" method ="POST" enctype="multipart/form-data">
                     <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -140,7 +140,7 @@
                                      <div class="container-fluid">
                                         <div class="jumbotron" >
                                             <div  class="row" >
-                                                <div class="col col-lg-12">
+                                                <div class="col-lg-12">
                                                     <div style="text-align:center">
                                                         <img src="banner/<?php echo $_SESSION['tmp_banner']?>" style="width:100%;heigth:auto " alt="banner" >
                                                     </div>

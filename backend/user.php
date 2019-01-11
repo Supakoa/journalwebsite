@@ -91,7 +91,7 @@
             <div class="container-fluid">
              <h3 style="text-align:center">ตาราง User</h3><hr><br>
             	<div class="row">
-                    <div class="col col-12-lg table-responsive-lg">
+                    <div class="col-lg-12 table-responsive">
                         <table class="table display" id="tableuser">
                             <thead>
                                 <th>Username</th>
@@ -147,7 +147,10 @@
                                                 <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิก</h3>
                                                 </button>
                                             </div>
-                                            <div class="modal-body" style="text-align:center" >
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class></div>
+                                                </div>
                                                 <span>username : </span><input type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username"><br>
                                                 <span>password : </span><input type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password"><br>
                                                 <span>gender : </span><select name="gender" required>
