@@ -1,9 +1,14 @@
 <?php
+    // connect database and open session to start
     require 'server.php';
-    if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+
+    // check online with check have start with index
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: index.php");
-      }
+        exit();
+    }
 
     $q = "SELECT * FROM paper WHERE status = 5 ";
     $result = mysqli_query($con, $q);
@@ -49,6 +54,11 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+
 
 </head>
 <body>
@@ -83,9 +93,8 @@
                             <tbody>
                                 <tr>
                                 <?php while ($row = mysqli_fetch_array($result)) { ?>
-                                        <?php
+                                    <?php
                                         $id_paper = $row["paper_id"];
-
                                         $q_reviewer = "SELECT * FROM reviewer_paper WHERE paper_id =$id_paper ";
                                         $result_reviewer = mysqli_query($con, $q_reviewer);
                                         $row_reviewer = mysqli_fetch_array($result_reviewer);
@@ -99,7 +108,7 @@
                                         $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
                                         $result_status = mysqli_query($con, $q_status);
                                         $row_status = mysqli_fetch_array($result_status);
-                                        ?>
+                                    ?>
                                       
                                         <td style="text-align:left" ><p style="font-size: 5 "><?php echo $row['paper_id'] ?></p></td>
                                         <td><p style="font-size: 5"><?php echo $row['name_th'] ?></p></td>
@@ -111,8 +120,7 @@
                                         <?php require 'setup/modal.php' ?>
                                         </td>
                                         </tr> 
-                                      <?php 
-                                    } ?>
+                                      <?php } ?>
                                   
                                
                             </tbody>
@@ -136,6 +144,10 @@
 
 
 </body>
+
+    <!-- php check alert -->
+    
+    <?php require '../alert.php'; ?>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -166,35 +178,5 @@
         $('#myInput').focus()
         })
 	</script>
-     <script type="text/javascript">
-    	$(document).ready(function(){
-            
-        	demo.initChartist();
-            <?php if ($_SESSION['counter_up'] == 1) { ?>
-        	$.notify({
-            	icon: 'pe-7s-bell',
-            	message: "เพิ่มข้อมูลเรียบร้อย"
-
-            },{
-                type: 'info',
-                timer: 4000
-            });
-            <?php } 
-             elseif ($_SESSION['counter_up'] == 2) { ?>
-        	$.notify({
-            	icon: 'pe-7s-bell',
-            	message: "การเพิ่มข้อมูลเกิดข้อผิดพลาด."
-
-            },{
-                type: 'danger',
-                timer: 4000
-            });
-            <?php 
-            }
-            $_SESSION['counter_up'] = 0 ;
-            
-            ?>
-    	});
-	 </script>
 
 </html>

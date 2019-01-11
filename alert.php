@@ -6,12 +6,23 @@
                 echo "  <script>
                             Swal({
                                 type: 'error',
-                                title: 'Oops...',
-                                text: 'Something went wrong!',
-                                footer: '<a href>Why do I have this issue?</a>'
+                                title: 'กรอกข้อมูลผิดพลาด',
+                                text: 'กรอกข้อมูลใหม่อีกครั้ง',
+                                // footer: '<a href>Why do I have this issue?</a>'
                             });
                         </script>";
                 break;
+
+            case '2':
+                echo "
+                    <script>
+                        Swal({
+                            type: 'warning',
+                            title: 'กรุณาเข้าสู่ระบบ',
+                            text: 'แสดงตัวตนทุกครั้งก่อนเข้าสู่ระบบ',
+                            // footer: '<a href>Why do I have this issue?</a>'
+                        });                    
+                    </script>";
             
             // = 0 or null
             default:
