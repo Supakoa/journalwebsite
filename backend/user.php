@@ -1,23 +1,29 @@
 <?php
-    require 'server.php';
-    if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+    // connect database and open session to start
+    require 'server/server.php';
+
+    // check online with check have start with index
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: index.php");
-      }
-      if(isset($_SESSION['alert'])){
-        if($_SESSION['alert'] == 0 ){
-          echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
-        }
-        elseif ($_SESSION['alert'] == 2) {
-          echo '<script>alert("ลบข้อมูลเรียบร้อย.");</script>';
-        }
-        unset($_SESSION['alert']);
-      }
-    $_SESSION['counter_up'] = 0 ;
+        exit();
+    }
+
+    // if(isset($_SESSION['alert'])){
+    //     if($_SESSION['alert'] == 0 ){
+    //       echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+    //     }
+    //     elseif ($_SESSION['alert'] == 2) {
+    //       echo '<script>alert("ลบข้อมูลเรียบร้อย.");</script>';
+    //     }
+    //     unset($_SESSION['alert']);
+    // }
+      
     //set page
     $_SESSION['set_page']=1;
 
-    $a = "SELECT * FROM `user` WHERE 1 ";
+    $a = "SELECT * FROM `user` ";
     $r_a = mysqli_query($con,$a);
 
     if(isset($_SESSION['alsert_user'])){
@@ -67,6 +73,11 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+
 </head>
 <body>
 
@@ -91,7 +102,7 @@
             <div class="container-fluid">
              <h3 style="text-align:center">ตาราง User</h3><hr><br>
             	<div class="row">
-                    <div class="col col-12-lg table-responsive-lg">
+                    <div class="col-lg-12 table-responsive">
                         <table class="table display" id="tableuser">
                             <thead>
                                 <th>Username</th>
@@ -147,7 +158,10 @@
                                                 <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิก</h3>
                                                 </button>
                                             </div>
-                                            <div class="modal-body" style="text-align:center" >
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class></div>
+                                                </div>
                                                 <span>username : </span><input type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username"><br>
                                                 <span>password : </span><input type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password"><br>
                                                 <span>gender : </span><select name="gender" required>
@@ -179,23 +193,23 @@
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="submit_modal<?php echo $ro_a['order'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-sm" role="document">
-                                        <form action="server/delete_user.php?id=<?php echo $ro_a['order'] ?> " method="POST">
-                                            <div class="modal-content">
-                                            <div class="modal-header" style="text-align:center" >
-                                                <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
-                                                </button>
+                                            <div class="modal-dialog modal-sm" role="document">
+                                                <form action="server/delete_user.php?id=<?php echo $ro_a['order'] ?> " method="POST">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header" style="text-align:center" >
+                                                        <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body" style="text-align:center" >
+                                                        <h5>ยืนยันการลบข้อมูลสมาชิค</h5>
+                                                    </div>
+                                                    <div class="modal-footer" style="text-align:center">
+                                                            <button type="submit" class="btn btn-success">ยืนยัน</button>
+                                                            <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
+                                                    </div>
+                                                    </div>
+                                                </form>    
                                             </div>
-                                            <div class="modal-body" style="text-align:center" >
-                                                <h5>ยืนยันการลบข้อมูลสมาชิค</h5>
-                                            </div>
-                                            <div class="modal-footer" style="text-align:center">
-                                                    <button type="submit" class="btn btn-success">ยืนยัน</button>
-                                                    <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
-                                            </div>
-                                            </div>
-                                        </form>    
-                                        </div>
                                         </div>
                                     </td>
 
@@ -220,6 +234,9 @@
 
 
 </body>
+
+    <!-- php check alert -->
+    <?php require '../alert.php'; ?>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>

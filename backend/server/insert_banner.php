@@ -1,9 +1,14 @@
 <?php
+   // connect database and open session to start
    require '../server.php';
-   if($_SESSION['status_admin'] != 1){
-    $_SESSION['online'] = 0 ;
-    header("Location: ../index.php");
-  }
+
+   // check online with check have start with index
+   if(!isset($_SESSION['status_admin'])){
+       // $_SESSION['online'] = 0 ;
+       $_SESSION['alert'] = 2 ;
+       header("Location: ../../index.php");
+       exit();
+   }
 
    if($_GET['id']==1){
     $b1 =$_SESSION['name_banner'];

@@ -1,11 +1,16 @@
 <?php
+    // connect database and open session to start
     require 'server.php';
 
-    if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+    // check online with check have start with index
+    if(!isset($_SESSION['status_admin'])){
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: index.php");
-      }
-    $_SESSION['counter_up'] = 0 ;
+        exit();
+    }
+
+    
 
     //set page
     $_SESSION['set_page']=7;
@@ -33,7 +38,7 @@
           echo '<script>alert("อัพเดท Footer เรียบร้อย.");</script>';
         }
         unset($_SESSION['alert']);
-      }
+    }
 
     $q_banner = "SELECT * FROM `banner` ";
     $result_banner = mysqli_query($con,$q_banner);
@@ -42,9 +47,6 @@
         $_SESSION['tmp_banner'] = $row_banner['tmp_name'];
         
     }
-
-    
-    
     
 ?>
 
@@ -81,6 +83,11 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+
 </head>
 <body>
 
@@ -102,7 +109,7 @@
                
                <h2 class="text-center">ตั้งค่า Banner</h2><br>
             	<div class="row">
-                    <div class="col-8-lg">
+                    <div class="col-lg-8">
                     <form action = "server/insert_banner.php" method ="POST" enctype="multipart/form-data">
                     <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -140,7 +147,7 @@
                                      <div class="container-fluid">
                                         <div class="jumbotron" >
                                             <div  class="row" >
-                                                <div class="col col-lg-12">
+                                                <div class="col-lg-12">
                                                     <div style="text-align:center">
                                                         <img src="banner/<?php echo $_SESSION['tmp_banner']?>" style="width:100%;heigth:auto " alt="banner" >
                                                     </div>
@@ -181,6 +188,9 @@
 
 
 </body>
+
+    <!-- php check alert -->
+    <?php require '../alert.php'; ?>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
