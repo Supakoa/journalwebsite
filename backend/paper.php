@@ -15,7 +15,7 @@
     $re = mysqli_query($con, $a);
     $re2 = mysqli_query($con, $b);
     if (isset($_POST['update'])) {
-    $id = 1;
+    $id = 1;//web
     $count = 1;
     $plus1 = "text";
     $plus2 = "link";
@@ -38,8 +38,8 @@
             $count++;
         }
         $id = $id + 1;
-    }
-    while ($rowrow = mysqli_fetch_array($re2)) {
+    }//end web
+    while ($rowrow = mysqli_fetch_array($re2)) {//paper
         $sum1 = $plus1 . $id;
         $sum2 = $plus2 . $id;
         $sum3 = $plus3 . $id;
@@ -102,7 +102,7 @@
         $q = "UPDATE `show_url` SET `hide`='$ed3' WHERE `id` = '$id' ";
         $result = mysqli_query($con, $q);
         $id = $id + 1;
-    }
+    }//end paper
 
     if ($count == $id) {
         echo '<script type="text/javascript">alert("แก้ไขข้อมูลสมบูรณ์.");</script>';
@@ -169,8 +169,8 @@
                     <h4 style="margin-left: 5px;text-align:center">ตั้งค่าเว็บไซต์ที่เกี่ยวข้อง</h4><br>
                     <form method="POST" action="paper.php" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col col-lg-12">
-                            <table class="table table responsive">
+                        <div class="col col-lg-12 table-responsive-lg">
+                            <table class="table ">
                                 <thead class="thead-drak">
                                     <th scope="col" colp="2">ข้อที่</th>
                                     <th scope="col" colp="2">ข้อความ</th>

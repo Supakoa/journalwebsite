@@ -67,8 +67,8 @@ $result2 = mysqli_query($con, $q2);
             <h3 style="text-align:center">รายงาน</h3><hr><br>
               
                 <div class="row">
-                    <div class=" col-12-lg">
-                    <table id="tablepaper" class="display responsive" >
+                    <div class=" col-12-lg table-responsive-lg">
+                    <table id="tablepaper" class="display table" >
                             <thead>
                                 <tr>
                                     <th>Paper-id</th>
@@ -83,7 +83,11 @@ $result2 = mysqli_query($con, $q2);
                            
                                 
                                 <?php while ($row = mysqli_fetch_array($result)) {
-                                    $id_paper = $row['paper_id']
+                                    $id_paper = $row['paper_id'];
+                                    $status_paper = $row['status'];
+                                    $q_status = "SELECT * FROM status_tb WHERE `status` = '$status_paper'";
+                                    $result_status = mysqli_query($con,$q_status);
+                                    $row_status = mysqli_fetch_array($result_status);
                                     ?>
                                 <tr>
                                 

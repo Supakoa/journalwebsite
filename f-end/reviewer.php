@@ -1,6 +1,5 @@
 <?php
 require 'server/server.php';
-// $_SESSION['id'] = '123456';
 if(isset($_SESSION['alert'])){
   if($_SESSION['alert'] == 0 ){
     echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
@@ -11,7 +10,6 @@ if(isset($_SESSION['alert'])){
   unset($_SESSION['alert']);
 }
 $id = $_SESSION['id'];
-// $id = "321654";
   
 if($_SESSION['status'] != 1){
   $_SESSION['online'] = 0 ;
@@ -20,7 +18,7 @@ if($_SESSION['status'] != 1){
 
 $q1 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb,reviewer_answer
 WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status = 1 And 
-(reviewer_paper.reviewer1 = '$id' OR reviewer_paper.reviewer2 = '$id') AND (reviewer_answer.reviewer_id = $id AND reviewer_answer.paper_id = paper.paper_id AND reviewer_answer.status = ' ')  ";
+(reviewer_paper.reviewer1 = '$id' OR reviewer_paper.reviewer2 = '$id') AND (reviewer_answer.reviewer_id = '$id' AND reviewer_answer.paper_id = paper.paper_id AND reviewer_answer.status = ' ')  ";
 $result1 = mysqli_query($con, $q1); 
 $q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status != 1  And (reviewer_paper.reviewer1 = '$id' OR reviewer_paper.reviewer2 = '$id')";
 $result2 = mysqli_query($con, $q2);
@@ -112,11 +110,12 @@ $r_name = mysqli_fetch_assoc($result_name);
             <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">รอการตรวจสอบ</h2>
             <hr class="star-dark mb-5">
-                <table id="table1" class="table responsive display">
+            <div class="table-responsive-lg">
+            <table id="table1" class="table  display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
+                        <th>ชื่อเอกสาร</th>
                         <th>สถานะ</th>
                         <th>แก้ไข</th>
                     </tr>
@@ -142,6 +141,8 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <?php } ?>
                 </tbody>
             </table>
+            </div>
+               
                 
             </div>
         </div>
@@ -156,12 +157,12 @@ $r_name = mysqli_fetch_assoc($result_name);
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-9 mx-auto">
-
-                <table id="table2" class="table responsive display">
+                  <div class="table-responsive-lg">
+                  <table id="table2" class="table display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
+                        <th>ชื่อเอกสาร</th>
                         <th>สถานะ</th>
                         <th>แก้ไข</th>
                     </tr>
@@ -187,6 +188,8 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <?php } ?>
                 </tbody>
             </table>
+                  </div>
+                
           </div>
         </div>
     </section>

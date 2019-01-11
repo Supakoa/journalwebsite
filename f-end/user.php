@@ -14,12 +14,15 @@ if(isset($_SESSION['alert'])){
   elseif ($_SESSION['alert'] == 2) {
     echo '<script>alert("แก้ไขวารสารเรียบร้อย.");</script>';
   }
+  elseif ($_SESSION['alert'] == 3) {
+    echo '<script>alert("ได้เฉพาะ ไฟล์ PDF.");</script>';
+  }
   unset($_SESSION['alert']);
 }
 //$id = $_SESSION['id'];
-$_SESSION['id'] = 'singha';
+// $_SESSION['id'] = 'singha';
 $id = $_SESSION['id'];
-$q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id";
+$q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND user_paper.username = user.username AND paper.status = status_tb.id group by paper.paper_id";
 $result = mysqli_query($con, $q);
 $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
 $result_name = mysqli_query($con, $q_name);
@@ -109,11 +112,12 @@ $r_name = mysqli_fetch_assoc($result_name);
             <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เอกสาร</h2>
             <hr class="star-dark mb-5">
-            <table id="table_id" class="table responsive display">
+            <div class="table-responsive-lg">
+            <table id="table_id" class="table display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
+                        <th>ชื่อเอกสาร</th>
                         <th>สถานะ</th>
                         <th>แก้ไข</th>
                     </tr>
@@ -148,6 +152,8 @@ $r_name = mysqli_fetch_assoc($result_name);
                 </tbody>
             </table>
             </div>
+            
+            </div>
         </div>
         
     </section>
@@ -179,7 +185,7 @@ $r_name = mysqli_fetch_assoc($result_name);
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>ชื่อเอกสารภาษาอังกฤษ</label>
-                  <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสารภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
+                  <input class="form-control" name="paper_eng" type="text" pattern="[a-z],[0-9]" placeholder="ชื่อเอกสารภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>

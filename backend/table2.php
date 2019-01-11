@@ -73,8 +73,8 @@
                 <h3 style="text-align:center">รอการตรวจ</h3>
                 <hr>
                 <div class="row">
-                    <div class="col col-12-lg2">
-                        <table id="table2" class="display responsive">
+                    <div class="col col-12-lg table-responsive-lg">
+                        <table id="table2" class="display table">
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>
@@ -109,8 +109,9 @@
                                         $row_user = mysqli_fetch_array($result_user);
                                         $status_paper = $row['status'];
                                         $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
-                                        $result_status = mysqli_query($con, $q_status);
+                                        $result_status = mysqli_query($con,$q_status);
                                         $row_status = mysqli_fetch_array($result_status);
+                                        
                                         ?>
                                       
                                         <td style="text-align:left" ><p style="font-size: 5 "><?php echo $row['paper_id'] ?></p></td>

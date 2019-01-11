@@ -142,7 +142,7 @@
                                             <div  class="row" >
                                                 <div class="col col-lg-12">
                                                     <div style="text-align:center">
-                                                        <img src="banner/<?php echo $_SESSION['tmp_banner']?>" alt="banner">
+                                                        <img src="banner/<?php echo $_SESSION['tmp_banner']?>" style="width:100%;heigth:auto " alt="banner" >
                                                     </div>
                                                 </div>
                                             </div>

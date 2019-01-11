@@ -67,8 +67,8 @@
                 <h3 style="text-align: center">ยังไม่ได้เลือกผู้ตรวจ</h3>
                 <hr>
                 <div class="row">
-                    <div class="col col-12-lg">
-                        <table id="table" class="display responsive">
+                    <div class="col col-12-lg table-responsive-lg">
+                        <table id="table" class="display table">
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>

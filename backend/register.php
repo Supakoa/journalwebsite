@@ -94,19 +94,19 @@
                 <form action="input_register.php" method="POST">
                     <div class="form-group">
                         <label >Username **</label>
-                        <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" >
+                        <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" required="required" >
 
                         <label for="password">Password **</label>
-                        <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" >
+                        <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" required="required">
 
                         <label for="conpassword">Confirm Password </label>
-                        <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" >
+                        <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" required="required">
 
                         <label for="fname">ชื่อ**</label>
-                        <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" >
+                        <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" required="required">
 
                         <label for="lname">นามสกุล **</label>
-                        <input type="text" class="form-control" name="lname" placeholder="นามสกุล" >
+                        <input type="text" class="form-control" name="lname" placeholder="นามสกุล" required="required" >
 
                         <label for="gender">เพศ</label>
                         <select class="form-control" name="gender" required>
@@ -116,13 +116,13 @@
                         </select>
 
                         <label for="address">ที่อยู่</label>
-                        <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่"></textarea>
+                        <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่" required="required"></textarea>
                     
                         <label for="username">Email *</label>
-                        <input type="text" class="form-control" name="email" placeholder="อีเมล์" >
+                        <input type="text" class="form-control" name="email" placeholder="อีเมล์" required="required">
                         
                         <label for="password">ยืนยัน Email *</label>
-                        <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" >
+                        <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" required="required">
                         <br>
                         </div>
                         <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">Submit</button>
