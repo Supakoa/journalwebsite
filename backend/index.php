@@ -1,23 +1,22 @@
-
-
 <?php
- require 'server.php';
-if(isset($_SESSION['status_login'])){
+    require 'server.php';
+    if(isset($_SESSION['status_login'])){
+        
+        if($_SESSION['status_login']==0){
+            echo '<script>alert("Username หรือ รหัสผ่านไม่ถูกต้อง.");</script>';
+        }
     
-    if($_SESSION['status_login']==0){
-        echo '<script>alert("Username หรือ รหัสผ่านไม่ถูกต้อง.");</script>';
     }
-   
-}
-if(isset($_SESSION['status_admin'])){
-    if($_SESSION['status_admin']==0){
-    echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+    if(isset($_SESSION['status_admin'])){
+        if($_SESSION['status_admin']==0){
+        echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+        }
     }
-  }
-  if(isset($_SESSION['online'])){
-    echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
-  }
-  session_destroy();
+    if(isset($_SESSION['online'])){
+        echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
+    }
+    session_destroy();
+
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +26,17 @@ if(isset($_SESSION['status_admin'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Log-in Admin journal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
+
+    <!-- sweet alert -->
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <style>
 
@@ -136,9 +141,9 @@ if(isset($_SESSION['status_admin'])){
                 <div class="form">
 
             <form action="server/login.php" method="post" class="login-form">
-            <input type="text" name="username" placeholder="username"/>
-            <input type="password" name="password" placeholder="password"/>
-            <button type="submit">เข้าสู่ระบบ</button>
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button type="submit">เข้าสู่ระบบ</button>
             </form>
 
         </div>
@@ -146,10 +151,16 @@ if(isset($_SESSION['status_admin'])){
     
     </div>
 </body>
+
+<!-- php check alert -->
+<?php
+
+    require '../alert.php';
+?>
+<!-- script -->
 <script>
-    $('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
+    $('.message a').click(function(){$('form').animate({height: "toggle", opacity: "toggle"}, "slow");});
+    
 </script>
 
 </html>

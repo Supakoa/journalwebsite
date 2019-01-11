@@ -3,7 +3,7 @@ require 'server.php';
 if($_SESSION['status_admin'] != 1){
     $_SESSION['online'] = 0 ;
     header("Location: index.php");
-  }
+}
 $_SESSION['counter_up'] = 0;
     //set page
 $_SESSION['set_page'] = 1;
