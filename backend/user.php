@@ -112,8 +112,8 @@
                                 <th>Gender</th>
                                 <th>Address</th>
                                 <th>E-mail</th>
-                                <th>Member</th>
                                 <th>Tel</th>
+                                <th>Member</th>
                                 <th>Role</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
