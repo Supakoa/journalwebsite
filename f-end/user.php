@@ -193,42 +193,49 @@
             <form action = "server/insert_paper.php" method ="POST" enctype="multipart/form-data">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                        <label>ไฟล์เอกสาร</label>
-                        <input class="form-control btn btn-sm" name="paper" type="file"  accept=".pdf" placeholder="ไฟล์เอกสาร" required="required">
+                      <div class="row">
+                      <div class="col-lg-4"></div>
+                          <div class="col-lg-4">
+                            <label for="pa-per">ไฟล์เอกสาร</label>
+                            <input id="pa-per" class="form-control btn btn-sm" name="paper" type="file"  accept=".pdf" placeholder="ไฟล์เอกสาร" required="required">
+                          </div>
+                          <div class="col-lg-4"></div>
+                      </div>
+                        
                     </div>
                 </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>ชื่อเอกสารภาษาไทย</label>
-                  <input class="form-control" name="paper_th" type="text" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกชื่อภาษาไทย" placeholder="ชื่อเอกสารภาษาไทย"  required="required" data-validation-required-message="Please enter your Paper name thai.">
+                  <label for="pa-th">ชื่อเอกสารภาษาไทย</label>
+                  <input id="pa-th" class="form-control" name="paper_th" type="text" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกชื่อภาษาไทย" placeholder="ชื่อเอกสารภาษาไทย"  required="required" data-validation-required-message="Please enter your Paper name thai.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>ชื่อเอกสารภาษาอังกฤษ</label>
-                  <input class="form-control" name="paper_eng" type="text"  placeholder="ชื่อเอกสารภาษาอังกฤษ" pattern="^[!-~\s]+$" title="กรุณากรอกชื่อภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
+                  <label for="pa-eng">ชื่อเอกสารภาษาอังกฤษ</label>
+                  <input id="pa-eng" class="form-control" name="paper_eng" type="text"  placeholder="ชื่อเอกสารภาษาอังกฤษ" pattern="^[!-~\s]+$" title="กรุณากรอกชื่อภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>ข้อความ</label>
-                  <textarea class="form-control" name="abstract" rows="5" placeholder="ข้อความ" required="required" data-validation-required-message="Please enter a message."></textarea>
+                  <label for="abs">ข้อความ</label>
+                  <textarea for="abs" class="form-control" name="abstract" rows="5" placeholder="ข้อความ" required="required" data-validation-required-message="Please enter a message."></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>คำเฉพาะ</label>
-                  <input class="form-control" name="keyword" type="text" placeholder="คำเฉพาะ" required="required" data-validation-required-message="Please enter your Keyword.">
+                  <label for="key">คำเฉพาะ</label>
+                  <input id="key" class="form-control" name="keyword" type="text" placeholder="คำเฉพาะ" required="required" data-validation-required-message="Please enter your Keyword.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <br>
               <div id="success"></div>
-              <div class="form-group">
+              <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary btn-md" id="sendMessageButton">ส่ง</button>
               </div>
             </form>
