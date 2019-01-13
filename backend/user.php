@@ -100,7 +100,7 @@
 
         <div class="content">
             <div class="container-fluid">
-             <h3 style="text-align:center">ตาราง User</h3><hr><br>
+             <h3 style="text-align:center">สมาชิก</h3><hr>
             	<div class="row">
                     <div class="col-lg-12 table-responsive">
                         <table class="table display" id="tableuser">
@@ -257,14 +257,6 @@
                 </div> 
             </div>
         </div>
-        <footer class="footer">
-            <div class="container-fluid">
-               
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Creative Tim</a>,CEFstyle
-                </p>
-            </div>
-        </footer>
     </div>
 </div>
 

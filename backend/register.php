@@ -102,8 +102,7 @@
 
         <div class="content">
             <div class="container-fluid">
-             <h3 style="text-align:center">เพิ่มข้อมูลผู้ทรงคุณวุฒิ </h3><hr><br>
-
+             <h3 style="text-align:center">เพิ่มข้อมูลผู้ทรงคุณวุฒิ </h3><hr>
                 <form action="input_register.php" method="POST">
                                         <div class="form-group">
                                             <label >Username **</label>
@@ -142,21 +141,12 @@
                                                
                                                 <br>
                                             </div>
-                        <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button>
+                                            <div class="text-center">
+                                                <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button>
+                                            </div>
                 </form>
-            	  
             </div>
         </div>
-      
-
-        <footer class="footer">
-            <div class="container-fluid">
-               
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Creative Tim</a>,CEFstyle
-                </p>
-            </div>
-        </footer>
     </div>
 </div>
 

@@ -167,9 +167,7 @@
     <div class="sidebar" data-color="#cccccc" >
         <div class="sidebar-wrapper">
             <?php require 'setup/menu.php' ?>
-
             <div class="main-panel">
-       
 		        <?php require 'setup/main.php' ?>
                 <form method="POST" action="paper.php" enctype="multipart/form-data">
                     <div class="container">
@@ -237,27 +235,17 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                        <div class="text-center">
-                            <input type="submit" class="btn btn-info btn-active" value="อัพเดต" name="update"><br>
-                        </div><br><br><br>
+                                <div class="col-lg-12 text-center">
+                                    <input type="submit" class="btn btn-info btn-active" value="อัพเดต" name="update"><br>
+                                </div>
+                            </div><br><br>
                     </div>
                 </form>
             </div>
-        </div>                       
+        </div>         
     </div>
 </div>
-    <footer class="footer">
-        <div class="container-fluid">
-            <p class="copyright pull-right">
-                &copy;  <script>
-                            document.write(new Date().getFullYear())
-                        </script> <a href="#">Creative Tim</a>,CEFstyle
-            </p>
-        </div>
-    </footer>
-
-
+    
 </body>
 
     <!-- php check alert -->

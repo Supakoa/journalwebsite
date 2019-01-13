@@ -48,7 +48,7 @@
                     <?php } ?>
                     <a href="table3.php">
                         <i class="pe-7s-mail"></i>
-                        <p>รอยืนยันคำตอบจากAdmin</p>
+                        <p>รอยืนยันคำตอบจาก Admin</p>
                     </a>
                     <?php if ($_SESSION['set_page']==4) {?>
                         </li>
@@ -60,7 +60,7 @@
                     <?php } ?>
                     <a href="register.php">
                         <i class="pe-7s-add-user"></i>
-                        <p>สมัครสมาชิค</p>
+                        <p>สมัครสมาชิก</p>
                     </a>
                     <?php if ($_SESSION['set_page']==5) {?>
                         </li>
