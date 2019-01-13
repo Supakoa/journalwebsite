@@ -160,13 +160,13 @@ $r_3 = mysqli_fetch_array($q3);
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>Password *</label>
-                            <input class="form-control" name="password" type="password" placeholder="Password **" required="required" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your password.">
+                            <input class="form-control" name="password" type="password" placeholder="Password **" required="required" pattern="(.{6,})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
                             <label>Confirm password *</label>
-                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password **" required="required" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your Confirm password.">
+                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password **" required="required" pattern="(.{6,})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your Confirm password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
