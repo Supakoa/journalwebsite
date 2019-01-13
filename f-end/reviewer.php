@@ -1,33 +1,62 @@
 <?php
-require 'server/server.php';
-if(isset($_SESSION['alert'])){
-  if($_SESSION['alert'] == 0 ){
-    echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
-  }
-  elseif ($_SESSION['alert'] == 1) {
-    echo '<script>alert("ส่งคำตอบเรียบร้อย.");</script>';
-  }
-  unset($_SESSION['alert']);
-}
-$id = $_SESSION['id'];
-  
-if($_SESSION['status'] != 1){
-  $_SESSION['online'] = 0 ;
-  header("Location: index.php");
-}
 
-$q1 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb,reviewer_answer
-WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status = 1 And 
-(reviewer_paper.reviewer1 = '$id' OR reviewer_paper.reviewer2 = '$id') AND (reviewer_answer.reviewer_id = '$id' AND reviewer_answer.paper_id = paper.paper_id AND reviewer_answer.status = ' ')  ";
-$result1 = mysqli_query($con, $q1); 
-$q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status != 1  And (reviewer_paper.reviewer1 = '$id' OR reviewer_paper.reviewer2 = '$id')";
-$result2 = mysqli_query($con, $q2);
-$q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
-$result_name = mysqli_query($con, $q_name);
-$r_name = mysqli_fetch_assoc($result_name);
+  require 'server/server.php';
+
+  // check online
+  if($_SESSION['status'] != 1){
+    // $_SESSION['online'] = 0;
+    $_SESSION['alert'] = 2;
+    header("Location: index.php");
+    exit();
+  }
+
+  if(isset($_SESSION['alert'])){
+    if($_SESSION['alert'] == 0 ){
+      echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+    }
+    elseif ($_SESSION['alert'] == 1) {
+      echo '<script>alert("ส่งคำตอบเรียบร้อย.");</script>';
+    }
+    unset($_SESSION['alert']);
+  }
+
+  $id = $_SESSION['id'];
+    
+  if($_SESSION['status'] != 1){
+    $_SESSION['online'] = 0 ;
+    header("Location: index.php");
+  }
+
+  $q1 = "SELECT paper.paper_id,paper.name_th,status_tb.status 
+    FROM paper,reviewer_paper,user,status_tb,reviewer_answer
+    WHERE paper.paper_id = reviewer_paper.paper_id 
+      AND user.username = '$id' 
+      AND paper.status = status_tb.id 
+      AND paper.status = 1 
+      And (reviewer_paper.reviewer1 = '$id' 
+      OR reviewer_paper.reviewer2 = '$id') 
+      AND (reviewer_answer.reviewer_id = '$id' 
+      AND reviewer_answer.paper_id = paper.paper_id 
+      AND reviewer_answer.status = ' ')  ";
+  $result1 = mysqli_query($con, $q1); 
+
+  $q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status 
+    FROM paper,reviewer_paper,user,status_tb 
+    WHERE paper.paper_id = reviewer_paper.paper_id 
+      AND user.username = '$id' 
+      AND paper.status = status_tb.id 
+      AND paper.status != 1  
+      And (reviewer_paper.reviewer1 = '$id' 
+      OR reviewer_paper.reviewer2 = '$id')";
+  $result2 = mysqli_query($con, $q2);
+
+  $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
+  $result_name = mysqli_query($con, $q_name);
+  $r_name = mysqli_fetch_assoc($result_name);
 
   $a3 = "SELECT * FROM banner ";
   $q3 = mysqli_query($con,$a3);
+
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +91,11 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <!-- login -->
     <link rel="stylesheet" href="login/login.css">
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
 
   </head>
 
@@ -231,6 +265,9 @@ $r_name = mysqli_fetch_assoc($result_name);
     $('#table2').DataTable();
     } );
     </script>
+
+    <!-- php check alert -->
+    <?php require '../alert.php';?>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

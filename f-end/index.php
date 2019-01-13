@@ -50,7 +50,7 @@
   if (isset($_SESSION['status'])) {
     if ($_SESSION['status'] == 0) {
       // echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
-      $_SESSION['alert'] = 9;
+      $_SESSION['alert'] = 14;
     }
   }
   if (isset($_SESSION['online'])) {
@@ -66,6 +66,7 @@
   $a3 = "SELECT * FROM banner ";
   $q3 = mysqli_query($con, $a3);
   $r_3 = mysqli_fetch_array($q3);
+  
 ?>
 
 <!DOCTYPE html>

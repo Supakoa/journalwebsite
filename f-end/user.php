@@ -1,6 +1,8 @@
 <?php
+  //connect database 
   require 'server/server.php';
 
+  // check online
   if($_SESSION['status'] != 1){
     // $_SESSION['online'] = 0;
     $_SESSION['alert'] = 2;
@@ -8,38 +10,40 @@
     exit();
   }
 
-  if(isset($_SESSION['alert'])){
-    if($_SESSION['alert'] == 0 ){
+    // old check alert
+    // if(isset($_SESSION['alert'])){
+    //   if($_SESSION['alert'] == 0 ){
 
-      echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+    //     echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
 
-    }
-    elseif ($_SESSION['alert'] == 1) {
+    //   }
+    //   elseif ($_SESSION['alert'] == 1) {
 
-      echo '<script>alert("เพิ่มวารสารเรียบร้อย.");</script>';
+    //     echo '<script>alert("เพิ่มวารสารเรียบร้อย.");</script>';
 
-    }
-    elseif ($_SESSION['alert'] == 2) {
+    //   }
+    //   elseif ($_SESSION['alert'] == 2) {
 
-      echo '<script>alert("แก้ไขวารสารเรียบร้อย.");</script>';
+    //     echo '<script>alert("แก้ไขวารสารเรียบร้อย.");</script>';
 
-    }
-    elseif ($_SESSION['alert'] == 3) {
+    //   }
+    //   elseif ($_SESSION['alert'] == 3) {
 
-      echo '<script>alert("ได้เฉพาะ ไฟล์ PDF.");</script>';
+    //     echo '<script>alert("ได้เฉพาะ ไฟล์ PDF.");</script>';
 
-    }
-    unset($_SESSION['alert']);
-  }
+    //   }
+    //   unset($_SESSION['alert']);
+    // }
 
-  //$id = $_SESSION['id'];
-  // $_SESSION['id'] = 'singha';
-  $id = $_SESSION['id'];
-  $q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND user_paper.username = user.username AND paper.status = status_tb.id group by paper.paper_id";
-  $result = mysqli_query($con, $q);
-  $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
-  $result_name = mysqli_query($con, $q_name);
-  $r_name = mysqli_fetch_assoc($result_name);
+    // $id = $_SESSION['id'];
+    // $_SESSION['id'] = 'singha';
+
+    $id = $_SESSION['id'];
+    $q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND user_paper.username = user.username AND paper.status = status_tb.id group by paper.paper_id";
+    $result = mysqli_query($con, $q);
+    $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
+    $result_name = mysqli_query($con, $q_name);
+    $r_name = mysqli_fetch_assoc($result_name);
 
     $a3 = "SELECT * FROM banner ";
     $q3 = mysqli_query($con,$a3);
@@ -265,9 +269,9 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
-    $(document).ready( function () {
-    $('#table_id').DataTable();
-    } );
+      $(document).ready( function () {
+        $('#table_id').DataTable();
+      } );
     </script>
 
     <!-- Plugin JavaScript -->

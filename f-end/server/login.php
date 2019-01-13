@@ -22,7 +22,7 @@
             header("Location: ../reviewer.php");
         }
     }else{
-      $_SESSION['status'] = 0; //not match
+        $_SESSION['status'] = 0; //not match
         header("Location: ../index.php");
     }
 ?>

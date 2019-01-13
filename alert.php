@@ -169,6 +169,30 @@
                     </script>";
             break;
 
+            case '15':
+                echo "
+                    <script>
+                        Swal({
+                            type: 'error',
+                            title: 'ไฟล์ใหญ่เกินไป (มากกว่า 60MB)',
+                            text: 'ลองอัพโหลดใหม่อีกครั้ง.',
+                            // footer: '<a href>Why do I have this issue?</a>'
+                        });                    
+                    </script>";
+            break;
+
+            case '16':
+                echo "
+                    <script>
+                        Swal({
+                            type: 'error',
+                            title: 'อัพโหลดได้เฉพาะไฟล์ pdf เท่านั้น',
+                            text: 'ลองอัพโหลดใหม่อีกครั้ง.',
+                            // footer: '<a href>Why do I have this issue?</a>'
+                        });                    
+                    </script>";
+            break;
+
             // $_SESSION['alert'] = 0 or null
             default:
                 # code...

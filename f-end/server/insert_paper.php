@@ -1,10 +1,14 @@
 <?php
     //connect database
     require 'server.php';
+
     if($_SESSION['status'] != 1){
-        $_SESSION['online'] = 0 ;
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2;
         header("Location: ../index.php");
+        exit();
       }
+
     //give value from form_insert_paper.php
     $paper_th = $_POST['paper_th'];
     $paper_eng = $_POST['paper_eng'];
@@ -19,26 +23,32 @@
 
     $imageFileType = strtolower(pathinfo($new_taget_name, PATHINFO_EXTENSION));
 
-    if ($_FILES["paper"]["size"] > 8000000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
+    if ($_FILES["paper"]["size"] > 62914560) {
+        // echo "Sorry, your file is too large.";
+        // $uploadOk = 0;
+        $_SESSION['alert'] = 15;
+        header("Location: ../user.php");
+        exit();
     }
 
     // Allow certain file formats
     if ($imageFileType != "pdf") {
-        echo "Sorry, only PDF files are allowed.";
-        $uploadOk = 0;
-        $_SESSION['alert'] = 3;
+        // echo "Sorry, only PDF files are allowed.";
+        // $uploadOk = 0;
+        // $_SESSION['alert'] = 3;
+        $_SESSION['alert'] = 16;
+        header("Location: ../user.php");
+        exit();
     }
 
     // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        if(!isset($_SESSION['alert'])){
-             $_SESSION['alert'] = 0;
-        }
+    // if ($uploadOk == 0) {
+    //     echo "Sorry, your file was not uploaded.";
+    //     if(!isset($_SESSION['alert'])){
+    //         $_SESSION['alert'] = 0;
+    //     }
        
-    }
+    // }
 
     else {
         if (move_uploaded_file($_FILES["paper"]["tmp_name"], $upload_path)) {
@@ -65,10 +75,10 @@
             $r_a = "INSERT INTO `reviewer_answer`( `paper_id`) VALUES ('$last_paper')";
             $r_r_a = mysqli_query($con,$r_a);
             $r_r_a = mysqli_query($con,$r_a);
-            $_SESSION['alert'] = 1;
+            $_SESSION['alert'] = 3;
         }else {
             echo 'Move fail';
-            $_SESSION['alert'] = 0;
+            $_SESSION['alert'] = 4;
         }
     }
   

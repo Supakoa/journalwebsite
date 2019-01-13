@@ -7,23 +7,28 @@
 <div class="modal fade " id="myModal<?php echo $row1['paper_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
+
       <div class="modal-header">
-      <h4  class="modal-title" id="myModalLabel">รายละเอียด</h4>
+        <h4  class="modal-title" id="myModalLabel">รายละเอียด</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        
       </div>
+
       <div class="modal-body">
-      <div class="card">
-        <div class="content">
+        <div class="card">
+          <div class="content">
                                 
                                 <?php
-                                $q_p = "SELECT * FROM paper WHERE paper_id = $id_paper";
-                                $r_q_p = mysqli_query($con,$q_p);
-                                $row_q_p = mysqli_fetch_assoc($r_q_p);
-                                $status_paper = $row_q_p['status'];
-                                $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
-                                $result_status = mysqli_query($con, $q_status);
-                                $row_status = mysqli_fetch_array($result_status);
+
+                                  $q_p = "SELECT * FROM paper WHERE paper_id = $id_paper";
+                                  $r_q_p = mysqli_query($con,$q_p);
+                                  $row_q_p = mysqli_fetch_assoc($r_q_p);
+
+                                  $status_paper = $row_q_p['status'];
+
+                                  $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
+                                  $result_status = mysqli_query($con, $q_status);
+                                  $row_status = mysqli_fetch_array($result_status);
+
                                 ?>
           <div class="row">
             <div class="col col-6-lg ms-auto">
