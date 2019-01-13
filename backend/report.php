@@ -122,15 +122,15 @@
                     </div>
                         <div class="modal-body" style="text-align:center" >
                                                 <?php
-                                                $filName = "server/report.csv";
-                                                $objWrite = fopen("server/report.csv", "w");
-                                                fwrite($objWrite, "\"Paper-id\",\"ชื่อ Paper(Eng)\",\"ชื่อ Paper(Th)\",\"ชื่อผู้ส่ง\",\"สถานะหลัก\" \n\n");
-                                                while ($row2 = mysqli_fetch_array($result2)) {
-                                                    fwrite($objWrite, "\"{$row2['paper_id']}\",\"{$row2['name_eng']}\",\"{$row2['name_th']}\",\"{$row2['first_name']} {$row2['last_name']}\",\" {$row2['status']}\",\n\n");
+                                                    $filName = "server/report.csv";
+                                                    $objWrite = fopen("server/report.csv", "w");
+                                                    fwrite($objWrite, "\"Paper-id\",\"ชื่อ Paper(Eng)\",\"ชื่อ Paper(Th)\",\"ชื่อผู้ส่ง\",\"สถานะหลัก\" \n\n");
+                                                    while ($row2 = mysqli_fetch_array($result2)) {
+                                                        fwrite($objWrite, "\"{$row2['paper_id']}\",\"{$row2['name_eng']}\",\"{$row2['name_th']}\",\"{$row2['first_name']} {$row2['last_name']}\",\" {$row2['status']}\",\n\n");
 
-                                                }
-                                                fclose($objWrite);
-                                                echo "ยืนยันการดาวโหลด";
+                                                    }
+                                                    fclose($objWrite);
+                                                    echo "ยืนยันการดาวโหลด";
                                                 ?>
                         </div>
                             <div class="modal-footer" style="text-align:center">

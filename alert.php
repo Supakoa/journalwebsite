@@ -157,6 +157,18 @@
                     </script>";
             break;
 
+            case '14':
+                echo "
+                    <script>
+                        Swal({
+                            type: 'question',
+                            title: 'ข้อมูลไม่ถูกต้อง',
+                            text: 'เข้าสู่ระบบอีกครั้ง.',
+                            // footer: '<a href>Why do I have this issue?</a>'
+                        });                    
+                    </script>";
+            break;
+
             // $_SESSION['alert'] = 0 or null
             default:
                 # code...
