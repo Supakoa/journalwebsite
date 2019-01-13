@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2018 at 04:39 AM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Jan 13, 2019 at 12:45 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -68,15 +68,9 @@ INSERT INTO `banner` (`order`, `name`, `tmp_name`, `footer`) VALUES
 
 CREATE TABLE `bill_guest` (
   `username` text NOT NULL,
-  `tmp_name` text NOT NULL
+  `tmp_name` text NOT NULL,
+  `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `bill_guest`
---
-
-INSERT INTO `bill_guest` (`username`, `tmp_name`) VALUES
-('eiei', 'Bill_5b8f90abb145d.jpg');
 
 -- --------------------------------------------------------
 
@@ -98,16 +92,6 @@ CREATE TABLE `paper` (
   `tmp_money` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `paper`
---
-
-INSERT INTO `paper` (`paper_id`, `field`, `file_name`, `file_tmp_name`, `name_th`, `name_eng`, `abstract`, `key_word`, `status`, `money_status`, `tmp_money`) VALUES
-(10011, '', 'ตารางเรียน GE.pdf', 'pdf_5b8e7c8b37c17.pdf', 'ทดสอบ', 'test', 'test', 'test', 1, 7, 'Bill_5b8e6c9d7efff.jpg'),
-(10012, '', 'ตารางเรียน GE.pdf', 'pdf_5b8e359db4b63.pdf', 'ทดสอบ', 'test', 'test', 'test', 1, 0, ''),
-(10013, '', 'session.lock', 'pdf_5bd7f9eec7134.lock', 'สิงของลองส่งตาราง', 'test', 'dasd', 'asd', 6, 0, ''),
-(10014, '', 'level.dat', 'pdf_5bd7feaee39b0.dat', 'asd', 'asd', 'asd', 'asd', 1, 0, '');
-
 -- --------------------------------------------------------
 
 --
@@ -123,30 +107,6 @@ CREATE TABLE `reviewer_answer` (
   `score` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `reviewer_answer`
---
-
-INSERT INTO `reviewer_answer` (`order`, `reviewer_id`, `paper_id`, `status`, `comment`, `score`) VALUES
-(1, '321654', '10000', '2', 'kk', 100),
-(2, '123456', '10000', '2', 'kk', 100),
-(3, '321654', '10006', '3', 'น่าจะเสร็จ', 32),
-(4, '123456', '10006', '2', 'น่าจะเสร็จ', 32),
-(5, '321654', '10007', '2', 'น่าจะเสร็จ', 32),
-(6, '123456', '10007', '2', '55555', 55),
-(7, '321654', '10008', '2', '55555', 55),
-(8, '123456', '10008', '2', 'น่าจะเสร็จ', 32),
-(11, '321654', '10010', '2', 'น่าจะเสร็จ', 55),
-(12, '123456', '10010', '2', '55555', 123),
-(13, '321654', '10011', ' ', ' ', 0),
-(14, '123456', '10011', ' ', ' ', 0),
-(15, '123456', '10012', '', '', 0),
-(16, '321654', '10012', '', '', 0),
-(17, '321654', '10013', '2', 'น่าจะเสร็จ', 55),
-(18, '123456', '10013', '2', 'น่าจะเสร็จ', 123),
-(19, '321654', '10014', '', '', 0),
-(20, 'singha2', '10014', '', '', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -155,25 +115,8 @@ INSERT INTO `reviewer_answer` (`order`, `reviewer_id`, `paper_id`, `status`, `co
 
 CREATE TABLE `reviewer_paper` (
   `paper_id` text NOT NULL,
-  `reviewer1` text NOT NULL,
-  `reviewer2` text NOT NULL
+  `reviewer` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `reviewer_paper`
---
-
-INSERT INTO `reviewer_paper` (`paper_id`, `reviewer1`, `reviewer2`) VALUES
-('10000', '321654', '123456'),
-('10006', '321654', '123456'),
-('10007', '321654', '123456'),
-('10008', '321654', '123456'),
-('10009', '321654', '123456'),
-('10010', '321654', '123456'),
-('10011', '321654', '123456'),
-('10012', '123456', '321654'),
-('10013', '321654', '123456'),
-('10014', '321654', 'singha2');
 
 -- --------------------------------------------------------
 
@@ -193,8 +136,8 @@ CREATE TABLE `setting_timmer` (
 --
 
 INSERT INTO `setting_timmer` (`order`, `name_time`, `time_start`, `time_end`) VALUES
-(1, 'a', '2018-09-01', '2018-09-15'),
-(2, 'b', '2018-09-01', '2018-09-15');
+(1, 'a', '2018-09-01', '2019-01-11'),
+(2, 'b', '2018-09-01', '2019-01-15');
 
 -- --------------------------------------------------------
 
@@ -265,20 +208,10 @@ CREATE TABLE `user` (
   `last_name` text NOT NULL,
   `address` text NOT NULL,
   `email` text NOT NULL,
+  `Tel` varchar(10) NOT NULL,
   `member` longtext NOT NULL,
   `role` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`order`, `username`, `password`, `gender`, `first_name`, `last_name`, `address`, `email`, `member`, `role`) VALUES
-(1, 'singha', 'cHB6eDAw', 'male', 'นาย พลเมือง', 'ดีเด่น', 'ไม่มี', 'ไม่มี', '', 1),
-(2, 'singha2', 'cHB6eDAw', 'male', 'ตะวัน', 'เข็มทอง', 'ไม่มี', 'ไม่มี', '', 2),
-(3, '321654', 'cHB6eDAw', 'male', 'นาย แบงค์', 'แก้วศรี', 'เล้า(อยู่กับแม่)', 'ไก้ไก่ๆไกลไก้ไกลไก่ไกๆไก่@coldmail.com', '', 2),
-(4, '123456', 'cHB6eDAw', 'male', 'นาย ข', 'ไข่', 'ไม่ให้ๆอย่ามาเอานะเค้าหวง', '8e88@morning.com', '', 2),
-(27, 'eiei', 'MTIzNA==', 'male', 'นาย ตาหวาน', 'เข็มทองคำ', '76/431 ซ.5/4 ต.บางคูรัด อ.บางบัวทอง จ.นนทบุรี', 'singcomnet@hotmail.com', '-', 3);
 
 -- --------------------------------------------------------
 
@@ -290,23 +223,6 @@ CREATE TABLE `user_paper` (
   `username` text NOT NULL,
   `paper_id` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `user_paper`
---
-
-INSERT INTO `user_paper` (`username`, `paper_id`) VALUES
-('singha', '10000'),
-('singha2', '10002'),
-('singha', '10006'),
-('singha', '10007'),
-('singha', '10008'),
-('singha', '10009'),
-('singha', '10010'),
-('singha', '10011'),
-('singha', '10012'),
-('singha', '10013'),
-('singha', '10014');
 
 --
 -- Indexes for dumped tables
@@ -368,13 +284,13 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `paper`
 --
 ALTER TABLE `paper`
-  MODIFY `paper_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10015;
+  MODIFY `paper_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000;
 
 --
 -- AUTO_INCREMENT for table `reviewer_answer`
 --
 ALTER TABLE `reviewer_answer`
-  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `setting_timmer`
@@ -398,7 +314,7 @@ ALTER TABLE `status_tb`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
