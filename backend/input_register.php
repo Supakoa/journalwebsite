@@ -20,6 +20,7 @@
     $address = $_POST['address'];
     $email = $_POST['email'];  
     $conemail = $_POST['conemail'];
+    $tel = $_POST['tel'];
 
     //Check user from databse is match or not match
     $a = "SELECT * FROM `user` WHERE `username` = '$username' ";
@@ -43,8 +44,8 @@
         exit();
     }
 
-    $b = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,role) 
-    VALUE ('$username','$password','$gender','$fname','$lname','$address','$email','2')";
+    $b = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,Tel,role) 
+    VALUE ('$username','$password','$gender','$fname','$lname','$address','$email','$tel','2')";
     $r_b = mysqli_query($con,$b);
 
     if ($r_b) {
