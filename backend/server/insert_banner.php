@@ -32,25 +32,36 @@
 
         $imageFileType = strtolower(pathinfo($new_taget_name, PATHINFO_EXTENSION));
 
-        if ($_FILES["banner"]["size"] > 8000000) {
+        if ($_FILES["banner"]["size"] > 60000000) {
             echo "Sorry, your file is too large.";
+            $_SESSION['alert'] = 15 ;
+            header("Location: ../setting.php");
+            exit();
             $uploadOk = 0;
         }
 
         // Allow certain file formats
         if ($imageFileType != "jpg"&&$imageFileType != "png") {
-            echo "Sorry, only PDF files are allowed.";
+            echo "Sorry, only JPG , PNG  files are allowed.";
+            $_SESSION['alert'] = 17 ;
+            header("Location: ../setting.php");
+            exit();
             $uploadOk = 0;
         }
 
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             echo "Sorry, your file was not uploaded.";
+            $_SESSION['alert'] = 4 ;
+            header("Location: ../setting.php");
+            exit();
         } else {
             if (move_uploaded_file($_FILES["banner"]["tmp_name"], $upload_path)) {
                 echo 'Move success.';
+                $_SESSION['alert'] = 3 ;
             } else {
                 echo 'Move fail';
+                $_SESSION['alert'] = 4 ;
             }
         }
 

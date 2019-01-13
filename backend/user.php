@@ -201,7 +201,7 @@
                                                     </div>
                                                         <div class="col-lg-6">
                                                             <label for="tel">Tel.</label>
-                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
+                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." maxlength="10" pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
                                                         </div>
                                                 </div>
                                                 <div class="row">
