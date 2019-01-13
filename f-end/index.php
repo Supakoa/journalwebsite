@@ -1,49 +1,72 @@
 <?php
-require 'server/server.php';
+  require 'server/server.php';
 
   //alert all
-if (isset($_SESSION['index_alert'])) {
-  $alert;
-  if ($_SESSION['index_alert'] == 1) {
-    $alert = 'password is not match.';
-  } elseif ($_SESSION['index_alert'] == 2) {
-    $alert = 'email is not match.';
-  } elseif ($_SESSION['index_alert'] == 3) {
-    $alert = 'password & email are not match.';
-  }
-  if ($_SESSION['index_alert'] != 0) {
-    echo '<script>alert("' . $alert . '");</script>';
-  }
-  $_SESSION['index_alert'] = 0;
-}
-if (isset($_SESSION['user_match'])) {
-  if ($_SESSION['user_match'] == 1) {
-    echo '<script>alert("Your username are used.");</script>';
-  } elseif ($_SESSION['user_match'] == 2) {
-    echo '<script>alert("Insert user sucessful.");</script>';
-  } elseif ($_SESSION['user_match'] == 3) {
-    echo '<script>alert("Insert error.");</script>';
-  }
-  $_SESSION['user_match'] = 0;
-}
-if (isset($_SESSION['status'])) {
-  if ($_SESSION['status'] == 0) {
-    echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
-  }
-}
-if (isset($_SESSION['online'])) {
-  echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
-}
-session_destroy();
+  if (isset($_SESSION['index_alert'])) {
+    $alert;
+    if ($_SESSION['index_alert'] == 1) {
 
-$a1 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '1'";
-$a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
-$q1 = mysqli_query($con, $a1);
-$q2 = mysqli_query($con, $a2);
+      // $alert = 'password is not match.';
+      $_SESSION['alert'] = 8;
 
-$a3 = "SELECT * FROM banner ";
-$q3 = mysqli_query($con, $a3);
-$r_3 = mysqli_fetch_array($q3);
+    } elseif ($_SESSION['index_alert'] == 2) {
+
+      // $alert = 'email is not match.';
+      $_SESSION['alert'] = 7;
+
+    } elseif ($_SESSION['index_alert'] == 3) {
+
+      // $alert = 'password & email are not match.';
+      $_SESSION['alert'] = 6;
+
+    }
+    if ($_SESSION['index_alert'] != 0) {
+
+      // echo '<script>alert("' . $alert . '");</script>';
+
+    }
+    $_SESSION['index_alert'] = 0;
+  }
+
+  if (isset($_SESSION['user_match'])) {
+    if ($_SESSION['user_match'] == 1) {
+
+      // echo '<script>alert("Your username are used.");</script>';
+      $_SESSION['alert'] = 9;
+
+    } elseif ($_SESSION['user_match'] == 2) {
+
+      // echo '<script>alert("Insert user sucessful.");</script>';
+      $_SESSION['alert'] = 3;
+
+    } elseif ($_SESSION['user_match'] == 3) {
+
+      // echo '<script>alert("Insert error.");</script>';
+      $_SESSION['alert'] = 4;
+
+    }
+    $_SESSION['user_match'] = 0;
+  }
+  if (isset($_SESSION['status'])) {
+    if ($_SESSION['status'] == 0) {
+      // echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+      $_SESSION['alert'] = 14;
+    }
+  }
+  if (isset($_SESSION['online'])) {
+    // echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
+    $_SESSION['alert'] = 2;
+  }
+  session_destroy();
+
+  $a1 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '1'";
+  $a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
+  $q1 = mysqli_query($con, $a1);
+  $q2 = mysqli_query($con, $a2);
+
+  $a3 = "SELECT * FROM banner ";
+  $q3 = mysqli_query($con, $a3);
+  $r_3 = mysqli_fetch_array($q3);
 ?>
 
 <!DOCTYPE html>
@@ -75,6 +98,11 @@ $r_3 = mysqli_fetch_array($q3);
 
     <!-- login -->
     <link rel="stylesheet" href="login/login.css">
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
 
   </head>
 
@@ -302,6 +330,8 @@ $r_3 = mysqli_fetch_array($q3);
       </a>
     </div>
 
+    <!-- php check alert -->
+    <?php require '../alert.php';?>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

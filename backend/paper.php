@@ -92,7 +92,6 @@
 
         } else {
 
-
             $count++;
         }
 
@@ -105,9 +104,11 @@
     }//end paper
 
     if ($count == $id) {
-        echo '<script type="text/javascript">alert("แก้ไขข้อมูลสมบูรณ์.");</script>';
+        // echo '<script type="text/javascript">alert("แก้ไขข้อมูลสมบูรณ์.");</script>';
+        $_SESSION['alert'] = 10;
     } else {
-        echo '<script type="text/javascript">alert("แก้ไขข้อมูลไม่สมบูรณ์.");</script>';
+        // echo '<script type="text/javascript">alert("แก้ไขข้อมูลไม่สมบูรณ์.");</script>';
+        $_SESSION['alert'] = 11;
     }
     }
 
@@ -153,6 +154,11 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
 
 </head>
 <body>
@@ -246,6 +252,9 @@
 
 
 </body>
+
+    <!-- php check alert -->
+    <?php require '../alert.php'; ?>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>

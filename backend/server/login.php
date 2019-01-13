@@ -16,7 +16,7 @@
     } else{
         // status admin ไม่ใช้ในหน้า index นอกแล้ว
         // $_SESSION['status_admin'] = 0 ;
-        $_SESSION['alert'] = 1;
+        $_SESSION['alert'] = 14;
         header("Location: ../index.php");
     }
 

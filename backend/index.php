@@ -4,14 +4,16 @@
     if(isset($_SESSION['status_login'])){
         
         if($_SESSION['status_login']==0){
-            echo '<script>alert("Username หรือ รหัสผ่านไม่ถูกต้อง.");</script>';
+            // echo '<script>alert("Username หรือ รหัสผ่านไม่ถูกต้อง.");</script>';
+            $_SESSION['alert'] = 14;
         }
     
     }
 
     if(isset($_SESSION['status_admin'])){
         if($_SESSION['status_admin']==0){
-            echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+            // echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+            $_SESSION['alert'] = 14;
         }
     }
 
@@ -154,14 +156,6 @@
         </div>
     
     </div>
-    <script>
-    Swal(
-    'The Internet?',
-     'That thing is still around?',
-    'question'
-    );
-<?php echo "eieieiei" ?>
-    </script>
 </body>
 
 <!-- php check alert -->
