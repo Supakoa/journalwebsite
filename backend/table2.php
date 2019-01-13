@@ -91,7 +91,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                
                                 <?php while ($row = mysqli_fetch_array($result)) { ?>
                                         <?php
                                         $id_paper = $row["paper_id"];
@@ -115,8 +115,8 @@
                                         $q_status = "SELECT * FROM status_tb WHERE id = $status_paper";
                                         $result_status = mysqli_query($con,$q_status);
                                         $row_status = mysqli_fetch_array($result_status);
-                                        
                                         ?>
+                                        <tr>
                                       
                                         <td style="text-align:left" ><p style="font-size: 5 "><?php echo $row['paper_id'] ?></p></td>
                                         <td><p style="font-size: 5"><?php echo $row['name_th'] ?></p></td>

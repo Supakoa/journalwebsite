@@ -63,95 +63,98 @@
     	<div class="sidebar-wrapper">
             <?php require 'setup/menu.php' ?>
 
-    <div class="main-panel">
-       
-		<?php require 'setup/main.php' ?>
+        <div class="main-panel">
+        
+            <?php require 'setup/main.php' ?>
 
-        <div class="content">
-            <div class="container-fluid">
-            <h3 style="text-align:center">รายงาน</h3><hr><br>
-              
-                <div class="row">
-                    <div class=" col-lg-12 table-responsive">
-                    <table id="tablepaper" class="display table" >
-                            <thead>
-                                <tr>
-                                    <th>Paper-id</th>
-                                    <th>ชื่อ Paper(Eng)</th>
-                                    <th>ชื่อ Paper(Th)</th>
-                                    <th>ชื่อผู้ส่ง</th>                                   
-                                    <th>สถานะหลัก</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                           
+            <div class="content">
+                <div class="container-fluid">
+                    <h3 style="text-align:center">รายงาน</h3><hr>
+                
+                    <div class="row">
+                        <div class=" col-lg-12 table-responsive">
+                            <table id="tablepaper" class="display table" >
+                                    <thead>
+                                        <tr>
+                                            <th>Paper-id</th>
+                                            <th>ชื่อ Paper(Eng)</th>
+                                            <th>ชื่อ Paper(Th)</th>
+                                            <th>ชื่อผู้ส่ง</th>                                   
+                                            <th>สถานะหลัก</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                 
-                                <?php while ($row = mysqli_fetch_array($result)) {
-                                    $id_paper = $row['paper_id'];
-                                    $status_paper = $row['status'];
-                                    $q_status = "SELECT * FROM status_tb WHERE `status` = '$status_paper'";
-                                    $result_status = mysqli_query($con,$q_status);
-                                    $row_status = mysqli_fetch_array($result_status);
+                                        
+                                        <?php while ($row = mysqli_fetch_array($result)) {
+                                            $id_paper = $row['paper_id'];
+                                            $status_paper = $row['status'];
+                                            $q_status = "SELECT * FROM status_tb WHERE `status` = '$status_paper'";
+                                            $result_status = mysqli_query($con,$q_status);
+                                            $row_status = mysqli_fetch_array($result_status);
+                                            ?>
+                                        <tr>
+                                        
+                                            <td><?php echo $row['paper_id'] ?></td>
+                                            <td><?php echo $row['name_eng'] ?></td>
+                                            <td><?php echo $row['name_th'] ?></td>
+                                            <td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
+                                            <td><?php echo $row['status'] ?></td>
+                                            <td><?php require 'setup/modal2.php' ?></td>
+                                        
+                                        </tr>
+                                        <?php 
+                                    }
                                     ?>
-                                <tr>
-                                
-                                    <td><?php echo $row['paper_id'] ?></td>
-                                    <td><?php echo $row['name_eng'] ?></td>
-                                    <td><?php echo $row['name_th'] ?></td>
-                                    <td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
-                                    <td><?php echo $row['status'] ?></td>
-                                    <td><?php require 'setup/modal2.php' ?></td>
-                                   
-                                </tr>
-                                <?php 
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                        <br>
-                        <div class="text-center">
-                            <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal">ดาวโหลดไฟล์</a>
-                        </div>
-                       
-        <div class="modal fade" id="submit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header" style="text-align:center" >
-                        <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
-                    </div>
-                        <div class="modal-body" style="text-align:center" >
-                                                <?php
-                                                    $filName = "server/report.csv";
-                                                    $objWrite = fopen("server/report.csv", "w");
-                                                    fwrite($objWrite, "\"Paper-id\",\"ชื่อ Paper(Eng)\",\"ชื่อ Paper(Th)\",\"ชื่อผู้ส่ง\",\"สถานะหลัก\" \n\n");
-                                                    while ($row2 = mysqli_fetch_array($result2)) {
-                                                        fwrite($objWrite, "\"{$row2['paper_id']}\",\"{$row2['name_eng']}\",\"{$row2['name_th']}\",\"{$row2['first_name']} {$row2['last_name']}\",\" {$row2['status']}\",\n\n");
-
-                                                    }
-                                                    fclose($objWrite);
-                                                    echo "ยืนยันการดาวโหลด";
-                                                ?>
-                        </div>
-                            <div class="modal-footer" style="text-align:center">
-                                <a href="<?php echo $filName ?>"> <button type="button" class="btn btn-success"  > ยืนยัน</button></a>
-                                <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
+                                    </tbody>
+                                </table>
+                            <br>
+                            <div class="text-center">
+                                <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal">ดาวโหลดไฟล์</a>
                             </div>
+                        
+                            <div class="modal fade" id="submit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="text-align:center" >
+                                            <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
+                                        </div>
+                                            <div class="modal-body" style="text-align:center" >
+                                                                    <?php
+                                                                        $filName = "server/report.csv";
+                                                                        $objWrite = fopen("server/report.csv", "w");
+                                                                        fwrite($objWrite, "\"Paper-id\",\"ชื่อ Paper(Eng)\",\"ชื่อ Paper(Th)\",\"ชื่อผู้ส่ง\",\"สถานะหลัก\" \n\n");
+                                                                        while ($row2 = mysqli_fetch_array($result2)) {
+                                                                            fwrite($objWrite, "\"{$row2['paper_id']}\",\"{$row2['name_eng']}\",\"{$row2['name_th']}\",\"{$row2['first_name']} {$row2['last_name']}\",\" {$row2['status']}\",\n\n");
+
+                                                                        }
+                                                                        fclose($objWrite);
+                                                                        echo "ยืนยันการดาวโหลด";
+                                                                    ?>
+                                            </div>
+                                                <div class="modal-footer" style="text-align:center">
+                                                    <a href="<?php echo $filName ?>"> <button type="button" class="btn btn-success"  > ยืนยัน</button></a>
+                                                    <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
+                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                   
+                    </div>
                 </div>
-            </div>
+            </div>                                                        
+
+
+            <footer class="footer">
+                <div class="container-fluid">
+                
+                    <p class="copyright pull-right">
+                        &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Creative Tim</a>,CEFstyle
+                    </p>
+                </div>
+            </footer>
         </div>
-                                       
-      
-
-
-        <footer class="footer">
-            <div class="container-fluid">
-               
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Creative Tim</a>,CEFstyle
-                </p>
-            </div>
-        </footer>
     </div>
 </div>
 

@@ -279,11 +279,10 @@
 
     <!-- Footer -->
     <footer class="footer text-center">
-      <div class="container">
-      <h4 class="text-uppercase mb-4">เอกสารที่เกี่ยวข้อง</h4>
         <div class="row">
           <div class="col-md-6 mb-5 mb-lg-0">
-          <ul class="list-inline mb-0">
+              <h4 class="text-uppercase mb-4">เอกสารที่เกี่ยวข้อง</h4>
+            <ul class="list-inline mb-0">
               <li class="list-inline-item">
                 <?php while ($r1 = mysqli_fetch_array($q1)) { ?>
                   <a class=" text-center" target="_blank" href="<?php echo $r1['url']; ?>"><?php echo $r1['text']; ?></a><br>
@@ -293,7 +292,8 @@
             </ul>
           </div>
           <div class="col-md-6 mb-5 mb-lg-0">
-          <ul class="list-inline mb-0">
+              <h4 class="text-uppercase mb-4">เอกสารเผยแพร่</h4>
+            <ul class="list-inline mb-0">
               <li class="list-inline-item">
               <?php while ($r2 = mysqli_fetch_array($q2)) { ?>
                   <a class=" text-center" target="_blank" href="../backend/uploads/<?php echo $r2['url']; ?>"><?php echo $r2['text']; ?></a><br>
@@ -303,7 +303,6 @@
             </ul>
           </div>
         </div>
-      </div>
     </footer>
 
     <div class="copyright py-4 text-center text-white">
