@@ -33,8 +33,8 @@
       AND user.username = '$id' 
       AND paper.status = status_tb.id 
       AND paper.status = 1 
-      And (reviewer_paper.reviewer1 = '$id' 
-      OR reviewer_paper.reviewer2 = '$id') 
+      And reviewer_paper.reviewer = '$id' 
+      
       AND (reviewer_answer.reviewer_id = '$id' 
       AND reviewer_answer.paper_id = paper.paper_id 
       AND reviewer_answer.status = ' ')  ";
@@ -46,8 +46,7 @@
       AND user.username = '$id' 
       AND paper.status = status_tb.id 
       AND paper.status != 1  
-      And (reviewer_paper.reviewer1 = '$id' 
-      OR reviewer_paper.reviewer2 = '$id')";
+      And reviewer_paper.reviewer = '$id'";
   $result2 = mysqli_query($con, $q2);
 
   $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
