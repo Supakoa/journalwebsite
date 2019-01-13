@@ -1,35 +1,48 @@
 <?php
-require 'server/server.php';
-if($_SESSION['status'] != 1){
-  $_SESSION['online'] = 0 ;
-  header("Location: index.php");
-}
-if(isset($_SESSION['alert'])){
-  if($_SESSION['alert'] == 0 ){
-    echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
-  }
-  elseif ($_SESSION['alert'] == 1) {
-    echo '<script>alert("เพิ่มวารสารเรียบร้อย.");</script>';
-  }
-  elseif ($_SESSION['alert'] == 2) {
-    echo '<script>alert("แก้ไขวารสารเรียบร้อย.");</script>';
-  }
-  elseif ($_SESSION['alert'] == 3) {
-    echo '<script>alert("ได้เฉพาะ ไฟล์ PDF.");</script>';
-  }
-  unset($_SESSION['alert']);
-}
-//$id = $_SESSION['id'];
-// $_SESSION['id'] = 'singha';
-$id = $_SESSION['id'];
-$q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND user_paper.username = user.username AND paper.status = status_tb.id group by paper.paper_id";
-$result = mysqli_query($con, $q);
-$q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
-$result_name = mysqli_query($con, $q_name);
-$r_name = mysqli_fetch_assoc($result_name);
+  require 'server/server.php';
 
-  $a3 = "SELECT * FROM banner ";
-  $q3 = mysqli_query($con,$a3);
+  if($_SESSION['status'] != 1){
+    // $_SESSION['online'] = 0;
+    $_SESSION['alert'] = 2;
+    header("Location: index.php");
+    exit();
+  }
+
+  if(isset($_SESSION['alert'])){
+    if($_SESSION['alert'] == 0 ){
+
+      echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+
+    }
+    elseif ($_SESSION['alert'] == 1) {
+
+      echo '<script>alert("เพิ่มวารสารเรียบร้อย.");</script>';
+
+    }
+    elseif ($_SESSION['alert'] == 2) {
+
+      echo '<script>alert("แก้ไขวารสารเรียบร้อย.");</script>';
+
+    }
+    elseif ($_SESSION['alert'] == 3) {
+
+      echo '<script>alert("ได้เฉพาะ ไฟล์ PDF.");</script>';
+
+    }
+    unset($_SESSION['alert']);
+  }
+
+  //$id = $_SESSION['id'];
+  // $_SESSION['id'] = 'singha';
+  $id = $_SESSION['id'];
+  $q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND user_paper.username = user.username AND paper.status = status_tb.id group by paper.paper_id";
+  $result = mysqli_query($con, $q);
+  $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
+  $result_name = mysqli_query($con, $q_name);
+  $r_name = mysqli_fetch_assoc($result_name);
+
+    $a3 = "SELECT * FROM banner ";
+    $q3 = mysqli_query($con,$a3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +77,11 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <!-- login -->
     <link rel="stylesheet" href="login/login.css">
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
 
   </head>
 
@@ -265,6 +283,9 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <!-- login -->
     <script src="login/login.js"></script>
+
+    <!-- php check alert -->
+    <?php require '../alert.php';?>
 
   </body>
 

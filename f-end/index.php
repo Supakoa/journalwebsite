@@ -50,12 +50,11 @@
   if (isset($_SESSION['status'])) {
     if ($_SESSION['status'] == 0) {
       // echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
-      $_SESSION['alert'] = 14;
+      $_SESSION['alert'] = 9;
     }
   }
   if (isset($_SESSION['online'])) {
     // echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
-    $_SESSION['alert'] = 2;
   }
   session_destroy();
 
