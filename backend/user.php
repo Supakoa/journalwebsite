@@ -162,21 +162,21 @@
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <label for="user_name">Username  </label>
-                                                        <input id="user_name" class="form-control" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username">
+                                                        <input id="user_name" class="form-control" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required">
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="pass_word">Password  </label>
-                                                        <input id="pass_word" class="form-control" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password">
+                                                        <input id="pass_word" class="form-control" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <label for="f_name">Firstname  </label>
-                                                        <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname">
+                                                        <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <label for="l_name">Lastname  </label>
-                                                        <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname">
+                                                        <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -188,22 +188,26 @@
                                                             <option value="female" required>female</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-lg-6"> </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <label for="e_mail">E-mail  </label>
-                                                        <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email">
-                                                    </div>
+                                                    
                                                     <div class="col-lg-6">
                                                         <label for="addre">Address  </label>
                                                         <input id="addre" class="form-control" type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address">
                                                     </div>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <label for="e_mail">E-mail  </label>
+                                                        <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                                    </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="tel">Tel.</label>
+                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
+                                                        </div>
+                                                </div>
+                                                <div class="row">
                                                     <div class="col-lg-12">
                                                         <label for="mem">Member  </label>
-                                                        <textarea id="mem" class="form-control" name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea>
+                                                        <textarea id="mem" class="form-control" name="member" value="" cols="30" rows="10" placeholder="member"><?php echo $ro_a['member'] ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>

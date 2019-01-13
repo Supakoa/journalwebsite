@@ -14,7 +14,7 @@
     $member = $_POST['member'];
 
     //Check user from databse is match or not match
-    $a = "SELECT * FROM user WHERE username=$username ";
+    $a = "SELECT * FROM user WHERE username= '$username' ";
     $r_a = mysqli_query($con,$a);
 
     //check username password email

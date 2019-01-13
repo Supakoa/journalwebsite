@@ -172,20 +172,20 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
                         <label>ไฟล์เอกสาร</label>
-                        <input class="form-control btn btn-sm" name="paper" type="file" placeholder="ไฟล์เอกสาร" required="required">
+                        <input class="form-control btn btn-sm" name="paper" type="file"  accept=".pdf" placeholder="ไฟล์เอกสาร" required="required">
                     </div>
                 </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>ชื่อเอกสารภาษาไทย</label>
-                  <input class="form-control" name="paper_th" type="text" placeholder="ชื่อเอกสารภาษาไทย" required="required" data-validation-required-message="Please enter your Paper name thai.">
+                  <input class="form-control" name="paper_th" type="text" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกชื่อภาษาไทย" placeholder="ชื่อเอกสารภาษาไทย"  required="required" data-validation-required-message="Please enter your Paper name thai.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>ชื่อเอกสารภาษาอังกฤษ</label>
-                  <input class="form-control" name="paper_eng" type="text"  placeholder="ชื่อเอกสารภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
+                  <input class="form-control" name="paper_eng" type="text"  placeholder="ชื่อเอกสารภาษาอังกฤษ" pattern="^[!-~]+$" title="กรุณากรอกชื่อภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
