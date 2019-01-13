@@ -105,39 +105,39 @@
              <h3 style="text-align:center">เพิ่มข้อมูลผู้ทรงคุณวุฒิ </h3><hr><br>
 
                 <form action="input_register.php" method="POST">
-                    <div class="form-group">
-                        <label >Username **</label>
-                        <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" required="required" >
+                                        <div class="form-group">
+                                            <label >Username **</label>
+                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required>
 
-                        <label for="password">Password **</label>
-                        <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" required="required">
+                                            <label for="password">Password **</label>
+                                            <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
-                        <label for="conpassword">Confirm Password </label>
-                        <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" required="required">
+                                            <label for="conpassword">ยืนยัน Password </label>
+                                            <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
-                        <label for="fname">ชื่อ**</label>
-                        <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" required="required">
+                                            <label for="fname">ชื่อ **</label>
+                                            <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
 
-                        <label for="lname">นามสกุล **</label>
-                        <input type="text" class="form-control" name="lname" placeholder="นามสกุล" required="required" >
+                                            <label for="lname">นามสกุล **</label>
+                                            <input type="text" class="form-control" name="lname" placeholder="นามสกุล"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
 
-                        <label for="gender">เพศ</label>
-                        <select class="form-control" name="gender" required>
-                            <option disabled selected value="">เพศ</option>
-                            <option value="male">ชาย</option>
-                            <option value="female">หญิง</option>
-                        </select>
+                                            <label for="gender">เพศ</label>
+                                            <select class="form-control" name="gender" required>
+                                                <option disabled selected value="">เพศ</option>
+                                                <option value="male">ชาย</option>
+                                                <option value="female">หญิง</option>
+                                            </select>
 
-                        <label for="address">ที่อยู่</label>
-                        <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่" required="required"></textarea>
-                    
-                        <label for="username">Email *</label>
-                        <input type="text" class="form-control" name="email" placeholder="อีเมล์" required="required">
-                        
-                        <label for="password">ยืนยัน Email *</label>
-                        <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" required="required">
-                        <br>
-                        </div>
+                                            <label for="address">ที่อยู่</label>
+                                            <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่"></textarea required>
+                                        
+                                            <label for="email">Email *</label>
+                                            <input type="text" class="form-control" name="email" placeholder="อีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                            
+                                            <label for="comemail">ยืนยัน Email *</label>
+                                            <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                                <br>
+                                            </div>
                         <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button>
                 </form>
             	  

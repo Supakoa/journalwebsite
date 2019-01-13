@@ -183,18 +183,18 @@
                         
                         <div class="col-lg-6 mx-auto">
                             <label>Username *</label>
-                            <input class="form-control" name="username" type="text" placeholder="Username **" required="required" data-validation-required-message="Please enter your username.">
+                            <input class="form-control" name="username" type="text" placeholder="Username **" required="required" pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" data-validation-required-message="Please enter your username.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>Password *</label>
-                            <input class="form-control" name="password" type="password" placeholder="Password **" required="required" data-validation-required-message="Please enter your password.">
+                            <input class="form-control" name="password" type="password" placeholder="Password **" required="required" pattern="(.{6,})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
                             <label>Confirm password *</label>
-                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password **" required="required" data-validation-required-message="Please enter your Confirm password.">
+                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password **" required="required" pattern="(.{6,})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your Confirm password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -206,12 +206,12 @@
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
                             <label>ชื่อ ** </label>
-                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ **" required="required" data-validation-required-message="Please enter your firstname.">
+                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ **" required="required" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" data-validation-required-message="Please enter your firstname.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
                             <label>นามสกุล ** </label>
-                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล **" required="required" data-validation-required-message="Please enter your lastname.">
+                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล **" required="required" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" data-validation-required-message="Please enter your lastname.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
