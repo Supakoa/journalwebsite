@@ -91,8 +91,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                
                                 <?php while ($row = mysqli_fetch_array($result)) { ?>
+                                    <tr>
                                     <?php
                                         $id_paper = $row["paper_id"];
                                         $q_reviewer = "SELECT * FROM reviewer_paper WHERE paper_id =$id_paper ";
@@ -121,7 +122,7 @@
                                         </td>
                                         </tr> 
                                       <?php } ?>
-                                  
+                                      
                                
                             </tbody>
                         </table>
