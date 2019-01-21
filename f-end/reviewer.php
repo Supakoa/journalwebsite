@@ -37,7 +37,7 @@
       
       AND (reviewer_answer.reviewer_id = '$id' 
       AND reviewer_answer.paper_id = paper.paper_id 
-      AND reviewer_answer.status = ' ')  ";
+      AND reviewer_answer.status IS NULL)  ";
   $result1 = mysqli_query($con, $q1); 
 
   $q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status 

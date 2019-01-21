@@ -205,7 +205,7 @@
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
-                            <label>ชื่อ ** </label>
+                            <label>ชื่อ **(ไม่ต้องใส่คำนำหน้า) </label>
                             <input class="form-control" name="fname" type="text" placeholder="ชื่อ **" required="required" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" data-validation-required-message="Please enter your firstname.">
                             <p class="help-block text-danger"></p>
                         </div>

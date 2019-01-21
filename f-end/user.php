@@ -196,7 +196,7 @@
                       <div class="row">
                       <div class="col-lg-4"></div>
                           <div class="col-lg-4">
-                            <label for="pa-per">ไฟล์เอกสาร</label>
+                            <label for="pa-per">ไฟล์เอกสาร(pdf)</label>
                             <input id="pa-per" class="form-control btn btn-sm" name="paper" type="file"  accept=".pdf" placeholder="ไฟล์เอกสาร" required="required">
                           </div>
                           <div class="col-lg-4"></div>
