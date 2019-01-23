@@ -47,6 +47,8 @@
 
     $a3 = "SELECT * FROM banner ";
     $q3 = mysqli_query($con,$a3);
+    $r_3 = mysqli_fetch_array($q3);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,13 +81,11 @@
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
-    <!-- login -->
-    <link rel="stylesheet" href="login/login.css">
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+    <!-- <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">  -->
 
   </head>
 
@@ -99,7 +99,7 @@
           Menu
           <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse twxt-center" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#paper">เอกสาร</a>
@@ -116,17 +116,7 @@
     </nav>  
 
     <!-- Header -->
-    <header class="masthead text-white text-center" style="background-color : #f06eaa" >
-      <div class="container">
-          <br>
-        <h1 class="text-uppercase mb-0" style="font-family: 'Mitr', sans-serif;"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></h1>
-        <br><br><br><br>
-        <hr>
-        
-        <br><br><br>
-       
-      </div>
-    </header>
+    <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="heigth:auto ;margin-top:70px">
 
     <!-- paper Section -->
     <section class="portfolio" id="paper" style="font-family: 'Mitr', sans-serif;">
@@ -185,11 +175,10 @@
     <!-- submit Section -->
     <section id="submitpaper" style="font-family: 'Mitr', sans-serif;">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เพิ่มเอกสาร</h2>
-        <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            
+          <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เพิ่มเอกสาร</h2>
+        <hr class="star-dark mb-5">
             <form action = "server/insert_paper.php" method ="POST" enctype="multipart/form-data">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -291,9 +280,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
-
-    <!-- login -->
-    <script src="login/login.js"></script>
 
     <!-- php check alert -->
     <?php require '../alert.php';?>

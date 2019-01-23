@@ -90,19 +90,16 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
+    
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
-    <!-- login -->
-    <link rel="stylesheet" href="login/login.css">
+    
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+    <!-- <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">  -->
 
   </head>
 
@@ -117,7 +114,7 @@
           Menu
           <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse text-center" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#login">เข้าสู่ระบบ</a>
@@ -135,11 +132,9 @@
    
 
     <!-- Header -->
-    <header class="text-white text-center responsive" >
-      
-      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%;heigth:auto ;margin-top:105px" srcset="">
-          
-    </header>
+    
+      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="heigth:auto ;margin-top:70px">
+    
 
     <!-- Login Section -->
     <section class="portfolio" id="login">
@@ -347,8 +342,6 @@
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
 
-    <!-- login -->
-    <script src="login/login.js"></script>
 
   </body>
 
