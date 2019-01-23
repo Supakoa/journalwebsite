@@ -92,8 +92,8 @@
 
   <!-- sweet alert -->
   <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-  <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script> 
- 
+  <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
 
 </head>
 
@@ -183,10 +183,10 @@
 
   <!-- checked Section -->
   <section class="portfolio" id="checked" style="font-family: 'Mitr', sans-serif;">
-      <div class="col-lg-9 mx-auto">
-        <div class="container">
-          <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">ตรวจแล้ว</h2>
-          <hr class="star-dark mb-5">
+    <div class="col-lg-9 mx-auto">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">ตรวจแล้ว</h2>
+        <hr class="star-dark mb-5">
         <div class="table-responsive">
           <table id="table2" class="table display">
             <thead>
@@ -213,11 +213,9 @@
                   <?php echo $row2['status'] ?>
                 </td>
                 <td>
-
                   <?php 
                      require 'modal/modal4.php';
                         ?>
-
 
                 </td>
               </tr>
@@ -281,7 +279,7 @@
   <!-- Custom scripts for this template -->
   <script src="js/freelancer.min.js"></script>
 
-  
+
 </body>
 
 </html>
