@@ -103,16 +103,15 @@
 
   </head>
 
-  <body id="page-top">
+  <body style="font-family: 'Mitr', sans-serif;" id="page-top">
 
     <!-- Navigation -->
    
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">JOURNAL GE SSRU</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
+        <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
@@ -133,7 +132,7 @@
 
     <!-- Header -->
     
-      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="heigth:auto ;margin-top:70px">
+      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="heigth:auto">
     
 
     <!-- Login Section -->
@@ -300,22 +299,17 @@
         </div>
     </footer>
 
-    <div class="copyright py-4 text-center text-white">
-      <div class="row">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
-            <?php 
+    <footer class="copyright py-4 text-center text-white container-fluid" style="font-family: 'Mitr', sans-serif;">
+    <div class="row">
+      <div class="col-md-12">
+        <?php 
               //htis site is show footer.
-            
-            echo $r_3['footer'];
+              // $r_3 = mysqli_fetch_array($q3);
+              echo $r_3['footer'];
             ?>
-          </div><!-- content -->
-          <div class="col-lg-4"></div>
-        </div>
-      <div class="container">
-        <small>Copyright &copy; Your Website 2018</small>
-      </div>
+      </div><!-- content -->
     </div>
+  </footer>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">

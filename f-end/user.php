@@ -92,13 +92,12 @@
 <body id="page-top" style="font-family: 'Mitr', sans-serif;">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav" style="font-family: 'Mitr', sans-serif;">
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav" style="font-family: 'Mitr', sans-serif;">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-family: 'Mitr', sans-serif;">สมาชิก</a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button"
         data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
-        Menu
         <i class="fa fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse twxt-center" id="navbarResponsive">
@@ -118,7 +117,7 @@
   </nav>
 
   <!-- Header -->
-  <img src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="heigth:auto ;margin-top:70px">
+  <img src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="heigth:auto ">
 
   <!-- paper Section -->
   <section class="portfolio" id="paper" style="font-family: 'Mitr', sans-serif;">
@@ -127,7 +126,7 @@
         <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เอกสาร</h2>
         <hr class="star-dark mb-5">
         <div class="table-responsive-lg">
-          <table id="table_id" class="table display">
+          <table id="table_id" class="table table-bordered">
             <thead>
               <tr>
                 <th>รหัสเอกสาร</th>
@@ -249,22 +248,17 @@
 
 
 
-  <div class="copyright py-4 text-center text-white">
+  <footer class="copyright py-4 text-center text-white container-fluid" style="font-family: 'Mitr', sans-serif;">
     <div class="row">
-      <div class="col-lg-4"></div>
-      <div class="col-lg-4">
+      <div class="col-md-12">
         <?php 
               //htis site is show footer.
-              $r_3 = mysqli_fetch_array($q3);
+              // $r_3 = mysqli_fetch_array($q3);
               echo $r_3['footer'];
             ?>
       </div><!-- content -->
-      <div class="col-lg-4"></div>
     </div>
-    <div class="container">
-      <small>Copyright &copy; Your Website 2018</small>
-    </div>
-  </div>
+  </footer>
 
   <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
   <div class="scroll-to-top d-lg-none position-fixed ">
