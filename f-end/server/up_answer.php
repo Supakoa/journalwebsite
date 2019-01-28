@@ -18,7 +18,7 @@
     $id_paper = $_GET['id'];
     
 
-    $count = "SELECT COUNT(paper_id) FROM reviewer_answer WHERE paper_id = '$id_paper' AND status = ' ' ";
+    $count = "SELECT COUNT(paper_id) FROM reviewer_answer WHERE paper_id = '$id_paper' AND status IS NULL ";
     $r_count = mysqli_query($con,$count);
     $row_count = mysqli_fetch_assoc($r_count);
 
