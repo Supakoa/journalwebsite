@@ -275,7 +275,7 @@
     <footer class="footer text-center">
         <div class="row">
           <div class="col-md-6 mb-5 mb-lg-0">
-              <h4 class="text-uppercase mb-4">เอกสารที่เกี่ยวข้อง</h4>
+              <h4 class="text-uppercase mb-4">เว็บไซต์ที่เกี่ยวข้อง</h4>
             <ul class="list-inline mb-0">
               <li class="list-inline-item">
                 <?php while ($r1 = mysqli_fetch_array($q1)) { ?>

@@ -32,7 +32,7 @@
     }
 
     // Allow certain file formats
-    if ($imageFileType != "pdf") {
+    if ($imageFileType != "doc"&&$imageFileType != "docx") {
         // echo "Sorry, only PDF files are allowed.";
         // $uploadOk = 0;
         // $_SESSION['alert'] = 3;

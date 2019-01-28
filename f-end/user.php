@@ -103,10 +103,10 @@
       <div class="collapse navbar-collapse twxt-center" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#paper">เอกสาร</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#paper">สถานะบทความ</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#submitpaper">เพิ่มเอกสาร</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#submitpaper">ส่งบทความ</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="server/logout.php">ออกจากระบบ</a>
@@ -123,7 +123,7 @@
   <section class="portfolio" id="paper" style="font-family: 'Mitr', sans-serif;">
     <div class="col-lg-8 mx-auto">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เอกสาร</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">สถานะบทความ</h2>
         <hr class="star-dark mb-5">
         <div class="table-responsive-lg">
           <table id="table_id" class="table table-bordered">
@@ -131,7 +131,7 @@
               <tr>
                 <th>รหัสเอกสาร</th>
                 <th>ชื่อเอกสาร</th>
-                <th>สถานะ</th>
+                <th>สถานะบทความ</th>
                 <th>แก้ไข</th>
               </tr>
             </thead>
@@ -184,7 +184,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">เพิ่มเอกสาร</h2>
+          <h2 class="text-center text-uppercase text-secondary mb-0" style="font-family: 'Mitr', sans-serif;">ส่งบทความ</h2>
           <hr class="star-dark mb-5">
           <form action="server/insert_paper.php" method="POST" enctype="multipart/form-data">
             <div class="control-group">
@@ -192,8 +192,8 @@
                 <div class="row">
                   <div class="col-lg-4"></div>
                   <div class="col-lg-4">
-                    <label for="pa-per">ไฟล์เอกสาร(pdf)</label>
-                    <input id="pa-per" class="form-control btn btn-sm" name="paper" type="file" accept=".pdf"
+                    <label for="pa-per">ไฟล์เอกสาร(doc,docx)</label>
+                    <input id="pa-per" class="form-control btn btn-sm" name="paper" type="file" accept=".doc,docx"
                       placeholder="ไฟล์เอกสาร" required="required">
                   </div>
                   <div class="col-lg-4"></div>

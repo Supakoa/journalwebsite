@@ -52,7 +52,7 @@
         $ed2 = $_FILES[$sum2]['name'];
 
         $ext = pathinfo(basename($_FILES[$sum2]["name"]), PATHINFO_EXTENSION);
-        $new_taget_name = 'pdf_' . uniqid() . "." . $ext;
+        $new_taget_name = 'document_' . uniqid() . "." . $ext;
         $target_path = "uploads/";
         $upload_path = $target_path . $new_taget_name;
         $uploadOk = 1;
@@ -66,7 +66,7 @@
                 $uploadOk = 0;
             }
        // Allow certain file formats
-            if ($imageFileType != "pdf") {
+            if ($imageFileType != "pdf"&&$imageFileType != "doc"&&$imageFileType != "docx") {
                 echo "Sorry, only PDF files are allowed.";
                 $uploadOk = 0;
             }
