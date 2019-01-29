@@ -193,7 +193,7 @@
                   <div class="col-lg-4"></div>
                   <div class="col-lg-4">
                     <label for="pa-per">ไฟล์เอกสาร(doc,docx)</label>
-                    <input id="pa-per" class="form-control btn btn-sm" name="paper" type="file" accept=".doc,docx"
+                    <input id="pa-per" class="form-control btn btn-sm" name="paper" type="file" accept=".doc,.docx"
                       placeholder="ไฟล์เอกสาร" required="required">
                   </div>
                   <div class="col-lg-4"></div>

@@ -34,6 +34,8 @@
         echo 'Success';
     }else{
         echo 'Fail';
+        header("Location: ../reviewer.php");
+        exit();
     }
 }
     $b = "UPDATE reviewer_answer SET status = '$done',score='$score',comment='$comment' WHERE paper_id = '$id_paper' AND reviewer_id = '$id' ";
