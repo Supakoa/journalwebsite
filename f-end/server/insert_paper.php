@@ -72,7 +72,7 @@
             $p_u = "INSERT INTO `user_paper`( `paper_id`,username) VALUES ('$last_paper','$id')";
             $r_p_u = mysqli_query($con,$p_u);
         
-            $r_a = "INSERT INTO `reviewer_answer`( `paper_id`) VALUES ('$last_paper')";
+            $r_a = "INSERT INTO `reviewer_answer`(`paper_id`) VALUES ('$last_paper')";
             $r_r_a = mysqli_query($con,$r_a);
             $r_r_a = mysqli_query($con,$r_a);
             $_SESSION['alert'] = 3;
