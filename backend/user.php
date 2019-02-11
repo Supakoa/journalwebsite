@@ -46,7 +46,7 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Admin GE-จัดการสมาชิค</title>
+	<title>Admin GE-จัดการสมาชิก</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -237,7 +237,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body" style="text-align:center" >
-                                                        <h5>ยืนยันการลบข้อมูลสมาชิค</h5>
+                                                        <h5>ยืนยันการลบข้อมูลสมาชิก</h5>
                                                     </div>
                                                     <div class="modal-footer" style="text-align:center">
                                                             <button type="submit" class="btn btn-success">ยืนยัน</button>

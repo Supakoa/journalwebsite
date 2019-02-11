@@ -72,7 +72,7 @@
                     <?php } ?>
                     <a href="user.php">
                         <i class="pe-7s-users"></i>
-                        <p>จัดการสมาชิค</p>
+                        <p>จัดการสมาชิก</p>
                     </a>
                     <?php if ($_SESSION['set_page']==6) {?>
                         </li>
