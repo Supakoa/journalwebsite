@@ -117,6 +117,8 @@
                                                     <div class="col-lg-4">
                                                         <input class="form-control" name="banner" type="file"
                                                             placeholder="File" required="required">
+                                                            <h2 class = "text-center" style="color:red" >ขนาด 1900*800 px</h2>
+                                                            
                                                     </div>
                                                     <div class="col-lg-4">
                                                         <button type="submit" class="btn btn-success">อัพโหลด</button>

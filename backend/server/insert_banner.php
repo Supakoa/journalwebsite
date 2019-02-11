@@ -1,6 +1,6 @@
 <?php
    // connect database and open session to start
-   require '../server.php';
+   require 'server.php';
 
    // check online with check have start with index
    if (!isset($_SESSION['status_admin'])) {

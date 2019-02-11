@@ -135,7 +135,7 @@
 
     <!-- Header -->
     
-      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="heigth:auto">
+      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="width:100%;heigth:auto">
     
 
     <!-- Login Section -->
