@@ -61,18 +61,23 @@
 
         if ($_FILES[$sum2]["name"] != "") {
 
-            if ($_FILES[$sum2]["size"] > 8000000) {
-                echo "Sorry, your file is too large.";
+            if ($_FILES[$sum2]["size"] > 60000000) {
+                $_SESSION['alert'] = 15;
                 $uploadOk = 0;
+                header("Location: paper.php");
+                 exit();
             }
        // Allow certain file formats
             if ($imageFileType != "pdf"&&$imageFileType != "doc"&&$imageFileType != "docx") {
-                echo "Sorry, only PDF files are allowed.";
+                // echo "Sorry, only PDF files are allowed.";
+                $_SESSION['alert'] = 18;
+                header("Location: paper.php");
+                 exit();
                 $uploadOk = 0;
             }
        // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
-                echo "Sorry, your file was not uploaded.";
+                
        // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES[$sum2]["tmp_name"], $upload_path)) {
@@ -86,7 +91,9 @@
                         $count++;
                     }
                 } else {
-                    echo "Sorry, there was an error uploading your file.";
+                    $_SESSION['alert'] = 11;
+                    header("Location: paper.php");
+                    exit();
                 }
             }
 
@@ -221,7 +228,7 @@
                                                 <td><input type="text" name="text<?php echo $i ?>" value="<?php echo $row2['text'] ?>" ></td>
                                                 <th scope="row"><?php echo $row2['real_name'] ?></th>
                                                 <!-- <td><input type="text" name="link<? php// echo $i ?>" value="<? php// echo $row2['url'] ?>" required></td> -->
-                                                <td style="text-align:center"><input type="file" name="link<?php echo $i ?>" ></td>
+                                                <td style="text-align:center"><input type="file" name="link<?php echo $i ?>" accept=".doc,.docx,.pdf" ></td>
                                                 <?php if ($row2['hide'] == 0) { ?>
                                                     <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>"></td>
                                                 <?php 

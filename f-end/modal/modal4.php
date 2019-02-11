@@ -70,7 +70,7 @@
 
                                 ?>
                                   <div class="col col-12-lg ms-auto">
-                                    <h4 style="margin-left:20px"> สถานะผู้ตรวจคนที่ <?php echo $i++ ?> </h4>
+                                    <h4 style="margin-left:20px"> สถานะผู้ทรงคุณวุฒิคนที่ <?php echo $i++ ?> </h4>
                                     <p style="margin-left:20px" > ชื่อ : <?php echo $row_RA['first_name'] . " " . $row_RA['last_name'] ?> </p>
                                     <p style="margin-left:20px"> คะแนน : <?php echo $row_RA['score'] ?></p>
                                     <p style="margin-left:20px"> ผลตรวจ : <?php echo $row_RA['status'] ?></p>

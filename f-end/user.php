@@ -148,7 +148,14 @@
                   <?php echo $row['name_th'] ?>
                 </td>
                 <td>
-                  <?php echo $row['status'] ?>
+                  <?php 
+                     if ($row['status'] == "รอผลการตรวจสอบ" || $row['status'] == "รอผลจากแอดมิน" || $row['status'] == "ยังไม่ได้เลือกผู้ตรวจ") {
+                      echo "รอผลการตรวจสอบ";
+                    }
+                    else{
+                      echo $row['status'] ;
+                    }
+                  ?>
                 </td>
                 <td>
 
