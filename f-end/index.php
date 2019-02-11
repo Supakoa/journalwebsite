@@ -124,6 +124,9 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#register">สมัครสมาชิก</a>
             </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#manual">คู่การใช้งาน</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -272,6 +275,7 @@
     </section>
 
     <!-- Footer -->
+    <section id = "manual" >
     <footer class="footer text-center">
         <div class="row">
           <div class="col-md-6 mb-5 mb-lg-0">
@@ -298,6 +302,8 @@
           </div>
         </div>
     </footer>
+    </section>
+    
 
     <footer class="copyright py-4 text-center text-white container-fluid" style="font-family: 'Mitr', sans-serif;">
     <div class="row">
