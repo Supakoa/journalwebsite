@@ -56,7 +56,10 @@
   if (isset($_SESSION['online'])) {
     // echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
   }
-  session_destroy();
+  if(!isset($_SESSION['status_admin'])){
+    session_destroy();
+  }
+  
 
   $a1 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '1'";
   $a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
