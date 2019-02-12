@@ -94,7 +94,6 @@
 
     <div class="wrapper">
         <div class="sidebar" data-color="#cccccc">
-
             <div class="sidebar-wrapper">
                 <?php require 'setup/menu.php' ?>
 
@@ -103,23 +102,25 @@
                     <?php require 'setup/main.php' ?>
 
                     <div class="content">
+                        <h3 style="text-align:center">ตั้งค่า website</h3>
+
                         <div class="container-fluid">
-                            <h3 style="text-align:center">ตั้งค่า website</h3>
-                            <hr><br>
-
-
-                            <h2 class="text-center">ตั้งค่า Banner</h2><br>
+                            <hr>
+                            <h5 class="text-center">Banner</h5><br>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <form action="server/insert_banner.php" method="POST" enctype="multipart/form-data">
                                         <div class="control-group">
                                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                                 <div class="row">
-                                                    <div class="col-lg-6">
+                                                    <div class="col-lg-4"></div>
+                                                    <div class="col-lg-4">
                                                         <input class="form-control" name="banner" type="file"
                                                             placeholder="File" required="required">
+                                                            <h2 class = "text-center" style="color:red" >ขนาด 1900*800 px</h2>
+                                                            
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    <div class="col-lg-4">
                                                         <button type="submit" class="btn btn-success">อัพโหลด</button>
                                                     </div>
                                                 </div>
@@ -162,11 +163,11 @@
                                         Banner</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="container-fluid">
                                 <hr>
 
                                 <br>
-                                <h2 class="text-center">ตั้งค่า footer</h2>
+                                <h5 class="text-center">footer</h5>
                                 <form action="setting.php" method="POST">
                                     <div class="row">
                                         <div class="col-lg-12" style="text-align:center">
@@ -179,20 +180,13 @@
                                     </div>
                                 </form>
                                 <br>
-
-
-                                <footer class="footer">
-                                    <div class="container-fluid">
-
-                                        <p class="copyright pull-right">
-                                            &copy; <script>
-                                                document.write(new Date().getFullYear())
-                                            </script> <a href="#">Creative Tim</a>,CEFstyle
-                                        </p>
-                                    </div>
-                                </footer>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>

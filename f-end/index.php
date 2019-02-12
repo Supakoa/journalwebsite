@@ -56,7 +56,10 @@
   if (isset($_SESSION['online'])) {
     // echo '<script>alert("กรุณาเข้าสู่ระบบ.");</script>';
   }
-  session_destroy();
+  if(!isset($_SESSION['status_admin'])){
+    session_destroy();
+  }
+  
 
   $a1 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '1'";
   $a2 = "SELECT * FROM show_url WHERE hide = '0' && group_url = '2'";
@@ -90,34 +93,30 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
+    
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
-    <!-- login -->
-    <link rel="stylesheet" href="login/login.css">
+    
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="../backend/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css"> 
+    <!-- <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">  -->
 
   </head>
 
-  <body id="page-top">
+  <body style="font-family: 'Mitr', sans-serif;" id="page-top">
 
     <!-- Navigation -->
    
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">JOURNAL GE SSRU</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
+        <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse text-center" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#login">เข้าสู่ระบบ</a>
@@ -128,6 +127,9 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#register">สมัครสมาชิก</a>
             </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#manual">คู่มือการใช้งาน</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -135,11 +137,9 @@
    
 
     <!-- Header -->
-    <header class="text-white text-center responsive" >
-      
-      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%;heigth:auto ;margin-top:105px" srcset="">
-          
-    </header>
+    
+      <img   src="../backend/banner/<?php echo $r_3['tmp_name'] ?>" class="img-fluid" alt="Responsive image" style="width:100%;heigth:auto">
+    
 
     <!-- Login Section -->
     <section class="portfolio" id="login">
@@ -205,7 +205,7 @@
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
-                            <label>ชื่อ ** </label>
+                            <label>ชื่อ **(ไม่ต้องใส่คำนำหน้า) </label>
                             <input class="form-control" name="fname" type="text" placeholder="ชื่อ **" required="required" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" data-validation-required-message="Please enter your firstname.">
                             <p class="help-block text-danger"></p>
                         </div>
@@ -278,12 +278,12 @@
     </section>
 
     <!-- Footer -->
+    <section id = "manual" >
     <footer class="footer text-center">
-      <div class="container">
-      <h4 class="text-uppercase mb-4">เอกสารที่เกี่ยวข้อง</h4>
         <div class="row">
           <div class="col-md-6 mb-5 mb-lg-0">
-          <ul class="list-inline mb-0">
+              <h4 class="text-uppercase mb-4">เว็บไซต์ที่เกี่ยวข้อง</h4>
+            <ul class="list-inline mb-0">
               <li class="list-inline-item">
                 <?php while ($r1 = mysqli_fetch_array($q1)) { ?>
                   <a class=" text-center" target="_blank" href="<?php echo $r1['url']; ?>"><?php echo $r1['text']; ?></a><br>
@@ -293,7 +293,8 @@
             </ul>
           </div>
           <div class="col-md-6 mb-5 mb-lg-0">
-          <ul class="list-inline mb-0">
+              <h4 class="text-uppercase mb-4">เอกสารเผยแพร่</h4>
+            <ul class="list-inline mb-0">
               <li class="list-inline-item">
               <?php while ($r2 = mysqli_fetch_array($q2)) { ?>
                   <a class=" text-center" target="_blank" href="../backend/uploads/<?php echo $r2['url']; ?>"><?php echo $r2['text']; ?></a><br>
@@ -303,25 +304,21 @@
             </ul>
           </div>
         </div>
-      </div>
     </footer>
+    </section>
+    
 
-    <div class="copyright py-4 text-center text-white">
-      <div class="row">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
-            <?php 
+    <footer class="copyright py-4 text-center text-white container-fluid" style="font-family: 'Mitr', sans-serif;">
+    <div class="row">
+      <div class="col-md-12">
+        <?php 
               //htis site is show footer.
-            
-            echo $r_3['footer'];
+              // $r_3 = mysqli_fetch_array($q3);
+              echo $r_3['footer'];
             ?>
-          </div><!-- content -->
-          <div class="col-lg-4"></div>
-        </div>
-      <div class="container">
-        <small>Copyright &copy; Your Website 2018</small>
-      </div>
+      </div><!-- content -->
     </div>
+  </footer>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-to-top d-lg-none position-fixed ">
@@ -348,8 +345,6 @@
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
 
-    <!-- login -->
-    <script src="login/login.js"></script>
 
   </body>
 

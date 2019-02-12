@@ -46,7 +46,7 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Admin GE-จัดการสมาชิค</title>
+	<title>Admin GE-จัดการสมาชิก</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -100,7 +100,7 @@
 
         <div class="content">
             <div class="container-fluid">
-             <h3 style="text-align:center">ตาราง User</h3><hr><br>
+             <h3 style="text-align:center">สมาชิก</h3><hr>
             	<div class="row">
                     <div class="col-lg-12 table-responsive">
                         <table class="table display" id="tableuser">
@@ -201,7 +201,7 @@
                                                     </div>
                                                         <div class="col-lg-6">
                                                             <label for="tel">Tel.</label>
-                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
+                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." maxlength="10" pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
                                                         </div>
                                                 </div>
                                                 <div class="row">
@@ -237,7 +237,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body" style="text-align:center" >
-                                                        <h5>ยืนยันการลบข้อมูลสมาชิค</h5>
+                                                        <h5>ยืนยันการลบข้อมูลสมาชิก</h5>
                                                     </div>
                                                     <div class="modal-footer" style="text-align:center">
                                                             <button type="submit" class="btn btn-success">ยืนยัน</button>
@@ -257,14 +257,6 @@
                 </div> 
             </div>
         </div>
-        <footer class="footer">
-            <div class="container-fluid">
-               
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Creative Tim</a>,CEFstyle
-                </p>
-            </div>
-        </footer>
     </div>
 </div>
 

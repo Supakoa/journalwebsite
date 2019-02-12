@@ -186,12 +186,36 @@
                     <script>
                         Swal({
                             type: 'error',
-                            title: 'อัพโหลดได้เฉพาะไฟล์ pdf เท่านั้น',
+                            title: 'อัพโหลดได้เฉพาะไฟล์ doc,docx เท่านั้น',
                             text: 'ลองอัพโหลดใหม่อีกครั้ง.',
                             // footer: '<a href>Why do I have this issue?</a>'
                         });                    
                     </script>";
             break;
+            
+            case '17':
+                echo "
+                    <script>
+                        Swal({
+                            type: 'error',
+                            title: 'อัพโหลดได้เฉพาะไฟล์ JPG,PNG  เท่านั้น',
+                            text: 'ลองอัพโหลดใหม่อีกครั้ง.',
+                            // footer: '<a href>Why do I have this issue?</a>'
+                        });                    
+                    </script>";
+            break;
+
+            case '18':
+            echo "
+                <script>
+                    Swal({
+                        type: 'error',
+                        title: 'อัพโหลดได้เฉพาะไฟล์ doc,docx,pdf เท่านั้น',
+                        text: 'ลองอัพโหลดใหม่อีกครั้ง.',
+                        // footer: '<a href>Why do I have this issue?</a>'
+                    });                    
+                </script>";
+        break;
 
             // $_SESSION['alert'] = 0 or null
             default:
