@@ -43,7 +43,7 @@
                 <h2>Banner</h2>
             </div>
         </div>
-    </div>
+    </div><br>
     <!-- banner -->
 
     <!-- navbar -->
@@ -85,14 +85,15 @@
                 </div>
             </nav>
         </div>
-    </div>
+    </div><br>
+
     <!-- nav col4 && content col8 -->
     <div class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-2">
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                         </li>
@@ -104,26 +105,66 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-                        </li>
+                        </li><br>
+                        <li class="nav-item">
+                            <div class="container">
+                                <a href="index.php"  class="btn btn-sm btn-success">
+                                 sign-in</a>
+                            </div>
+                        </li><br>
                     </ul>
 
-                    
+
                 </div>
-                <div class="col-8">
-                <!-- Tab panes -->
-                <div class="tab-content">
-                        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
-                        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
+                <div class="col-10">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="container">
+                                <img src="journal_4.png" alt="Responsive image" class="img-fluid" style="">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade text-cnter" id="profile" role="tabpanel" aria-labelledby="profile-tab">...arrays takes 2* O(n/2). This ends up in a performance of O(n log n).
+
+                            In the worst case quicksort selects only one element in each iteration. So it is O(n) + O(n-1) + (On-2).. O(1) which is equal to O(n^2).
+
+                            The average case of quicksort is O(n log n). </div>
+                        <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">... <p>1. ถ้าข้อมูลเข้า ( input) เป็นตัวถูกดำเนินการ ( operand) ให้นำออกไปเป็นผลลัพธ์ ( output)
+
+                                2. ถ้าข้อมูลเข้าเป็นตัวดำเนินการ ( operator) ให้ดำเนินการดังนี้
+                                2.1 ถ้าสแตคว่าง ให้ push operator ลงในสแตค
+                                2.2 ถ้าสแตคไม่ว่าง ให้เปรียบเทียบ operator ที่เข้ามากับ operator ที่อยู่ในตำแหน่ง TOP ของสแตค
+                                2.2.1 ถ้า operator ที่เข้ามามีความสำคัญมากกว่า operator ที่ตำแหน่ง TOP ของสแตคให้ push ลงสแตค
+                                2.2.2 ถ้า operator ที่เข้ามามีความสำคัญน้อยกว่าหรือเท่ากับ operator ที่อยู่ในตำแหน่ง TOP ของสแตค ให้ pop สแตคออกไปเป็นผลลัพธ์ แล้วทำการเปรียบเทียบ operator ที่เข้ามากับ operator ที่ตำแหน่ง TOP ต่อไป จะหยุดจนกว่า operator ที่เข้ามาจะมีความสำคัญมากกว่า operator ที่ตำแหน่ง TOP ของสแตค แล้วจึง push operator ที่เข้ามานั้นลงสแตค
+
+                                3. ถ้าข้อมูลเข้าเป็นวงเล็บเปิด ให้ push ลงสแตค
+
+                                4. ถ้าข้อมูลเข้าเป็นวงเล็บปิด ให้ pop ข้อมูลออกจากสแตคไปเป็นผลลัพธ์จนกว่าจะถึงวงเล็บ เปิด จากนั้นทิ้งวงเล็บเปิดและปิดทิ้งไป
+
+                                5. ถ้าข้อมูลเข้าหมด ให้ pop ข้อมูลออกจากสแตคไปเป็นผลลัพธ์จนกว่าสแตคจะว่าง
+
+                                ตัวอย่างการแปลงนิพจน์ Infix เป็นนิพจน์ Postfix
+                                นิพจน์ A + B * C</p>
+                        </div>
+                        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">.Quicksort is a divide and conquer algorithm. It first divides a large list into two smaller sub-lists and then recursively sort the two sub-lists. If we want to sort an array without any extra space, quicksort is a good option. On average, time complexity is O(n log(n)).
+
+                            The basic step of sorting an array are as follows:
+                            Select a pivot
+                            Move smaller elements to the left and move bigger elements to the right of the pivot
+                            Recursively sort left part and right part
+                            This post shows two versions of the Java implementation. The first one picks the rightmost element as the pivot and the second one picks the middle element as the pivot...</div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div><br>
 
 
-
+    <footer>
+        <div class="container text-center" style="background-color:lightpink">
+            <h1>footer</h1>
+        </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -136,6 +177,9 @@
         $('#myTab a').on('click', function(e) {
             e.preventDefault()
             $(this).tab('show')
+        })
+        $(function() {
+            $('#myTab li:first-child a').tab('show')
         })
     </script>
 
