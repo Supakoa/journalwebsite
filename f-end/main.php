@@ -37,12 +37,12 @@
 
 <body>
     <!-- banner -->
-    <div class="container-fluid">
-        <div class="container" style="background-color:green;height:200px">
+    <div class="container-fluid" style="background-color:green;height:200px">
+       
             <div class="text-center">
                 <h2>Banner</h2>
             </div>
-        </div>
+        
     </div><br>
     <!-- banner -->
 
