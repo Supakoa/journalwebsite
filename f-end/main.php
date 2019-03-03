@@ -1,3 +1,7 @@
+<?php
+    require 'server/server.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -28,6 +32,8 @@
     <!-- Custom styles for this template -->
     <!-- <link href="css/freelancer.min.css" rel="stylesheet"> -->
 
+    <!-- google font kanit -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
@@ -51,7 +57,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
                 <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -64,7 +71,8 @@
                             <a class="nav-link" href="#">Link</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                                 Dropdown
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -94,17 +102,22 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-                        </li>
+                        <!-- V insert new <li> // -->
+                        <?php
+                            $sql = "SELECT * FROM `news` WHERE status = 1";
+                            $result = mysqli_query($con,$sql);
+                                while ($row = mysqli_fetch_array($result)){ ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="settings-tab" data-toggle="tab" href="#<?php echo $row['news_id'];?>"
+                                            role="tab" aria-controls="settings" aria-selected="false">
+                                            <?php echo $row['name']; ?></a>
+                                    </li>
+                        <?php } ?>
+                        <!-- A insert new <li> // -->
+                        <br>
                     </ul>
 
 
@@ -117,41 +130,20 @@
                                 <img src="journal_4.png" alt="Responsive image" class="img-fluid" style="">
                             </div>
                         </div>
-                        <div class="tab-pane fade text-cnter" id="profile" role="tabpanel" aria-labelledby="profile-tab">...arrays takes 2* O(n/2). This ends up in a performance of O(n log n).
-
-                            In the worst case quicksort selects only one element in each iteration. So it is O(n) + O(n-1) + (On-2).. O(1) which is equal to O(n^2).
-
-                            The average case of quicksort is O(n log n). </div>
-                        <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">... <p>1. ถ้าข้อมูลเข้า ( input) เป็นตัวถูกดำเนินการ ( operand) ให้นำออกไปเป็นผลลัพธ์ ( output)
-
-                                2. ถ้าข้อมูลเข้าเป็นตัวดำเนินการ ( operator) ให้ดำเนินการดังนี้
-                                2.1 ถ้าสแตคว่าง ให้ push operator ลงในสแตค
-                                2.2 ถ้าสแตคไม่ว่าง ให้เปรียบเทียบ operator ที่เข้ามากับ operator ที่อยู่ในตำแหน่ง TOP ของสแตค
-                                2.2.1 ถ้า operator ที่เข้ามามีความสำคัญมากกว่า operator ที่ตำแหน่ง TOP ของสแตคให้ push ลงสแตค
-                                2.2.2 ถ้า operator ที่เข้ามามีความสำคัญน้อยกว่าหรือเท่ากับ operator ที่อยู่ในตำแหน่ง TOP ของสแตค ให้ pop สแตคออกไปเป็นผลลัพธ์ แล้วทำการเปรียบเทียบ operator ที่เข้ามากับ operator ที่ตำแหน่ง TOP ต่อไป จะหยุดจนกว่า operator ที่เข้ามาจะมีความสำคัญมากกว่า operator ที่ตำแหน่ง TOP ของสแตค แล้วจึง push operator ที่เข้ามานั้นลงสแตค
-
-                                3. ถ้าข้อมูลเข้าเป็นวงเล็บเปิด ให้ push ลงสแตค
-
-                                4. ถ้าข้อมูลเข้าเป็นวงเล็บปิด ให้ pop ข้อมูลออกจากสแตคไปเป็นผลลัพธ์จนกว่าจะถึงวงเล็บ เปิด จากนั้นทิ้งวงเล็บเปิดและปิดทิ้งไป
-
-                                5. ถ้าข้อมูลเข้าหมด ให้ pop ข้อมูลออกจากสแตคไปเป็นผลลัพธ์จนกว่าสแตคจะว่าง
-
-                                ตัวอย่างการแปลงนิพจน์ Infix เป็นนิพจน์ Postfix
-                                นิพจน์ A + B * C</p>
-                        </div>
-                        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">.Quicksort is a divide and conquer algorithm. It first divides a large list into two smaller sub-lists and then recursively sort the two sub-lists. If we want to sort an array without any extra space, quicksort is a good option. On average, time complexity is O(n log(n)).
-
-                            The basic step of sorting an array are as follows:
-                            Select a pivot
-                            Move smaller elements to the left and move bigger elements to the right of the pivot
-                            Recursively sort left part and right part
-                            This post shows two versions of the Java implementation. The first one picks the rightmost element as the pivot and the second one picks the middle element as the pivot...</div>
+                        <?php  
+                            $result2 = mysqli_query($con,$sql);
+                            while ($row_content = mysqli_fetch_array($result2)) { ?>
+                                <div class="tab-pane fade text-cnter" style="font-family: 'Kanit', sans-serif;" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
+                                    <?php
+                                        echo $row_content['content'];
+                                    ?>
+                                </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
     </div><br>
-
 
     <footer>
         <div class="container text-center" style="background-color:lightpink">
@@ -164,14 +156,14 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#table_id').DataTable();
         });
-        $('#myTab a').on('click', function(e) {
+        $('#myTab a').on('click', function (e) {
             e.preventDefault()
             $(this).tab('show')
         })
-        $(function() {
+        $(function () {
             $('#myTab li:first-child a').tab('show')
         })
     </script>
@@ -188,4 +180,4 @@
     <!-- <script src="js/freelancer.min.js"></script> -->
 </body>
 
-</html> 
+</html>
