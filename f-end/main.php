@@ -32,6 +32,8 @@
     <!-- Custom styles for this template -->
     <!-- <link href="css/freelancer.min.css" rel="stylesheet"> -->
 
+    <!-- google font kanit -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
@@ -132,7 +134,7 @@
                         <?php  
                             $result2 = mysqli_query($con,$sql);
                             while ($row_content = mysqli_fetch_array($result2)) { ?>
-                                <div class="tab-pane fade text-cnter" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="tab-pane fade text-cnter" style="font-family: 'Kanit', sans-serif;" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
                                     <?php
                                         echo $row_content['content'];
                                     ?>
