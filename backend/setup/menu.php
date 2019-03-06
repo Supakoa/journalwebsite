@@ -123,7 +123,7 @@
     <li class="active">
         <?php 
     } ?>
-        <a href="#"> <i class="pe-7s-pencil"></i>
+        <a href="content.php" target="_blank" > <i class="pe-7s-pencil"></i>
             <p>เพิ่มข้อมูลข่าว</p>
         </a>
         <?php if ($_SESSION['set_page'] == 9) { ?>
