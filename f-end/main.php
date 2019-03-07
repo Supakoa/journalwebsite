@@ -64,10 +64,10 @@ require 'server/server.php';
                             <a style="color:#fff;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ข้อมูลทั่วไป
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#" onclick="content(10017)" style="color:#fff;">หลักการและเหตุผล</a>
-                                <a class="dropdown-item" href="#" onclick="content(10018)" style="color:#fff;">วัตถุประสงค์</a>
-                                <a class="dropdown-item" href="#" onclick="content(10019)" style="color:#fff;">รูปแบบการในเสนอ</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#2C3E50">
+                                <a class="dropdown-item" href="#" onclick="content(10017)" style="color:#fff; background-color: #2C3E50;">หลักการและเหตุผล</a>
+                                <a class="dropdown-item" href="#" onclick="content(10018)" style="color:#fff;background-color: #2C3E50;">วัตถุประสงค์</a>
+                                <a class="dropdown-item" href="#" onclick="content(10019)" style="color:#fff;background-color: #2C3E50;">รูปแบบการในเสนอ</a>
                             </div>
                         </li>
                         <li class="nav-item" style="color:#fff;">
