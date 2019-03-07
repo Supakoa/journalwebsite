@@ -229,56 +229,76 @@ $result_show = mysqli_query($con, $q_show);
         </div>
     </div>
 
+    <div class="row">
+    <h1 class="page-header">อัพโหลดรูป</h1>
 
-    
-    <script>
-        $(document).ready(function() {
-            $('#nottt').summernote({
-                height: 300, // set editor height
-                minHeight: null, // set minimum height of editor
-                maxHeight: null, // set maximum height of editor
-                focus: true // set focus to editable area after initializing summernote
+        <div class="col-lg-12">
+            <form action="server/insert_banner.php" method="POST" enctype="multipart/form-data">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <div class="row">
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4">
+                                <input class="form-control" name="banner" type="file" placeholder="File" required="required">
+                                <h4 class="text-center" style="color:red">ขนาด 1900*800 px</h4>
+
+                            </div>
+                            <div class="col-lg-4">
+                                <button type="submit" class="btn btn-success">อัพโหลด</button>
+                            </div>
+                        </div>
+            </form>
+
+        </div>
+
+
+        <script>
+            $(document).ready(function() {
+                $('#nottt').summernote({
+                    height: 300, // set editor height
+                    minHeight: null, // set minimum height of editor
+                    maxHeight: null, // set maximum height of editor
+                    focus: true // set focus to editable area after initializing summernote
+                });
+
+                $('#gogo').click(function(e) {
+                    var markupStr = $('#nottt').summernote('code');
+                    $('#code').val(markupStr);
+
+                });
+                // $('#del_id').val('value');
+                var markupStr2 = `<?php echo $row_edit_content['content'] ?>`;
+                $('#nottt').summernote('code', markupStr2);
+            });
+            $('#basicModal').modal({
+                keyboard: false,
+                backdrop: 'static'
+
+            });
+            $('#delete').modal({
+                // keyboard: false,
+                backdrop: 'static'
+            });
+            $('#add').modal({
+                // keyboard: false,
+                backdrop: 'static'
+            });
+            $('#del_yes').click(function() {
+                // $('#test').append('123456');
+                $('#del_singha').submit();
+
             });
 
-            $('#gogo').click(function(e) {
-                var markupStr = $('#nottt').summernote('code');
-                $('#code').val(markupStr);
+            $('*').modal('hide');
+            // $('#basicModal').modal(options)
+            $('#basicModal').modal('show');
 
-            });
-            // $('#del_id').val('value');
-            var markupStr2 = `<?php echo $row_edit_content['content'] ?>`;
-            $('#nottt').summernote('code', markupStr2);
-        });
-        $('#basicModal').modal({
-            keyboard: false,
-            backdrop: 'static'
+            // $('#basicModal').modal('toggle')
+            // $('#basicModal').modal('handleUpdate')
+        </script>
 
-        });
-        $('#delete').modal({
-            // keyboard: false,
-            backdrop: 'static'
-        });
-        $('#add').modal({
-            // keyboard: false,
-            backdrop: 'static'
-        });
-        $('#del_yes').click(function() {
-            // $('#test').append('123456');
-            $('#del_singha').submit();
-
-        });
-
-        $('*').modal('hide');
-        // $('#basicModal').modal(options)
-        $('#basicModal').modal('show');
-
-        // $('#basicModal').modal('toggle')
-        // $('#basicModal').modal('handleUpdate')
-        
-    </script>
-    
-    <!-- php check alert -->
-    <?php require '../alert.php'; ?>
+        <!-- php check alert -->
+        <?php require '../alert.php'; ?>
 </body>
 
 </html> 

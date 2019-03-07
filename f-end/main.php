@@ -65,13 +65,16 @@ require 'server/server.php';
                                 ข้อมูลทั่วไป
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#2C3E50">
-                                <a class="dropdown-item" href="#" onclick="content(10017)" style="color:#fff; background-color: #2C3E50;">หลักการและเหตุผล</a>
+                                <a class="dropdown-item" href="#" onclick="content(10017)" style="color:#fff;">หลักการและเหตุผล</a>
                                 <a class="dropdown-item" href="#" onclick="content(10018)" style="color:#fff;background-color: #2C3E50;">วัตถุประสงค์</a>
                                 <a class="dropdown-item" href="#" onclick="content(10019)" style="color:#fff;background-color: #2C3E50;">รูปแบบการในเสนอ</a>
                             </div>
                         </li>
                         <li class="nav-item" style="color:#fff;">
                             <a class="nav-link" href="#" onclick="content(10020)" style="color:#fff;">ผู้ทรงคุณวุฒิ</a>
+                        </li>
+                        <li class="nav-item" style="color:#fff;">
+                            <a class="nav-link" href="#" onclick="content(10021)" style="color:#fff;">กองบรรณาธิการ</a>
                         </li>
                     </ul>
                     <div class="form-inline my-2 my-lg-0" >

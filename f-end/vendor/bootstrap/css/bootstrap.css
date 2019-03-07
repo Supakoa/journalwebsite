@@ -3539,7 +3539,7 @@ input[type="button"].btn-block {
 .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
-  background-color: #2C3E50;
+  background-color: #fff;
 }
 
 .dropdown-item.active,
