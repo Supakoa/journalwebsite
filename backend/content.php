@@ -163,7 +163,7 @@ $result_show = mysqli_query($con, $q_show);
                     </div>
                     <div class="text-center">
                         <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#add"><i class="glyphicon glyphicon-plus"></i></a>
-                        <a href="../../font/main.php" target="_blank" class="btn btn-sm btn-success">ไปยังหน้าแสดงข่าว</a>
+                        <a href="../f-end/main.php" target="_blank" class="btn btn-sm btn-success">ไปยังหน้าแสดงข่าว</a>
                     </div>
                 </div>
             </div>
