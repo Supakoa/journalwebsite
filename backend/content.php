@@ -275,7 +275,7 @@ $result_show = mysqli_query($con, $q_show);
         </div>
     </div>
 
-    <div class="row">
+    <div class="row text-center">
     <h1 class="page-header">อัพโหลดรูป</h1>
 
         <div class="col-lg-12">
