@@ -65,7 +65,7 @@ require 'server/server.php';
                                 ข้อมูลทั่วไป
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#2C3E50">
-                                <a class="dropdown-item" href="#" onclick="content(10017)" style="color:#fff;">หลักการและเหตุผล</a>
+                                <a class="dropdown-item" href="#" onclick="content(10017)" style="color:#fff;background-color: #2C3E50;">หลักการและเหตุผล</a>
                                 <a class="dropdown-item" href="#" onclick="content(10018)" style="color:#fff;background-color: #2C3E50;">วัตถุประสงค์</a>
                                 <a class="dropdown-item" href="#" onclick="content(10019)" style="color:#fff;background-color: #2C3E50;">รูปแบบการในเสนอ</a>
                             </div>
@@ -92,7 +92,7 @@ require 'server/server.php';
                 <div class="col-lg-2" >
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs nav-pills flex-column myTab" id="myTab" role="tablist" style="background-color: #2C3E50;">
-                        <li class="nav-item">
+                        <li class="nav-item " >
                             <a style="color:#fff;" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                         </li>
                         <?php
