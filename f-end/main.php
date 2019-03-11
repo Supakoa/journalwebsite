@@ -50,18 +50,20 @@ require 'server/server.php';
 
     <!-- navbar -->
     <div class="container-fluid" style="background-color: #2C3E50;">
-        <div class="container" >
+        <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #2C3E50;">
                 <a class="navbar-brand" href="#" style="color:#fff;">GE Conference</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto" role="tablist">
 
                         <li class="nav-item dropdown" style="color:#fff;">
-                            <a style="color:#fff;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a style="color:#fff;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ข้อมูลทั่วไป
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color:#2C3E50">
@@ -77,7 +79,7 @@ require 'server/server.php';
                             <a class="nav-link" href="#" onclick="content(10050)" style="color:#fff;">กองบรรณาธิการ</a>
                         </li>
                     </ul>
-                    <div class="form-inline my-2 my-lg-0" >
+                    <div class="form-inline my-2 my-lg-0">
                         <a href="index.php" class="btn btn-info my-2 my-sm-0" style="color:#fff;">ส่งบทความ</a>
                     </div>
                 </div>
@@ -89,18 +91,20 @@ require 'server/server.php';
     <div class="container-fluid">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2" >
+                <div class="col-lg-2">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs nav-pills flex-column myTab" id="myTab" role="tablist" style="background-color: #2C3E50;">
-                        <li class="nav-item " >
-                            <a style="color:#fff;" class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                        <li class="nav-item ">
+                            <a style="color:#fff;" class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                role="tab" aria-controls="home" aria-selected="true">Home</a>
                         </li>
                         <?php
                         $sql = "SELECT * FROM `news` WHERE status = 1";
                         $result = mysqli_query($con, $sql);
                         while ($row = mysqli_fetch_array($result)) { ?>
                         <li class="nav-item">
-                            <a style="color:#fff;" class="nav-link" id="settings-tab" data-toggle="tab" href="#<?php echo $row['news_id']; ?>" role="tab" aria-controls="settings" aria-selected="false">
+                            <a style="color:#fff;" class="nav-link" id="settings-tab" data-toggle="tab" href="#<?php echo $row['news_id']; ?>"
+                                role="tab" aria-controls="settings" aria-selected="false">
                                 <?php echo $row['name']; ?></a>
                         </li>
                         <?php 
@@ -119,7 +123,8 @@ require 'server/server.php';
                         <?php 
                         $result2 = mysqli_query($con, $sql);
                         while ($row_content = mysqli_fetch_array($result2)) { ?>
-                        <div class="tab-pane fade " style="font-family: 'Kanit', sans-serif;" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="tab-pane fade " style="font-family: 'Kanit', sans-serif;" id="<?php echo $row_content['news_id']; ?>"
+                            role="tabpanel" aria-labelledby="profile-tab">
                             <?php
                             echo $row_content['content'];
                             ?>
@@ -129,29 +134,37 @@ require 'server/server.php';
 
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="container">
-                                <img src="http://www.gen-ed.ssru.ac.th/useruploads/images/20190212/e351519d4139d4016dec7fd8b96d2903d69a20ee.png" class="fr-fic fr-dib img-responsive" style="height: 302.47px; width: 100%;">
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;
-                                            เปิดรับสมัครบทความจำนวนจำกัด (100 บทความ)
-                                            เพื่อนำเสนองานประชุมวิชาการการศึกษาทั่วไปฯ มหาวิทยาลัยราชภัฏสวนสุนันทา
-                                            ปี พ.ศ.2562 ตั้งแต่วันนี้ – 12 มีนาคม พ.ศ.2562&nbsp;</span></strong></p>
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">โดยนักวิจัยสามารถสมัครเข้าร่วมโครงการฯ
-                                            เพื่อส่งบทความและชำระเงินค่าลงทะเบียนได้ที่&nbsp;</span></strong></p>
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="color: rgb(0, 0, 0);"><strong><span style="font-size: 18px;">ค่าลงทะเบียน 3,000 บาท&nbsp;</span></strong></span><span style="color: rgb(147, 101, 184);"><strong><span style="font-size: 18px;"><strong><u><a href="http://www.geconference.ssru.ac.th/font/index.php" rel="noopener noreferrer" target="_blank" style="color: rgb(0, 0, 0); text-shadow: none;">&gt;&gt;
-                                                            คลิกเข้าระบบ</a>&nbsp;&lt;&lt;</u></strong>&nbsp;</span></strong></span></p>
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">&nbsp; หัวข้อการเสนอผลงาน ได้แก่<br>&nbsp;
-                                            &nbsp; 1.กลุ่มวิชาด้านมนุษยศาสตร์และสังคมศาสตร์<br>&nbsp; &nbsp;
-                                            2.กลุ่มวิชาด้านการศึกษา<br>&nbsp; &nbsp;
-                                            3.กลุ่มวิชาด้านวิทยาศาสตร์และเทคโนโลยี<br>&nbsp; &nbsp;
-                                            4.กลุ่มวิชาด้านภาษา<br>ผู้วิจัยที่ชำระเงินหลังวันที่ 12 มีนาคม พ.ศ.2562
-                                            เป็นต้นไป ทางผู้จัดขอสงวนสิทธิ์ไม่คืนเงินค่าลงทะเบียนในทุกกรณี</span></strong></p>
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><br></p>
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="font-size: 18px;"><strong><span style="color: rgb(41, 105, 176);">ติดต่อสอบถามรายละเอียดได้ที่
-                                                นางสาวภัททิยา ตรัยที่พึ่ง</span></strong></span></p>
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="color: rgb(41, 105, 176);"><strong><span style="font-size: 18px;">หัวหน้าฝ่ายวิจัยและพัฒนานวัตกรรมการจัดการเรียนรู้</span></strong></span></p>
-                                <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="color: rgb(41, 105, 176);"><span style="font-size: 18px;"><strong>เบอร์ติดต่อ 02-160-1265 ต่อ 301&nbsp;<strong>หรือโทร
-                                                    086-0826655</strong></strong></span></span></p>
-                                <div><span style="color: rgb(41, 105, 176);"><span style="font-size: 18px;"><strong><strong><br></strong></strong></span></span></div>
-                                <p></p>
+                                <h1 style="text-align: center; ">
+                                    <p align="center" style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px;"><img
+                                            src="http://www.gen-ed.ssru.ac.th/useruploads/images/20190212/22c69304bc35f2413cd2806501d040f7a22c44ec.png"
+                                            class="fr-fic fr-dib img-responsive" style="height: 302.47px; width: 821px;"></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><span
+                                            style="color: rgb(0, 0, 0);"><strong><span style="font-size: 18px;">&nbsp;
+                                                    &nbsp; &nbsp; เปิดรับสมัครบทความเพื่อตีพิมพ์ในวารสารวิชาการ
+                                                    สำนักวิชาการศึกษาทั่วไปและนวัตกรรมการเรียนรู้อิเล็กทรอนิกส์
+                                                    ตั้งแต่วันนี้ – 31 มีนาคม พ.ศ.2562
+                                                    โดยนักวิจัยสามารถสมัครเข้าร่วมโครงการฯ เพื่อส่งบทความได้ที่&nbsp;</span></strong></span></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><span
+                                            style="color: rgb(147, 101, 184);"><span style="font-size: 18px;"><strong><a
+                                                        href="http://www.gejournal.ssru.ac.th/f-end/index.php" style="color: rgb(0, 0, 0); text-shadow: none;">&gt;&gt;
+                                                        คลิกเข้าระบบ &lt;&lt;</a></strong></span></span></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><span
+                                            style="font-size: 18px;"><strong><span style="color: rgb(0, 0, 0);">&nbsp;หัวข้อการเสนอผลงาน
+                                                    ได้แก่<br>&nbsp; &nbsp;1.กลุ่มวิชาด้านมนุษยศาสตร์และสังคมศาสตร์<br>&nbsp;
+                                                    &nbsp;2.กลุ่มวิชาด้านการศึกษา<br>&nbsp;
+                                                    &nbsp;3.กลุ่มวิชาด้านวิทยาศาสตร์และเทคโนโลยี<br>&nbsp;
+                                                    &nbsp;4.กลุ่มวิชาด้านภาษา</span></strong></span></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><br></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><span
+                                            style="font-size: 18px;"><strong><span style="color: rgb(41, 105, 176);">ติดต่อสอบถามรายละเอียดได้ที่
+                                                    นางสาวภัททิยา ตรัยที่พึ่ง</span></strong></span></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><span
+                                            style="color: rgb(41, 105, 176);"><strong><span style="font-size: 18px;">หัวหน้าฝ่ายวิจัยและพัฒนานวัตกรรมการจัดการเรียนรู้</span></strong></span></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><span
+                                            style="color: rgb(41, 105, 176);"><span style="font-size: 18px;"><strong>เบอร์ติดต่อ
+                                                    02-160-1265 ต่อ 301&nbsp;</strong></span></span><span style="color: rgb(41, 105, 176);"><span
+                                                style="font-size: 18px;"><strong>หรือโทร 086-0826655</strong></span></span></p>
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -173,13 +186,13 @@ require 'server/server.php';
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 <script>
-    $('.myTab a').on('click', function(e) {
+    $('.myTab a').on('click', function (e) {
         $('#main_content').show();
         $('#qry_content').hide();
         e.preventDefault();
         $(this).tab('show');
     })
-    $(function() {
+    $(function () {
         $('.myTab li:first-child a').tab('show')
     })
 
@@ -191,7 +204,7 @@ require 'server/server.php';
         $.post("qry_content.php", {
                 data: id
             },
-            function(result) {
+            function (result) {
                 $('#qry_content').show();
                 $('#main_content').hide();
                 $("#qry_content").html(result);
@@ -214,4 +227,4 @@ require 'server/server.php';
 <!-- <script src="js/freelancer.min.js"></script> -->
 </body>
 
-</html> 
+</html>
