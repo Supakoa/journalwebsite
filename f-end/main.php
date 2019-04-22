@@ -142,7 +142,7 @@ require 'server/server.php';
                                             style="color: rgb(0, 0, 0);"><strong><span style="font-size: 18px;">&nbsp;
                                                     &nbsp; &nbsp; เปิดรับสมัครบทความเพื่อตีพิมพ์ในวารสารวิชาการ
                                                     สำนักวิชาการศึกษาทั่วไปและนวัตกรรมการเรียนรู้อิเล็กทรอนิกส์
-                                                    ตั้งแต่วันนี้ – 31 มีนาคม พ.ศ.2562
+                                                    ตั้งแต่วันนี้ – 30 เมษายน พ.ศ.2562
                                                     โดยนักวิจัยสามารถสมัครเข้าร่วมโครงการฯ เพื่อส่งบทความได้ที่&nbsp;</span></strong></span></p>
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif; font-size: 14px; text-align: start;"><span
                                             style="color: rgb(147, 101, 184);"><span style="font-size: 18px;"><strong><a
